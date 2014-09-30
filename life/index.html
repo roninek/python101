@@ -1,0 +1,1025 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Gra w życie Conwaya &mdash; Python 101 0.5 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
+        <link rel="next" title="4. Quiz – Aplikacja internetowa" href="../quiz.html"/>
+        <link rel="prev" title="2. Gra w Ponga" href="../pong/index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Python 101</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../env.html">Środowisko systemowe i wymagane oprogramowanie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#szkolny-remix-ucznia-sru">Szkolny Remix Ucznia (SRU)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-windows">Środowisko Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-pycharm">Środowisko programistyczne PyCharm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Przygotowanie katalogu projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#pobieranie-materialow">Pobieranie materiałów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#korzystanie-z-kodu-zrodlowego-w-opisie-przykladow">Korzystanie z kodu źródłowego w opisie przykładów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#synchronizacja-kodu-pomiedzy-etapami-przykladow">Synchronizacja kodu pomiędzy etapami przykładów</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic.html">1. Python - Podstawy programowania</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#zmienne">1.1. Zmienne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#wyrazenia-warunkowe">1.2. Wyrażenia warunkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#gra-w-zgadnij-liczbe">1.3. Gra w &#8220;zgadnij liczbę&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#zadania-dodatkowe">1.4. Zadania dodatkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#petla-while">1.5. Pętla WHILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#wyrazenia-break-i-continue">1.6. Wyrażenia break i continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#petla-for">1.7. Pętla FOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#slowniczek">1.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pong/index.html">2. Gra w Ponga</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#przygotowanie">2.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#okienko-gry">2.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pileczka">2.3. Piłeczka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijanie-pileczki">2.4. Odbijanie piłeczki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijamy-pileczke-rakietka">2.5. Odbijamy piłeczkę rakietką</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#gramy-przeciwko-komputerowi">2.6. Gramy przeciwko komputerowi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pokazujemy-punkty">2.7. Pokazujemy punkty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">2.8. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#slowniczek">2.9. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. Gra w życie Conwaya</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#przygotowanie">3.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#okienko-gry">3.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tworzymy-matryce-zycia">3.3. Tworzymy matrycę życia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ukladamy-zywe-komorki-na-planszy">3.4. Układamy żywe komórki na planszy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dodajemy-populacje-do-kontrolera-gry">3.5. Dodajemy populację do kontrolera gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#szukamy-zyjacych-sasiadow">3.6. Szukamy żyjących sąsiadów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">3.7. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slowniczek">3.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quiz.html">4. Quiz – Aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#struktura-katalogow">4.1. Struktura katalogów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#szkielet-aplikacji">4.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#definiowanie-widokow-strona-glowna">4.3. Definiowanie widoków – strona główna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#pokaz-dane-aplikacji-pytania-i-odpowiedzi">4.4. Pokaż dane aplikacji – pytania i odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#oceniamy-odpowiedzi">4.5. Oceniamy odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#dodatkowe-informacje">4.6. Dodatkowe informacje</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">5. Lista ToDo – Aplikacja internetowa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chatter.html">6. Chatter – Aplikacja internetowa</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python 101</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>3. Gra w życie Conwaya</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/life/index.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="gra-w-zycie-conwaya">
+<h1>3. Gra w życie Conwaya<a class="headerlink" href="#gra-w-zycie-conwaya" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://pl.wikipedia.org/wiki/Gra_w_życie">Gra w życie</a> zrealizowana z użyciem biblioteki <a class="reference external" href="http://www.pygame.org/wiki/tutorials">PyGame</a>.</p>
+<div class="figure">
+<img alt="../_images/screen1.png" src="../_images/screen1.png" />
+</div>
+<div class="section" id="przygotowanie">
+<h2>3.1. Przygotowanie<a class="headerlink" href="#przygotowanie" title="Permalink to this headline">¶</a></h2>
+<p>Do rozpoczęcia pracy z przykładem pobieramy szczątkowy kod źródłowy:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span>git checkout -f life/z1
+</pre></div>
+</div>
+</div>
+<div class="section" id="okienko-gry">
+<h2>3.2. Okienko gry<a class="headerlink" href="#okienko-gry" title="Permalink to this headline">¶</a></h2>
+<p>Na wstępie w pliku <code class="docutils literal"><span class="pre">~/python101/life/life.py</span></code> otrzymujemy kod który przygotuje okienko naszej gry:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ten przykład zakłada wcześniejsze zrealizowanie przykładu: <a class="reference internal" href="../pong/index.html"><em>Gra w Ponga</em></a>,
+opisy niektórych cech wspólnych został tutaj wyraźnie pominięty.
+W tym przykładzie wykorzystujemy np. podobne mechanizmy do tworzenia okna i
+zarządzania główną pętlą naszej gry.</p>
+</div>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># coding=utf-8</span>
+
+<span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">pygame.locals</span>
+
+
+<span class="k">class</span> <span class="nc">Board</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plansza do gry. Odpowiada za rysowanie okna gry.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Konstruktor planszy do gry. Przygotowuje okienko gry.</span>
+
+<span class="sd">        :param width: szerokość w pikselach</span>
+<span class="sd">        :param height: wysokość w pikselach</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surface</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s">&#39;Game of life&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rysuje okno gry</span>
+
+<span class="sd">        :param args: lista obiektów do narysowania</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">background</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">drawable</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="n">drawable</span><span class="o">.</span><span class="n">draw_on</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surface</span><span class="p">)</span>
+
+        <span class="c"># dopiero w tym miejscu następuje fatyczne rysowanie</span>
+        <span class="c"># w oknie gry, wcześniej tylko ustalaliśmy co i jak ma zostać narysowane</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">GameOfLife</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Łączy wszystkie elementy gry w całość.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cell_size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Przygotowanie ustawień gry</span>
+<span class="sd">        :param width: szerokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param height: wysokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param cell_size: bok komórki w pikselach</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">height</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">)</span>
+        <span class="c"># zegar którego użyjemy do kontrolowania szybkości rysowania</span>
+        <span class="c"># kolejnych klatek gry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Główna pętla gry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_events</span><span class="p">():</span>
+            <span class="c"># działaj w pętli do momentu otrzymania sygnału do wyjścia</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">handle_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obsługa zdarzeń systemowych, tutaj zinterpretujemy np. ruchy myszką</span>
+
+<span class="sd">        :return True jeżeli pygame przekazał zdarzenie wyjścia z gry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">locals</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="k">return</span> <span class="bp">True</span>
+
+
+<span class="c"># Ta część powinna być zawsze na końcu modułu (ten plik jest modułem)</span>
+<span class="c"># chcemy uruchomić naszą grę dopiero po tym jak wszystkie klasy zostaną zadeklarowane</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">game</span> <span class="o">=</span> <span class="n">GameOfLife</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>W powyższym kodzie mamy podstawy potrzebne do uruchomienia gry:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span>python games/life.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="tworzymy-matryce-zycia">
+<h2>3.3. Tworzymy matrycę życia<a class="headerlink" href="#tworzymy-matryce-zycia" title="Permalink to this headline">¶</a></h2>
+<p>Nasza gra polega na ułożenia komórek na planszy i obserwacji jak w kolejnych generacjach
+życie się zmienia, które komórki giną, gdzie się rozmnażają i wywołują efektowną wędrówkę
+oraz tworzenie się ciekawych struktur.</p>
+<p>Zacznijmy od zadeklarowania zmiennych które zastąpią nam tzw. <a class="reference internal" href="#term-magiczne-liczby"><em class="xref std std-term">magiczne liczby</em></a>.
+W kodzie zamiast wartości <code class="docutils literal"><span class="pre">1</span></code> dla określenia żywej komórki i wartości <code class="docutils literal"><span class="pre">0</span></code>
+dla martwej komórki wykorzystamy zmiennie <code class="docutils literal"><span class="pre">ALIVE</span></code> oraz <code class="docutils literal"><span class="pre">DEAD</span></code>. W innych językach
+takie zmienne czasem są określane jako <a class="reference internal" href="#term-stala"><em class="xref std std-term">stała</em></a>.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>77
+78
+79</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># magiczne liczby używane do określenia czy komórka jest żywa</span>
+<span class="n">DEAD</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ALIVE</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</td></tr></table></div>
+<p>Podstawą naszego życia będzie klasa <code class="docutils literal"><span class="pre">Population</span></code> która będzie przechowywać stan gry,
+a także realizować funkcje potrzebne do zmian stanu gry w czasie. W przeciwieństwie do
+<a class="reference internal" href="../pong/index.html"><em>gry w Pong</em></a> nie będziemy dzielić odpowiedzialności
+pomiędzy większą liczbę klas.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Population</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Populacja komórek</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cell_size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Przygotowuje ustawienia populacji</span>
+
+<span class="sd">        :param width: szerokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param height: wysokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param cell_size: bok komórki w pikselach</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">box_size</span> <span class="o">=</span> <span class="n">cell_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_generation</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">reset_generation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tworzy i zwraca macierz pustej populacji</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># w pętli wypełnij listę kolumnami</span>
+        <span class="c"># które także w pętli zostają wypełnione wartością 0 (DEAD)</span>
+        <span class="k">return</span> <span class="p">[[</span><span class="n">DEAD</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table></div>
+<p>Poza ostatnią linią nie ma tutaj wielu niespodzianek, ot konstruktor <code class="docutils literal"><span class="pre">__init__</span></code>
+zapamiętujący wartości konfiguracyjne w instancji naszej klasy, tj. w <code class="docutils literal"><span class="pre">self</span></code>.</p>
+<p>W ostatniej linii budujemy macierz dla komórek. Tablicę dwuwymiarową, którą będziemy
+adresować przy pomocy współrzędnych <code class="docutils literal"><span class="pre">x</span></code> i <code class="docutils literal"><span class="pre">y</span></code>.
+Jeśli plansza miałaby szerokość 4, a wysokość 3
+komórek to zadeklarowana ręcznie nasza tablica wyglądałaby tak:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">generation</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">,</span> <span class="n">DEAD</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+<p>Jednak ręczne zadeklarowanie byłoby uciążliwe i mało elastyczne, wyobraźmy sobie macierz
+40 na 80 — strasznie dużo pisania! Dlatego posłużymy się pętlami i wyliczymy sobie dowolną
+macierz na podstawie zadanych parametrów.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">reset_generation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">generation</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+            <span class="n">column</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">DEAD</span><span class="p">)</span>
+        <span class="n">generation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">generation</span>
+</pre></div>
+</td></tr></table></div>
+<p>Powyżej wykorzystaliśmy 2 pętle (jedna zagnieżdżona w drugiej)
+oraz funkcję <code class="docutils literal"><span class="pre">xrange</span></code> która wygeneruje listę wartości
+od 0 do zadanej wartości - 1. Dzięki temu nasze pętle uzyskają <code class="docutils literal"><span class="pre">self.width</span></code>
+i <code class="docutils literal"><span class="pre">self.height</span></code> przebiegów. Jest lepiej.</p>
+<p>Przykład kodu powyżej to konstrukcja którą w taki lub podobny sposób
+wykorzystuje się co chwila w każdym programie — to chleb powszedni programisty.
+Każdy program musi w jakiś sposób iterować po elementach list przekształcając je w inne listy.</p>
+<p>W linii 113 mamy przykład zastosowania tzw. wyrażeń listowych (ang. list comprehensions).
+Pomiędzy znakami nawiasów kwadratowych <code class="docutils literal"><span class="pre">[</span> <span class="pre">]</span></code> mamy pętlę, która w każdym przebiegu
+zwraca jakiś element. Te zwrócone elementy napełniają nową listę która zostanie zwrócona
+w wyniku wyrażenia.</p>
+<p>Sprawę komplikuje dodaje fakt, że chcemy uzyskać tablicę dwuwymiarową dlatego mamy zagnieżdżone
+wyrażenie listowe (jak 2 pętle powyżej). Zajrzyjmy najpierw do wewnętrznego wyrażenia:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">[</span><span class="n">DEAD</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table></div>
+<p>W kodzie powyżej każdym przebiegu pętli uzyskamy <code class="docutils literal"><span class="pre">DEAD</span></code>. Dzięki temu zyskamy
+<em>kolumnę</em> macierzy od wysokości <code class="docutils literal"><span class="pre">self.height</span></code>, w każdej z nich będziemy mogli się dostać do pojedynczej
+komorki adresując ją listę wartością <code class="docutils literal"><span class="pre">y</span></code> o tak <code class="docutils literal"><span class="pre">kolumna[y]</span></code>.</p>
+<p>Teraz zajmijmy się zewnętrznym wyrażeniem
+listowym, ale dla uproszczenia w każdym jego przebiegu zwracajmy <code class="docutils literal"><span class="pre">nowa_kolumna</span></code></p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">[</span><span class="n">nowa_kolumna</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table></div>
+<p>W kodzie powyżej w każdym przebiegu pętli uzyskamy <code class="docutils literal"><span class="pre">nowa_kolumna</span></code>. Dzięki temu zyskamy
+listę <em>kolumn</em>. Do każdej z nich będziemy mogli się dostać adresując listę wartością <code class="docutils literal"><span class="pre">x</span></code> o tak
+<code class="docutils literal"><span class="pre">generation[x]</span></code>, w wyniku otrzymamy kolumnę którą możemy adresować wartością <code class="docutils literal"><span class="pre">y</span></code>, co w sumie
+da nam macierz w której do komórek dostaniemy się o tak: <code class="docutils literal"><span class="pre">generation[x][y]</span></code>.</p>
+<p>Zamieniamy <code class="docutils literal"><span class="pre">nowa_kolumna</span></code> wyrażeniem listowym dla <code class="docutils literal"><span class="pre">y</span></code> i otrzymamy 1 linijkę
+zamiast 7 z przykładu z podwójną pętlą:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">[[</span><span class="n">DEAD</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="ukladamy-zywe-komorki-na-planszy">
+<h2>3.4. Układamy żywe komórki na planszy<a class="headerlink" href="#ukladamy-zywe-komorki-na-planszy" title="Permalink to this headline">¶</a></h2>
+<p>Teraz przygotujemy kod który dzięki wykorzystaniu myszki umożliwi nam
+ułożenie planszy, będziemy wybierać gdzie na planszy będą żywe komórki.
+Dodajmy do klasy <code class="docutils literal"><span class="pre">Population</span></code> metodę <code class="docutils literal"><span class="pre">handle_mouse</span></code> którą będziemy
+później wywoływać w metody <code class="docutils literal"><span class="pre">GameOfLife.handle_events</span></code> za każdym razem
+gdy nasz program otrzyma zdarzenie dotyczące myszki.</p>
+<p>Chcemy by myszka z naciśniętym lewym klawiszem ustawiała pod kursorem
+żywą komórkę. Jeśli jest naciśnięty inny klawisz to usuniemy żywą komórkę.
+Jeśli żaden z klawiszy nie jest naciśnięty to zignorujemy zdarzenie myszki.</p>
+<p>Zdarzenia są generowane w przypadku naciśnięcia klawiszy lub ruchu myszką,
+nie będziemy nic robić jeśli gracz poruszy myszką bez naciskania klawiszy.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">handle_mouse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c"># pobierz stan guzików myszki z wykorzystaniem funcji pygame</span>
+    <span class="n">buttons</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">buttons</span><span class="p">):</span>
+        <span class="c"># ignoruj zdarzenie jeśli żaden z guzików nie jest wciśnięty</span>
+        <span class="k">return</span>
+
+    <span class="c"># dodaj żywą komórką jeśli wciśnięty jest pierwszy guzik myszki</span>
+    <span class="c"># będziemy mogli nie tylko dodawać żywe komórki ale także je usuwać</span>
+    <span class="n">alive</span> <span class="o">=</span> <span class="bp">True</span> <span class="k">if</span> <span class="n">buttons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="bp">False</span>
+
+    <span class="c"># pobierz pozycję kursora na planszy mierzoną w pikselach</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
+
+    <span class="c"># przeliczamy współrzędne komórki z pikseli na współrzędne komórki w macierz</span>
+    <span class="c"># gracz może kliknąć w kwadracie o szerokości box_size by wybrać komórkę</span>
+    <span class="n">x</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">box_size</span>
+    <span class="n">y</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">box_size</span>
+
+    <span class="c"># ustaw stan komórki na macierzy</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">generation</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">ALIVE</span> <span class="k">if</span> <span class="n">alive</span> <span class="k">else</span> <span class="n">DEAD</span>
+</pre></div>
+</td></tr></table></div>
+<p>Następnie dodajmy metodę <code class="docutils literal"><span class="pre">draw_on</span></code> która będzie rysować żywe komórki na planszy.
+Tą metodę wywołamy w metodzie <code class="docutils literal"><span class="pre">GameOfLife.draw</span></code>.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>130
+131
+132
+133
+134
+135
+136
+137</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">draw_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rysuje komórki na planszy</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">alive_cells</span><span class="p">():</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">box_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">box_size</span><span class="p">)</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">box_size</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">box_size</span><span class="p">)</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Powyżej wykorzystaliśmy nie istniejącą metodę <code class="docutils literal"><span class="pre">alive_cells</span></code> która jak wynika z
+jej użycia powinna zwrócić kolekcję współrzędnych dla żywych komórek.
+Po jednej parze <code class="docutils literal"><span class="pre">x,</span> <span class="pre">y</span></code> dla każdej żywej komórki. Każdą żywą komórkę
+narysujemy jako kwadrat w białym kolorze.</p>
+<p>Utwórzmy metodę <code class="docutils literal"><span class="pre">alive_cells</span></code> która w pętli przejdzie po całej macierzy populacji
+i zwróci tylko współrzędne żywych komórek.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>141
+142
+143
+144
+145
+146
+147
+148
+149
+150</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">alive_cells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generator zwracający współrzędne żywych komórek.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">generation</span><span class="p">)):</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generation</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">column</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">column</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="n">ALIVE</span><span class="p">:</span>
+                <span class="c"># jeśli komórka jest żywa zwrócimy jej współrzędne</span>
+                <span class="k">yield</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</td></tr></table></div>
+<p>W kodzie powyżej mamy przykład dwóch pętli przy pomocy których sprawdzamy zawartość
+stan życia komórek dla wszystkich możliwych współrzędnych <code class="docutils literal"><span class="pre">x</span></code> i <code class="docutils literal"><span class="pre">y</span></code> w macierzy.
+Na uwagę zasługują dwie rzeczy. Nigdzie tutaj nie zadeklarowaliśmy listy żywych komórek
+— którą chcemy zwrócić — oraz instrukcję yield.</p>
+<p>Instrukcja <code class="docutils literal"><span class="pre">yield</span></code> powoduje, że nasza funkcja zamiast zwykłych wartości zwróci
+<a class="reference internal" href="#term-generator"><em class="xref std std-term">generator</em></a>. W skrócie w każdym przebiegu wewnętrznej pętli
+zostaną <em>wygenerowane</em> i zwrócone na zewnątrz wartości <code class="docutils literal"><span class="pre">x,</span> <span class="pre">y</span></code>. Za każdym razem gdy
+<code class="docutils literal"><span class="pre">for</span> <span class="pre">x,</span> <span class="pre">y</span> <span class="pre">in</span> <span class="pre">self.alive_cells()</span></code> poprosi o współrzędne następnej żywej komórki,
+<code class="docutils literal"><span class="pre">alive_cells</span></code> wykona się do instrukcji <code class="docutils literal"><span class="pre">yield</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Działanie generatora najlepiej zaobserwować w debugerze, będziemy mogli to zrobić za
+chwilę.</p>
+</div>
+</div>
+<div class="section" id="dodajemy-populacje-do-kontrolera-gry">
+<h2>3.5. Dodajemy populację do kontrolera gry<a class="headerlink" href="#dodajemy-populacje-do-kontrolera-gry" title="Permalink to this headline">¶</a></h2>
+<p>Czas by rozwinąć nasz kontroler gry, klasę <code class="docutils literal"><span class="pre">GameOfLife</span></code> o instancję klasy <code class="docutils literal"><span class="pre">Population</span></code></p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">GameOfLife</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Łączy wszystkie elementy gry w całość.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cell_size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Przygotowanie ustawień gry</span>
+<span class="sd">        :param width: szerokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param height: wysokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param cell_size: bok komórki w pikselach</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">height</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">)</span>
+        <span class="c"># zegar którego użyjemy do kontrolowania szybkości rysowania</span>
+        <span class="c"># kolejnych klatek gry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">)</span>
+</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Główna pętla gry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_events</span><span class="p">():</span>
+            <span class="c"># działaj w pętli do momentu otrzymania sygnału do wyjścia</span>
+<span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
+</span><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="p">,</span>
+</span><span class="hll">            <span class="p">)</span>
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">handle_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obsługa zdarzeń systemowych, tutaj zinterpretujemy np. ruchy myszką</span>
+
+<span class="sd">        :return True jeżeli pygame przekazał zdarzenie wyjścia z gry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">locals</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="k">return</span> <span class="bp">True</span>
+
+<span class="hll">            <span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="n">MOUSEMOTION</span><span class="p">,</span> <span class="n">MOUSEBUTTONDOWN</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">MOUSEMOTION</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+</span><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">handle_mouse</span><span class="p">()</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Gotowy kod możemy wyciągnąć komendą:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span>git checkout -f life/z2
+</pre></div>
+</div>
+</div>
+<div class="section" id="szukamy-zyjacych-sasiadow">
+<h2>3.6. Szukamy żyjących sąsiadów<a class="headerlink" href="#szukamy-zyjacych-sasiadow" title="Permalink to this headline">¶</a></h2>
+<p>Podstawą do określenia tego czy w danym miejscu na planszy (w współrzędnych x i y macierzy)
+powstanie nowe życie, przetrwa lub zginie istniejące życie; jest określenie liczby żywych
+komórek w bezpośrednim sąsiedztwie. Przygotujmy do tego metodę:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generator zwracający wszystkich okolicznych sąsiadów</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">nx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">ny</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">nx</span> <span class="o">==</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">ny</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+                <span class="c"># pomiń współrzędne centrum</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">nx</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">:</span>
+                <span class="c"># sąsiad poza końcem planszy, bierzemy pierwszego w danym rzędzie</span>
+                <span class="n">nx</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">nx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c"># sąsiad przed początkiem planszy, bierzemy ostatniego w danym rzędzie</span>
+                <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">ny</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">:</span>
+                <span class="c"># sąsiad poza końcem planszy, bierzemy pierwszego w danej kolumnie</span>
+                <span class="n">ny</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">ny</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c"># sąsiad przed początkiem planszy, bierzemy ostatniego w danej kolumnie</span>
+                <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span>
+
+            <span class="c"># dla każdego nie pominiętego powyżej</span>
+            <span class="c"># przejścia pętli zwróć komórkę w tych współrzędnych</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">generation</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+<p>Następnie przygotujmy funkcję która będzie tworzyć nową populację</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">cycle_generation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generuje następną generację populacji komórek</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">next_gen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_generation</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">generation</span><span class="p">)):</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generation</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">column</span><span class="p">)):</span>
+            <span class="c"># pobieramy wartości sąsiadów</span>
+            <span class="c"># dla żywej komórki dostaniemy wartość 1 (ALIVE)</span>
+            <span class="c"># dla martwej otrzymamy wartość 0 (DEAD)</span>
+            <span class="c"># zwykła suma pozwala nam określić liczbę żywych sąsiadów</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neighbours</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="c"># rozmnażamy się</span>
+                <span class="n">next_gen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">ALIVE</span>
+            <span class="k">elif</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="c"># przechodzi do kolejnej generacji bez zmian</span>
+                <span class="n">next_gen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># za dużo lub za mało sąsiadów by przeżyć</span>
+                <span class="n">next_gen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">DEAD</span>
+
+    <span class="c"># nowa generacja staje się aktualną generacją</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">generation</span> <span class="o">=</span> <span class="n">next_gen</span>
+</pre></div>
+</td></tr></table></div>
+<p>Jeszcze ostatnie modyfikacje kontrolera gry tak by komórki zaczęły żyć po wciśnięciu klawisza enter.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">GameOfLife</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Łączy wszystkie elementy gry w całość.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cell_size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Przygotowanie ustawień gry</span>
+<span class="sd">        :param width: szerokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param height: wysokość planszy mierzona liczbą komórek</span>
+<span class="sd">        :param cell_size: bok komórki w pikselach</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">height</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">)</span>
+        <span class="c"># zegar którego użyjemy do kontrolowania szybkości rysowania</span>
+        <span class="c"># kolejnych klatek gry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Główna pętla gry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_events</span><span class="p">():</span>
+            <span class="c"># działaj w pętli do momentu otrzymania sygnału do wyjścia</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="p">,</span>
+            <span class="p">)</span>
+<span class="hll">            <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&quot;started&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">):</span>
+</span><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">cycle_generation</span><span class="p">()</span>
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">handle_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obsługa zdarzeń systemowych, tutaj zinterpretujemy np. ruchy myszką</span>
+
+<span class="sd">        :return True jeżeli pygame przekazał zdarzenie wyjścia z gry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">locals</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="k">return</span> <span class="bp">True</span>
+
+            <span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="n">MOUSEMOTION</span><span class="p">,</span> <span class="n">MOUSEBUTTONDOWN</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">MOUSEMOTION</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">handle_mouse</span><span class="p">()</span>
+
+<span class="hll">            <span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="n">KEYDOWN</span><span class="p">,</span> <span class="n">K_RETURN</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">KEYDOWN</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">K_RETURN</span><span class="p">:</span>
+</span><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">started</span> <span class="o">=</span> <span class="bp">True</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Gotowy kod możemy wyciągnąć komendą:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span>git checkout -f life/z3
+</pre></div>
+</div>
+</div>
+<div class="section" id="zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">
+<h2>3.7. Zadania dodatkowe i rzeczy które można poprawić<a class="headerlink" href="#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>TODO</li>
+</ol>
+</div>
+<div class="section" id="slowniczek">
+<h2>3.8. Słowniczek<a class="headerlink" href="#slowniczek" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-magiczne-liczby">magiczne liczby</dt>
+<dd>to takie same wartości liczbowe wielokrotnie używane w kodzie, za każdym
+razem oznaczające to samo. Stosowanie magicznych liczby jest uważane
+za złą praktykę ponieważ ich utrudniają czytanie i zrozumienie działania kodu.</dd>
+<dt id="term-stala">stała</dt>
+<dd>to zmienna której wartości po początkowym ustaleniu nie będziemy zmieniać.
+Python nie ma mechanizmów które wymuszają takie zachowanie, jednak
+przyjmuje się, że zmienne zadeklarowane WIELKIMI_LITERAMI zwykle służą do
+przechowywania wartości stałych.</dd>
+<dt id="term-generator">generator</dt>
+<dd>zwraca jakąś wartość za każdym wywołaniem. Dla świata zewnętrznego
+generatory zachowują się jak listy (możemy po nich iterować) jedna różnica polega
+na użyciu pamięci. Listy w całości znajdują się pamięci podczas gdy generatory
+&#8220;tworzą&#8221; wartość na zawołanie.
+Czasem tak samo nazywane są funkcje zwracające generator (ang. generator function).</dd>
+</dl>
+<div class="section" id="metryka">
+<h3>3.8.1. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Janusz Skonieczny &lt;<a class="reference external" href="mailto:js&#37;&#52;&#48;bravelabs&#46;pl">js<span>&#64;</span>bravelabs<span>&#46;</span>pl</a>&gt;,
+Robert Bednarz</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-10-01 o 01:16</td>
+</tr>
+</tbody>
+</table>
+<style>
+    div.code_no { text-align: right; background: #e3e3e3; padding: 6px 12px; }
+    div.highlight, div.highlight-python { margin-top: 0px; }
+</style></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../quiz.html" class="btn btn-neutral float-right" title="4. Quiz – Aplikacja internetowa"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pong/index.html" class="btn btn-neutral" title="2. Gra w Ponga"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Centrum Edukacji Obywatelskiej.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
