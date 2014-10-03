@@ -72,6 +72,11 @@ Indices and tables
 
 .. raw:: html
 
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+        <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+    <br />Ten utwór jest dostępny na <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">licencji
+    Creative Commons Uznanie autorstwa-Na tych samych warunkach 3.0 Międzynarodowe</a>.
+
     <script>
       // dla http://koduj-z-klasa.github.io/python101/
       // w read the docs kod uzupełnia się w dashboardzie
@@ -83,3 +88,4 @@ Indices and tables
       ga('create', 'UA-55172998-1', 'auto');
       ga('send', 'pageview');
     </script>
+
