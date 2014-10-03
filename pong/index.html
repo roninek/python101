@@ -61,6 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../env.html">Środowisko systemowe i wymagane oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../env.html#szkolny-remix-ucznia-sru">Szkolny Remix Ucznia (SRU)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-windows">Środowisko Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-geany">Środowisko programistyczne Geany</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-pycharm">Środowisko programistyczne PyCharm</a></li>
 </ul>
 </li>
@@ -106,7 +107,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../life/index.html#slowniczek">3.8. Słowniczek</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">4. Gra w Kółko i Krzyżyk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">4. Gra w Kółko i Krzyżyk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#przygotowanie">4.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#okienko-gry">4.2. Okienko gry</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../quiz.html">5. Quiz – Aplikacja internetowa</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../quiz.html#struktura-katalogow">5.1. Struktura katalogów</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quiz.html#szkielet-aplikacji">5.2. Szkielet aplikacji</a></li>
@@ -270,91 +275,14 @@ metody na obiekcie <code class="docutils literal"><span class="pre">board.draw()
 </div>
 <p>Mrugnęło? Program się wykonał i zakończył działanie :). Żeby zobaczyć efekt na dłużej,
 możemy na końcu chwilkę uśpić nasz program:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>39
-40</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Jednak zamiast tego, dla lepszej kontroli powinniśmy zadeklarować klasę kontrolera gry,
 usuńmy kod o linii 37 do końca i dodajmy klasę kontrolera:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Łączy wszystkie elementy gry w całość.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-        <span class="c"># zegar którego użyjemy do kontrolowania szybkości rysowania</span>
-        <span class="c"># kolejnych klatek gry</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Główna pętla programu</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_events</span><span class="p">():</span>
-            <span class="c"># działaj w pętli do momentu otrzymania sygnału do wyjścia</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">handle_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Obsługa zdarzeń systemowych, tutaj zinterpretujemy np. ruchy myszką</span>
-
-<span class="sd">        :return True jeżeli pygame przekazał zdarzenie wyjścia z gry</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">locals</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-                <span class="k">return</span> <span class="bp">True</span>
-
-
-<span class="c"># Ta część powinna być zawsze na końcu modułu (ten plik jest modułem)</span>
-<span class="c"># chcemy uruchomić naszą grę dopiero po tym jak wszystkie klasy zostaną zadeklarowane</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">game</span> <span class="o">=</span> <span class="n">PongGame</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-    <span class="n">game</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-</td></tr></table></div>
-<div class="admonition note">
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Prócz dodania kontrolera zmieniliśmy także sposób w jaki gra jest uruchamiana
 — nie mylić z uruchomieniem programu.</p>
@@ -376,61 +304,32 @@ uruchomiona.</p>
 naszej pętli przesuniemy o kilka punktów w osi X i Y, zgodnie wektorem prędkości.</p>
 <p>Wcześniej jednak zdefiniujemy wspólną klasę bazową dla obiektów które będziemy
 rysować w oknie naszej gry:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Drawable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Klasa bazowa dla rysowanych obiektów</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">surface</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">([</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">],</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SRCALPHA</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">convert_alpha</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">draw_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
-        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surface</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-<p>Następnie dodajmy klasę samej piłeczki dziedzicząc z <code class="docutils literal"><span class="pre">Drawable</span></code>:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><p>Następnie dodajmy klasę samej piłeczki dziedzicząc z <code class="docutils literal"><span class="pre">Drawable</span></code>:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><p>Teraz musimy naszą piłeczkę zintegrować z resztą gry:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Łączy wszystkie elementy gry w całość.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -488,18 +387,7 @@ prędkości, musimy tylko wykryć moment w którym piłeczka będzie dotykać kr
 <p>W tym celu piłeczka musi być świadoma istnienia planszy i pozycji krawędzi, dlatego
 zmodyfikujemy metodę <code class="docutils literal"><span class="pre">Ball.move</span></code> tak by przyjmowała <code class="docutils literal"><span class="pre">board</span></code> jako argument i na
 jego podstawie sprawdzimy czy piłeczka powinna się odbijać:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133</pre></div></td><td class="code"><div class="highlight"><pre><span class="hll"><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
 </span>    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Przesuwa piłeczkę o wektor prędkości</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -512,18 +400,9 @@ jego podstawie sprawdzimy czy piłeczka powinna się odbijać:</p>
 </span><span class="hll">    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">board</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">get_height</span><span class="p">():</span>
 </span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">bounce_y</span><span class="p">()</span>
 </span></pre></div>
-</td></tr></table></div>
+</div>
 <p>Jeszcze zmodyfikujmy wywołanie metody <code class="docutils literal"><span class="pre">move</span></code> w naszej pętli głównej:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>51
-52
-53
-54
-55
-56
-57
-58
-59
-60</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Główna pętla programu</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -534,7 +413,7 @@ jego podstawie sprawdzimy czy piłeczka powinna się odbijać:</p>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fps_clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Powyższe przykłady mają o jedno wcięcie za mało. Poprawnie wcięte przykłady
@@ -555,24 +434,24 @@ należy poprawić dodając jedno wcięcie (4 spacje).</p>
 <h2>2.5. Odbijamy piłeczkę rakietką<a class="headerlink" href="#odbijamy-pileczke-rakietka" title="Permalink to this headline">¶</a></h2>
 <p>Dodajmy &#8220;rakietkę&#8221; od przy pomocy której będziemy mogli odbijać piłeczkę.
 Dodajmy zwykły prostokąt, który będziemy przesuwać przy pomocy myszki.</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Racket</span><span class="p">(</span><span class="n">Drawable</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Racket</span><span class="p">(</span><span class="n">Drawable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rakietka, porusza się w osi X z ograniczeniem prędkości.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -605,22 +484,22 @@ w zależności od znaku jaki ma aktualnie.</p>
 <p>Następnie &#8220;pokażemy&#8221; rakietkę piłeczce, tak by mogła się od niej odbijać.
 Wiemy że rakietek będzie więcej dlatego od razu tak zmodyfikujemy metodę
 <code class="docutils literal"><span class="pre">Ball.move</span></code> by przyjmowała kolekcję rakietek:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137</pre></div></td><td class="code"><div class="highlight"><pre><span class="hll"><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="hll"><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 </span>    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Przesuwa piłeczkę o wektor prędkości</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -640,48 +519,48 @@ Wiemy że rakietek będzie więcej dlatego od razu tak zmodyfikujemy metodę
 </td></tr></table></div>
 <p>Tak jak w przypadku dodawania piłeczki, rakietkę też trzeba dodać do &#8220;gry&#8221;,
 dodatkowo musimy ją pokazać piłeczce:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>38
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
 39
 40
 41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+42</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Łączy wszystkie elementy gry w całość.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -743,16 +622,16 @@ Jeśli kod przestanie działać, można szybko porzucić zmiany poniższą komen
 <h2>2.6. Gramy przeciwko komputerowi<a class="headerlink" href="#gramy-przeciwko-komputerowi" title="Permalink to this headline">¶</a></h2>
 <p>Dodajemy przeciwnika, nasz przeciwnik będzie mistrzem, będzie dokładnie
 śledził piłeczkę i zawsze starał się utrzymać rakietkę gotową do odbicia piłeczki.</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>167
-168
-169
-170
-171
-172
-173
-174
-175
-176</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ai</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ai</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Przeciwnik, steruje swoją rakietką na podstawie obserwacji piłeczki.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -769,36 +648,36 @@ a wraz nią wraz dodajemy drugą rakietkę.
 Dwie rakietki ustawiamy na przeciwległych brzegach planszy.</p>
 <p>Trzeba pamiętać by pokazać drugą rakietkę piłeczce, tak by mogła się
 od niej odbijać.</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Łączy wszystkie elementy gry w całość.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -835,48 +714,48 @@ od niej odbijać.</p>
 <h2>2.7. Pokazujemy punkty<a class="headerlink" href="#pokazujemy-punkty" title="Permalink to this headline">¶</a></h2>
 <p>Dodajmy klasę sędziego, który patrząc na poszczególne elementy gry będzie
 decydował czy graczom należą się punkty i będzie ustawiał piłkę w początkowym położeniu.</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Judge</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Judge</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sędzia gry</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -921,38 +800,38 @@ decydował czy graczom należą się punkty i będzie ustawiał piłkę w począ
 </pre></div>
 </td></tr></table></div>
 <p>Tradycyjnie dodajemy instancję nowej klasy do gry:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Łączy wszystkie elementy gry w całość.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1021,7 +900,7 @@ z klasy nadrzędnej rozszerzając lub całkowicie zmieniając jej działanie</dd
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Janusz Skonieczny &lt;<a class="reference external" href="mailto:js&#37;&#52;&#48;bravelabs&#46;pl">js<span>&#64;</span>bravelabs<span>&#46;</span>pl</a>&gt;,
 Robert Bednarz</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-10-03 o 09:25</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-10-03 o 10:27</td>
 </tr>
 </tbody>
 </table>
