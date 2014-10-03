@@ -1,0 +1,1189 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Mów mi Python – wprowadzenie do języka Python &mdash; Python 101 0.5 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
+        <link rel="next" title="3. Gra w Ponga" href="../pong/index.html"/>
+        <link rel="prev" title="1. Python - Podstawy programowania" href="../basic/basic.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Python 101</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../env.html">Środowisko systemowe i wymagane oprogramowanie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#szkolny-remix-ucznia-sru">Szkolny Remix Ucznia (SRU)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-windows">Środowisko Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-geany">Środowisko programistyczne Geany</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-pycharm">Środowisko programistyczne PyCharm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Przygotowanie katalogu projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#pobieranie-materialow">Pobieranie materiałów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#korzystanie-z-kodu-zrodlowego-w-opisie-przykladow">Korzystanie z kodu źródłowego w opisie przykładów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#synchronizacja-kodu-pomiedzy-etapami-przykladow">Synchronizacja kodu pomiędzy etapami przykładów</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic.html">1. Python - Podstawy programowania</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#zmienne">1.1. Zmienne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#wyrazenia-warunkowe">1.2. Wyrażenia warunkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#gra-w-zgadnij-liczbe">1.3. Gra w &#8220;zgadnij liczbę&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#zadania-dodatkowe">1.4. Zadania dodatkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#petla-while">1.5. Pętla WHILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#wyrazenia-break-i-continue">1.6. Wyrażenia break i continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#petla-for">1.7. Pętla FOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#slowniczek">1.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. Mów mi Python – wprowadzenie do języka Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#i-jestem-python">2.1. I. Jestem Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ii-witaj-python">2.2. II. Witaj Python!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iii-warunki-i-petle">2.3. III. Warunki i pętle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iv-listy-tuple-i-funkcje">2.4. IV. Listy, tuple i funkcje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v-listy-zbiory-moduly-i-funkcje-w-praktyce">2.5. V. Listy, zbiory, moduły i funkcje w praktyce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vi-slowniki">2.6. VI. Słowniki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vii-znam-pythona">2.7. VII. Znam Pythona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viii-nie-znam-pythona-jeszcze">2.8. VIII. Nie znam Pythona... jeszcze</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pong/index.html">3. Gra w Ponga</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#przygotowanie">3.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#okienko-gry">3.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pileczka">3.3. Piłeczka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijanie-pileczki">3.4. Odbijanie piłeczki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijamy-pileczke-rakietka">3.5. Odbijamy piłeczkę rakietką</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#gramy-przeciwko-komputerowi">3.6. Gramy przeciwko komputerowi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pokazujemy-punkty">3.7. Pokazujemy punkty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">3.8. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#slowniczek">3.9. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../life/index.html">4. Gra w życie Conwaya</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#przygotowanie">4.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#okienko-gry">4.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#tworzymy-matryce-zycia">4.3. Tworzymy matrycę życia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#ukladamy-zywe-komorki-na-planszy">4.4. Układamy żywe komórki na planszy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#dodajemy-populacje-do-kontrolera-gry">4.5. Dodajemy populację do kontrolera gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#szukamy-zyjacych-sasiadow">4.6. Szukamy żyjących sąsiadów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">4.7. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#slowniczek">4.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">5. Gra w Kółko i Krzyżyk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#przygotowanie">5.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#okienko-gry">5.2. Okienko gry</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quiz.html">6. Quiz – Aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#struktura-katalogow">6.1. Struktura katalogów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#szkielet-aplikacji">6.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#definiowanie-widokow-strona-glowna">6.3. Definiowanie widoków – strona główna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#pokaz-dane-aplikacji-pytania-i-odpowiedzi">6.4. Pokaż dane aplikacji – pytania i odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#oceniamy-odpowiedzi">6.5. Oceniamy odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz.html#dodatkowe-informacje">6.6. Dodatkowe informacje</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">7. Lista ToDo – Aplikacja internetowa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chatter.html">8. Chatter – Aplikacja internetowa</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python 101</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>2. Mów mi Python – wprowadzenie do języka Python</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/basic1/basic1.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="mow-mi-python-wprowadzenie-do-jezyka-python">
+<h1>2. Mów mi Python – wprowadzenie do języka Python<a class="headerlink" href="#mow-mi-python-wprowadzenie-do-jezyka-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="i-jestem-python">
+<h2>2.1. I. Jestem Python<a class="headerlink" href="#i-jestem-python" title="Permalink to this headline">¶</a></h2>
+<p>Python jest dynamicznie typowanym językiem interpretowanym wysokiego poziomu. Cechuje się czytelnością i zwięzłością kodu. Stworzony został w latach 90. przez Guido van Rossuma, nazwa zaś pochodzi od tytułu serialu komediowego emitowanego w BBC pt. &#8220;Latający cyrk Monty Pythona&#8221;.</p>
+<p>W systemach opartych na Linuksie interpreter Pythona jest standardowo zainstalowany, ponieważ duża część oprogramowania na nim bazuje. W systemach Microsoft Windows Pythona należy doinstalować. Funkcjonalność Pythona może być dowolnie rozszerzana dzięki licznym bibliotekom pozwalającym tworzyć aplikacje okienkowe (PyQt, PyGTK, wxPython), internetowe (Flask, Django) czy multimedialne i gry (Pygame). Istnieją również kompleksowe projekty oparte na Pythonie wspomagające naukową analizę, obliczenia i przetwarzanie danych (Anaconda, Canopy).</p>
+<p>Kodować można w dowolnym edytorze tekstowym, jednak ze względów praktycznych warto korzystać z programów ułatwiających pisanie kodu. Polecić można np. lekkie, szybkie i obsługujące wiele języków środowisko Geany, a także profesjonalne rozwiązanie, jakim jest aplikacja PyCharm. Obydwa programy działają na platformie Linux i Windows.</p>
+<p>Zanim przystąpimy do pracy w katalogu domowym utworzymy podkatalog python, w którym będziemy zapisywali nasze skrypty:</p>
+<p><em class="nrkodu">Terminal I.1</em></p>
+<div class="code bash highlight-python"><div class="highlight"><pre>~ $ mkdir python
+</pre></div>
+</div>
+<p>Poznawanie Pythona zrealizujemy poprzez rozwiązywanie prostych zadań, które pozwolą zaprezentować elastyczność i łatwość tego języka. Nazwy kolejnych skryptów umieszczone są jako komentarz zawsze w czwartej linii kodu. Pliki zawierające skrypty Pythona mają zazwyczaj rozszerzenie .py. Bardzo przydatnym narzędziem podczas kodowania w Pythonie jest konsola interpretera, którą uruchomimy wydając w terminalu polecenie python lub ipython[#f1]_. Można w niej testować i debugować wszystkie wyrażenia, warunki, polecenia itd., z których korzystamy w skryptach.</p>
+</div>
+<div class="section" id="ii-witaj-python">
+<h2>2.2. II. Witaj Python!<a class="headerlink" href="#ii-witaj-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zadanie-ii-1">
+<h3>2.2.1. ZADANIE II.1<a class="headerlink" href="#zadanie-ii-1" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Pobierz od użytkownika imię, wiek i powitaj go komunikatem::</dt>
+<dd>&#8220;Mów mi Python, mam x lat.
+Witaj w moim świecie imie.
+Jesteś starszy(młodszy) ode mnie.&#8221;</dd>
+</dl>
+<p><em class="nrkodu">Kod II.1</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/01_hello.py</span>
+
+<span class="c"># inicjalizujemy zmienne (wartości)</span>
+<span class="n">curYear</span> <span class="o">=</span> <span class="mi">2014</span>
+<span class="n">pythonYear</span> <span class="o">=</span> <span class="mi">1989</span>
+<span class="n">wiekPythona</span> <span class="o">=</span> <span class="n">curYear</span> <span class="o">-</span> <span class="n">pythonYear</span> <span class="c"># ile lat ma Python</span>
+
+<span class="c"># pobieramy dane</span>
+<span class="n">imie</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Jak się nazywasz? &#39;</span><span class="p">)</span>
+<span class="n">wiek</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Ile masz lat? &#39;</span><span class="p">))</span>
+
+<span class="c"># wyprowadzamy dane</span>
+<span class="k">print</span> <span class="s">&quot;Witaj w moim świecie &quot;</span><span class="p">,</span><span class="n">imie</span>
+<span class="k">print</span> <span class="s">&quot;Mów mi Python, mam&quot;</span><span class="p">,</span> <span class="n">wiekPythona</span><span class="p">,</span> <span class="s">&quot;lat.&quot;</span>
+
+<span class="c"># instrukcja warunkowa</span>
+<span class="k">if</span> <span class="n">wiek</span> <span class="o">&gt;</span> <span class="n">wiekPythona</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Jesteś starszy ode mnie.&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Jesteś młodszy ode mnie.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jak-to-dziala">
+<h3>2.2.2. JAK TO DZIAŁA<a class="headerlink" href="#jak-to-dziala" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>zmienna, wartość, wyrażenie, wejście i wyjście danych, instrukcja warunkowa, komentarz</em>.</p>
+<p>Deklaracja zmiennej w Pythonie nie jest wymagana, wystarczy podanej nazwie przypisać jakąś wartość
+za pomocą operatora przypisania &#8220;=&#8221; <a class="footnote-reference" href="#f2" id="id1">[1]</a>. Zmiennym często przypisujemy wartości za pomocą wyrażeń,
+czyli działań arytmetycznych lub logicznych.</p>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Dlatego niekiedy mówi się, że w Pythonie zmiennych nie ma, są natomiast wartości określonego typu.</td></tr>
+</tbody>
+</table>
+<p>Funkcja <code class="docutils literal"><span class="pre">raw_input()</span></code> zwraca pobrane z klawiatury znaki jako napis, czyli typ <strong>string</strong>.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">int()</span></code> umożliwia konwersję napisu na liczbę całkowitą, czyli typ <strong>integer</strong>.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">print</span></code> drukuje podane argumenty oddzielone przecinkami. Komunikaty tekstowe ujmujemy
+w cudzysłowy podwójne lub pojedyncze. Przecinek oddziela kolejne argumenty spacjami.</p>
+<p>Instrukcja <code class="docutils literal"><span class="pre">if</span></code> (jeżeli) pozwala na warunkowe wykonanie kodu. Jeżeli podane wyrażenie
+jest prawdziwe (przyjmuje wartość <code class="docutils literal"><span class="pre">True</span></code>) wykonywana jest pierwsza instrukcja,
+w przeciwnym wypadku (<code class="docutils literal"><span class="pre">else</span></code>), kiedy wyrażenie jest fałszywe (wartość <code class="docutils literal"><span class="pre">False</span></code>),
+wykonywana jest instrukcja druga. Warto zauważyć, że polecenia instrukcji warunkowej kończymy dwukropkiem.</p>
+<p>Charakterystyczną cechą Pythona jest używanie wcięć do zaznaczania bloków kodu.
+Komentarze wprowadzamy po znaku <code class="docutils literal"><span class="pre">#</span></code>.</p>
+</div>
+<div class="section" id="pocwicz-sam">
+<h3>2.2.3. POĆWICZ SAM<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Zmień program tak, aby zmienna curYear (aktualny rok) była podawana przez użytkownika na początku programu.</div></blockquote>
+</div>
+</div>
+<div class="section" id="iii-warunki-i-petle">
+<h2>2.3. III. Warunki i pętle<a class="headerlink" href="#iii-warunki-i-petle" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zadanie-iii-1">
+<h3>2.3.1. ZADANIE III.1<a class="headerlink" href="#zadanie-iii-1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Pobierz od użytkownika trzy liczby, sprawdź, która jest najmniejsza i wydrukuj ją na ekranie.</div></blockquote>
+<p><em class="nrkodu">Kod III.1</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/02_if.py</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="s">&quot;t&quot;</span>
+<span class="k">while</span> <span class="n">op</span> <span class="o">==</span> <span class="s">&quot;t&quot;</span><span class="p">:</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj trzy liczby oddzielone spacjami: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+
+    <span class="k">print</span> <span class="s">&quot;Wprowadzono liczby:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Najmniejsza: &quot;</span><span class="p">,</span>
+
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">a</span>
+    <span class="k">elif</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">c</span>
+
+    <span class="n">op</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Jeszcze raz (t/n)? &quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&quot;Nie, to nie :-(&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>2.3.2. JAK TO DZIAŁA<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>pętla, obiekt, metoda, instrukcja warunkowa zagnieżdżona, formatowanie kodu</em>.</p>
+<p>Pętla while umożliwia powtarzanie określonych operacji, czyli pozwala użytkownikowi wprowadzać
+kolejne serie liczb. Definiując pętle określamy warunek powtarzania kodu. Dopóki jest prawdziwy,
+czyli dopóki zmienna op ma wartość &#8220;t&#8221; pętla działa. Do wydzielania kodu przynależnego do pętli
+i innych instrukcji (np. <code class="docutils literal"><span class="pre">if</span></code>) stosujemy wcięcia. Formatując kod, możemy używać zarówno tabulatorów,
+jak i spacji, ważne aby w obrębie pliku było to konsekwentne <a class="footnote-reference" href="#f3" id="id3">[2]</a>.</p>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Dobry styl programowania sugeruje używanie do wcięć 4 spacji.</td></tr>
+</tbody>
+</table>
+<p>W Pythonie wszystko jest obiektem, czyli typy wbudowane, np. napisy, posiadają metody (funkcje)
+wykonujące określone operacje na wartościach. W podanym kodzie funkcja <code class="docutils literal"><span class="pre">raw_input()</span></code> zwraca
+ciąg znaków wprowadzony przez użytkownika, z którego wydobywamy poszczególne słowa za pomocą
+metody <code class="docutils literal"><span class="pre">split()</span></code> typu string.
+Instrukcje warunkowe (<code class="docutils literal"><span class="pre">if</span></code>), jak i pętle, można zagnieżdżać stosując wcięcia.
+W jednej złożonej instrukcji warunkowej można sprawdzać wiele warunków (<code class="docutils literal"><span class="pre">elif:</span></code>).</p>
+</div>
+<div class="section" id="id4">
+<h3>2.3.3. POĆWICZ SAM<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Sprawdź, co się stanie, jeśli podasz liczby oddzielone przecinkiem lub podasz
+za mało liczb. Zmień program tak, aby poprawnie interpretował dane oddzielane przecinkami.</div></blockquote>
+</div>
+<div class="section" id="zadanie-iii-2">
+<h3>2.3.4. ZADANIE III.2<a class="headerlink" href="#zadanie-iii-2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="docutils">
+<dt>Wydrukuj alfabet w porządku naturalnym, a następnie odwróconym w formacie:</dt>
+<dd>&#8220;mała =&gt; duża litera&#8221;. W jednym wierszu trzeba wydrukować po pięć takich grup.</dd>
+</dl>
+</div></blockquote>
+<p><em class="nrkodu">Kod III.2</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/03_petle.py</span>
+
+<span class="k">print</span> <span class="s">&quot;Alfabet w porządku naturalnym:&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">91</span><span class="p">):</span>
+    <span class="n">litera</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">litera</span> <span class="o">+</span> <span class="s">&quot; =&gt; &quot;</span> <span class="o">+</span> <span class="n">litera</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">65</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c"># warunek złożony</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">tmp</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+    <span class="k">print</span> <span class="n">tmp</span><span class="p">,</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Alfabet w porządku odwróconym:&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">litera</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+    <span class="k">print</span> <span class="n">litera</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="s">&quot;=&gt;&quot;</span><span class="p">,</span> <span class="n">litera</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>2.3.5. JAK TO DZIAŁA<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>iteracja, pętla, kod ASCII, lista, inkrementacja, operatory arytmetyczne, logiczne, przypisania i zawierania</em>.</p>
+<p>Pętla for wykorzystuje zmienną i, która przybiera wartości z listy liczb całkowitych zwróconej przez funkcję <code class="docutils literal"><span class="pre">range()</span></code>. Parametry tej funkcji określają wartość początkową i końcową listy, przy czym wartość końcowa nie wchodzi do listy. Kod <code class="docutils literal"><span class="pre">range(122,96,-1)</span></code> generuje listę wartości malejących od 122 do 97(!) z krokiem -1.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">chr()</span></code> zwraca znak, którego kod ASCII, czyli liczbę całkowitą, przyjmuje jako argument. Metoda <code class="docutils literal"><span class="pre">lower()</span></code> typu string (napisu) zwraca małą literę, <code class="docutils literal"><span class="pre">upper()</span></code> – dużą. Wyrażenie przypisywane zmiennej tmp pokazuje, jak można łączyć napisy (konkatenacja).</p>
+<p>Zmienna pomocnicza <code class="docutils literal"><span class="pre">x</span></code> jest zwiększana (inkrementacja) w pętlach o 1. Wyrażenie <code class="docutils literal"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code> odpowiada wyrażeniu <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>. Pierwszy warunek wykorzystuje operator logiczny and (koniunkcję) i operator modulo <code class="docutils literal"><span class="pre">%</span></code> (zwraca resztę z dzielenia), aby do ciągu znaków w zmiennej <code class="docutils literal"><span class="pre">tmp</span></code> dodać znak końca linii (<code class="docutils literal"><span class="pre">\n</span></code>) za pomocą operatora <code class="docutils literal"><span class="pre">+=</span></code>. W drugim warunku używamy operatora porównania <code class="docutils literal"><span class="pre">==</span></code>.</p>
+<p>Poniżej podano wybrane operatory dostępne w Pythonie.</p>
+<p>Arytmetyczne:</p>
+<ul class="simple">
+<li>+, -, <em>, /, //, %, *</em> (potęgowanie)</li>
+<li>znak + znak (konkatenacja napisów)</li>
+<li>znak * 10 (powielenie znaków)</li>
+</ul>
+<p>Przypisania:</p>
+<div class="highlight-python"><div class="highlight"><pre>- =, +=, -=, *=, /=, %=, **=, //=
+</pre></div>
+</div>
+<p>Logiczne:</p>
+<div class="highlight-python"><div class="highlight"><pre>- and, or, not
+</pre></div>
+</div>
+<p>Fałszem logicznym są: liczby zero (0, 0.0), False, None (null), puste kolekcje ([], (), {}, set()), puste napisy. Wszystko inne jest prawdą logiczną.</p>
+<p>Zawierania:</p>
+<div class="highlight-python"><div class="highlight"><pre>- in, not in
+</pre></div>
+</div>
+<p>Porównania:</p>
+<div class="highlight-python"><div class="highlight"><pre>- ==, &gt;, &lt;, &lt;&gt;, &lt;=, &gt;= != (jest różne)
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>2.3.6. POĆWICZ SAM<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Uprość warunek w pierwszej pętli for drukującej alfabet w porządku naturalnym tak, aby nie używać operatora modulo.
+Wydrukuj co n-tą grupę liter alfabetu, przy czym wartość n podaje użytkownik. Wskazówka: użyj opcjonalnego, trzeciego argumentu funkcji <code class="docutils literal"><span class="pre">range()</span></code>.
+Sprawdź działanie różnych operatorów Pythona w konsoli.</p>
+</div>
+</div>
+<div class="section" id="iv-listy-tuple-i-funkcje">
+<h2>2.4. IV. Listy, tuple i funkcje<a class="headerlink" href="#iv-listy-tuple-i-funkcje" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zadanie-iv-1">
+<h3>2.4.1. ZADANIE IV.1<a class="headerlink" href="#zadanie-iv-1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Pobierz od użytkownika n liczb i zapisz je w liście. Wydrukuj: elementy listy i ich indeksy, elementy w odwrotnej kolejności, posortowane elementy. Usuń z listy pierwsze wystąpienie elementu podanego przez użytkownika. Usuń z listy element o podanym indeksie. Podaj ilość wystąpień oraz indeks pierwszego wystąpienia podanego elementu. Wybierz z listy elementy od indeksu i do j.</div></blockquote>
+<p>Wszystkie poniższe przykłady proponujemy wykonać w konsoli Pythona. Nie umieszczaj w konsoli komentarzy, możesz też pominąć lub skrócić komunikaty funkcji print. Można również wpisać poniższy kod do pliku i go uruchomić.</p>
+<p><em class="nrkodu">Kod IV.1</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/04_1_listy.py</span>
+
+<span class="n">tupla</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&quot;Podaj liczby oddzielone przecinkami: &quot;</span><span class="p">)</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># deklaracja pustej listy</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tupla</span><span class="p">)):</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">tupla</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="k">print</span> <span class="s">&quot;Elementy i ich indeksy:&quot;</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">v</span><span class="p">,</span> <span class="s">&quot;[&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s">&quot;]&quot;</span>
+
+<span class="k">print</span> <span class="s">&quot;Elementy w odwróconym porządku:&quot;</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">e</span><span class="p">,</span>
+
+<span class="k">print</span> <span class="s">&quot;&quot;</span>
+<span class="k">print</span> <span class="s">&quot;Elementy posortowane rosnąco:&quot;</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">e</span><span class="p">,</span>
+
+<span class="k">print</span> <span class="s">&quot;&quot;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Którą liczbę usunąć? &quot;</span><span class="p">))</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">lista</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&quot;Podaj element do dodania i indeks, przed którym ma się on znaleźć: &quot;</span><span class="p">)</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">lista</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj liczbę, której wystąpienia w liście chcesz zliczyć? &quot;</span><span class="p">))</span>
+<span class="k">print</span> <span class="n">lista</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Pierwszy indeks, pod którym zapisana jest podana liczba to: &quot;</span>
+<span class="k">print</span> <span class="n">lista</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&quot;Pobieramy ostatni element z listy: &quot;</span>
+<span class="k">print</span> <span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">lista</span>
+
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&quot;Podaj indeks początkowy i końcowy, aby uzyskać frgament listy: &quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>2.4.2. JAK TO DZIAŁA<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>tupla, lista, metoda.</em></p>
+<p>Funkcja <code class="docutils literal"><span class="pre">input()</span></code> pobiera dane wprowadzone przez użytkownika
+(tak jak <code class="docutils literal"><span class="pre">raw_input()</span></code>), ale próbuje zinterpretować je jako kod Pythona.
+Podane na wejściu liczby oddzielone przecinkami zostają więc spakowane jako
+<strong>tupla</strong> (krotka). Jest to uporządkowana sekwencja poindeksowanych danych,
+przypominająca tablicę, której wartości nie można zmieniać. Gdybyśmy chcieli
+wpisać do tupli wartości od razu w kodzie, napisalibyśmy: <code class="docutils literal"><span class="pre">tupla</span> <span class="pre">=</span> <span class="pre">(4,</span> <span class="pre">3,</span> <span class="pre">5)</span></code> <a class="footnote-reference" href="#f4" id="id8">[3]</a>.
+Listy to również uporządkowane sekwencje indeksowanych danych, zazwyczaj tego samego typu, które jednak możemy zmieniać.</p>
+<table class="docutils footnote" frame="void" id="f4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[3]</a></td><td>W definicji tupli nawiasy są opcjonalne, można więc pisać tak: <code class="docutils literal"><span class="pre">tupla</span> <span class="pre">=</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">8.</span></code></td></tr>
+</tbody>
+</table>
+<p>Dostęp do elementów tupli lub listy uzyskujemy podając nazwę i indeks, np. <code class="docutils literal"><span class="pre">lista[0]</span></code>.
+Elementy indeksowane są od 0 (zera!). Funkcja <code class="docutils literal"><span class="pre">len()</span></code> zwraca ilość elementów w tupli/liście.
+Funkcja <code class="docutils literal"><span class="pre">enumerate()</span></code> zwraca obiekt zawierający indeksy i elementy sekwencji (np. tupli lub listy) podanej jako atrybut.
+Funkcja <code class="docutils literal"><span class="pre">reversed()</span></code> zwraca odwróconą sekwencję.</p>
+<p>Lista ma wiele użytecznych metod: <code class="docutils literal"><span class="pre">.append(x)</span></code> – dodaje x do listy; <code class="docutils literal"><span class="pre">.remove(x)</span></code> – usuwa pierwszy x z listy;
+<code class="docutils literal"><span class="pre">.insert(i,</span> <span class="pre">x)</span></code> – wstawia x przed indeksem i; <code class="docutils literal"><span class="pre">.count(x)</span></code> – zwraca ilość wystąpień x;
+<code class="docutils literal"><span class="pre">.index(x)</span></code> – zwraca indeks pierwszego wystąpienia x; <code class="docutils literal"><span class="pre">.pop()</span></code>
+– usuwa i zwraca ostatni element listy. Funkcja <code class="docutils literal"><span class="pre">reversed(lista)</span></code> zwraca kopię listy w odwróconym porządku,
+natomiast <code class="docutils literal"><span class="pre">sorted(lista)</span></code> zwraca kopię listy posortowanej rosnąco.
+Jeżeli chcemy trwale odwrócić lub posortować elementy listy stosujemy metody:
+<code class="docutils literal"><span class="pre">.reverse()</span></code> i <code class="docutils literal"><span class="pre">.sort()</span></code>. Z każdej sekwencji (napisu, tupli czy listy) możemy
+wydobywać fragmenty dzięki notacji <em>slice</em> (wycinek). W najprostszym przypadku polega
+ona na podaniu początkowego i końcowego (wyłącznie) indeksu elementów, które chcemy
+wydobyć, np. <code class="docutils literal"><span class="pre">lista[1:4]</span></code>.</p>
+</div>
+<div class="section" id="id9">
+<h3>2.4.3. POĆWICZ SAM<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Utwórz w konsoli Pythona dowolną listę i przećwicz notację slice. Sprawdź działanie indeksów pustych
+i ujemnych, np. <code class="docutils literal"><span class="pre">lista[2:],</span> <span class="pre">lista[:4],</span> <span class="pre">lista[-2],</span> <span class="pre">lista[-2:]</span></code>.
+Posortuj dowolną listę malejąco. Wskazówka: wykorzystaj metodę <code class="docutils literal"><span class="pre">.sort(reverse=True)</span></code>.</div></blockquote>
+</div>
+<div class="section" id="zadanie-iv-2">
+<h3>2.4.4. ZADANIE IV.2<a class="headerlink" href="#zadanie-iv-2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Wypisz ciąg Fibonacciego aż do n-ego wyrazu podanego przez użytkownika.
+Ciąg Fibonacciego to ciąg liczb naturalnych, którego każdy wyraz poza dwoma
+pierwszymi jest sumą dwóch wyrazów poprzednich. Początkowe wyrazy tego ciągu to: 0 1 1 2 3 5 8 13 21</div></blockquote>
+<p><em class="nrkodu">Kod IV.2</em></p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/04_2_fibonacci.py</span>
+
+<span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c">#definicja funkcji</span>
+    <span class="n">pwyrazy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c">#dwa pierwsze wyrazy ciągu zapisane w tupli</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">pwyrazy</span> <span class="c">#przypisanie wielokrotne, rozpakowanie tupli</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">b</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="c">#przypisanie wielokrotne</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj numer wyrazu: &quot;</span><span class="p">))</span>
+<span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c">#wywołanie funkcji</span>
+<span class="k">print</span> <span class="s">&quot;&quot;</span> <span class="c">#pusta linia</span>
+<span class="k">print</span> <span class="s">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">25</span> <span class="c">#na koniec szlaczek</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id10">
+<h3>2.4.5. JAK TO DZIAŁA<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>funkcja, zwracanie wartości, tupla, rozpakowanie tupli, przypisanie wielokrotne</em>.</p>
+<p>Definicja funkcji w Pythonie polega na użyciu słowa kluczowego <code class="docutils literal"><span class="pre">def</span></code>,
+podaniu nazwy funkcji i w nawiasach okrągłych ewentualnej listy argumentów.
+Definicję kończymy znakiem dwukropka, po którym wpisujemy w następnych liniach,
+pamiętając o wcięciach, ciało funkcji. Funkcja może, ale nie musi zwracać wartości.
+Jeżeli chcemy zwrócić jakąś wartość używamy polecenia return wartość.</p>
+<p>Zapis <code class="docutils literal"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">pwyrazy</span></code> jest przykładem rozpakowania tupli, tzn. zmienne <em>a</em> i <em>b</em>
+przyjmują wartości kolejnych elementów tupli pwyrazy. Zapis równoważny, w którym nie
+definiujemy tupli tylko wprost podajemy wartości, to <code class="docutils literal"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">1</span></code>; ten sposób
+przypisania wielokrotnego stosujemy w kodzie <code class="docutils literal"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b,</span> <span class="pre">b+a</span></code>. Jak widać, ilość
+zmiennych z lewej strony musi odpowiadać liczbie wartości rozpakowywanych z tupli
+lub liczbie wartości podawanych wprost z prawej strony.</p>
+</div>
+<div class="section" id="id11">
+<h3>2.4.6. POĆWICZ SAM<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Zmień funkcję <code class="docutils literal"><span class="pre">fibonnacci()</span></code> tak, aby zwracała wartość n-tego wyrazu. Wydrukuj tylko tę wartość w programie.</div></blockquote>
+</div>
+</div>
+<div class="section" id="v-listy-zbiory-moduly-i-funkcje-w-praktyce">
+<h2>2.5. V. Listy, zbiory, moduły i funkcje w praktyce<a class="headerlink" href="#v-listy-zbiory-moduly-i-funkcje-w-praktyce" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zadanie">
+<h3>2.5.1. ZADANIE<a class="headerlink" href="#zadanie" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Napisz program, który umożliwi wprowadzanie ocen z podanego przedmiotu ścisłego (np. fizyki), następnie policzy i wyświetla średnią, medianę i odchylenie standardowe wprowadzonych ocen. Funkcje pomocnicze i statystyczne umieść w osobnym module.</div></blockquote>
+<p>:nrkodu`Kod V.1`</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/05_oceny_03.py</span>
+
+<span class="c"># importujemy funkcje z modułu ocenyfun zapisanego w pliku ocenyfun.py</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">drukuj</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">srednia</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">mediana</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">odchylenie</span>
+
+<span class="n">przedmioty</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;polski&#39;</span><span class="p">,</span><span class="s">&#39;angielski&#39;</span><span class="p">])</span> <span class="c">#definicja zbioru</span>
+<span class="n">drukuj</span><span class="p">(</span><span class="n">przedmioty</span><span class="p">,</span> <span class="s">&quot;Lista przedmiotów zawiera: &quot;</span><span class="p">)</span> <span class="c">#wywołanie funkcji z modułu ocenyfun</span>
+
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Aby przerwać wprowadzanie przedmiotów, naciśnij Enter.&quot;</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">przedmiot</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj nazwę przedmiotu: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">przedmiot</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">przedmiot</span> <span class="ow">in</span> <span class="n">przedmioty</span><span class="p">:</span> <span class="c">#czy przedmiot jest w zbiorze?</span>
+            <span class="k">print</span> <span class="s">&quot;Ten przedmiot już mamy :-)&quot;</span>
+        <span class="n">przedmioty</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">przedmiot</span><span class="p">)</span> <span class="c">#dodaj przedmiot do zbioru</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">drukuj</span><span class="p">(</span><span class="n">przedmioty</span><span class="p">,</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Twoje przedmioty: &quot;</span><span class="p">)</span>
+        <span class="n">przedmiot</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Z którego przedmiotu wprowadzisz oceny? &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">przedmiot</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">przedmioty</span><span class="p">:</span> <span class="c">#jeżeli przedmiotu nie ma w zbiorze</span>
+            <span class="k">print</span> <span class="s">&quot;Brak takiego przedmiotu, możesz go dodać.&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span> <span class="c"># wyjście z pętli</span>
+
+<span class="n">oceny</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># pusta lista ocen</span>
+<span class="n">ocena</span> <span class="o">=</span> <span class="bp">None</span> <span class="c"># zmienna sterująca pętlą i do pobierania ocen</span>
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Aby przerwać wprowadzanie ocen, podaj 0 (zero).&quot;</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">ocena</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span> <span class="c">#mechanizm obsługi błędów</span>
+        <span class="n">ocena</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj ocenę (1-6): &quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ocena</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">ocena</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">):</span>
+            <span class="n">oceny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ocena</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">ocena</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Błędna ocena.&quot;</span>
+        <span class="n">ocena</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Błędne dane!&quot;</span>
+
+<span class="n">drukuj</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">przedmiot</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; - wprowadzone oceny: &quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">srednia</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="c"># wywołanie funkcji z modułu ocenyfun</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">mediana</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="c"># wywołanie funkcji z modułu ocenyfun</span>
+<span class="n">o</span> <span class="o">=</span> <span class="n">odchylenie</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c"># wywołanie funkcji z modułu ocenyfun</span>
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Średnia: {0:5.2f}</span><span class="se">\n</span><span class="s">Mediana: {1:5.2f}</span><span class="se">\n</span><span class="s">Odchylenie: {2:5.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id12">
+<h3>2.5.2. JAK TO DZIAŁA<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>import, moduł, zbiór, przechwytywanie wyjątków, formatowanie napisów i danych na wyjściu</em>.</p>
+<p>Klauza from moduł import funkcja umożliwia wykorzystanie w programie funkcji
+zdefiniowanych w innych modułach i zapisanych w osobnych plikach. Dzięki temu
+utrzymujemy przejrzystość programu głównego, a jednocześnie możemy funkcje
+z modułów wykorzystywać, importując je w innych programach. Nazwa modułu
+to nazwa pliku z kodem pozbawiona jednak rozszerzenia <em>.py</em>. Moduł musi
+być dostępny w ścieżce przeszukiwania <a class="footnote-reference" href="#f5" id="id13">[4]</a>, aby można go było poprawnie dołączyć.</p>
+<table class="docutils footnote" frame="void" id="f5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[4]</a></td><td>W przypadku prostych programów zapisuj moduły w tym samym katalogu co program główny.</td></tr>
+</tbody>
+</table>
+<p>Instrukcja <code class="docutils literal"><span class="pre">set()</span></code> tworzy zbiór, czyli nieuporządkowany zestaw niepowtarzalnych (!) elementów. Instrukcje <code class="docutils literal"><span class="pre">if</span> <span class="pre">przedmiot</span> <span class="pre">in</span> <span class="pre">przedmioty</span></code> i <code class="docutils literal"><span class="pre">if</span> <span class="pre">przedmiot</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">przedmioty</span></code> za pomocą operatorów zawierania <code class="docutils literal"><span class="pre">(not)</span> <span class="pre">in</span></code> sprawdzają, czy podany przedmiot już jest lub nie w zbiorze. Polecenie <code class="docutils literal"><span class="pre">przedmioty.add()</span></code> pozwala dodawać elementy do zbioru, przy czym jeżeli element jest już w zbiorze, nie zostanie dodany. Polecenie <code class="docutils literal"><span class="pre">przedmioty.remove()</span></code> usunnie podany jako argument element ze zbioru.</p>
+<p>Oceny z wybranego przedmiotu pobieramy w pętli dopóty, dopóki użytkownik nie wprowadzi 0 (zera). Blok <code class="docutils literal"><span class="pre">try...except</span></code> pozwala przechwycić wyjątki, czyli w naszym przypadku niemożność przekształcenia wprowadzonej wartości na liczbę całkowitą. Jeżeli funkcja <code class="docutils literal"><span class="pre">int()</span></code> zwróci wyjątek, wykonywane są instrukcje w bloku <code class="docutils literal"><span class="pre">except</span> <span class="pre">ValueError:</span></code>, w przeciwnym razie po sprawdzeniu poprawności oceny dodajemy ją jako liczbę zmiennoprzecinkową (typ <em>float</em>) do listy: <code class="docutils literal"><span class="pre">oceny.append(float(ocena))</span></code>.</p>
+<p>Metoda <code class="docutils literal"><span class="pre">.capitalize()</span></code> pozwala wydrukować podany napis dużą literą.</p>
+<p>W funkcji <code class="docutils literal"><span class="pre">print(...).format(s,m,o)</span></code> zastosowano formatowanie drukowanych wartości, do których odwołujemy się w specyfikacji <code class="docutils literal"><span class="pre">{0:5.2f}</span></code>. Pierwsza cyfra wskazuje, którą wartość z numerowanej od 0 (zera) listy, umieszczonej w funkcji <code class="docutils literal"><span class="pre">format()</span></code>, wydrukować; np. aby wydrukować drugą wartość, trzeba by użyć kodu <code class="docutils literal"><span class="pre">{1:}</span></code>.Po dwukropku podajemy szerokość pola przeznaczonego na wydruk, po kropce ilość miejsc po przecinku, symbol <em>f</em> oznacza natomiast liczbę zmiennoprzecinkową stałej precyzji.</p>
+</div>
+<div class="section" id="id14">
+<h3>2.5.3. POĆWICZ SAM<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>W konsoli Pythona utwórz listę wyrazy zawierającą elementy: <em>abrakadabra</em> i <em>kordoba</em>. Utwórz zbiór <em>w1</em> poleceniem <code class="docutils literal"><span class="pre">set(wyrazy[0])</span></code>. Oraz zbiór <em>w2</em> poleceniem <code class="docutils literal"><span class="pre">set(wyrazy[1])</span></code>. Wykonaj kolejno polecenia: <code class="docutils literal"><span class="pre">print</span> <span class="pre">w1</span> <span class="pre">–</span> <span class="pre">w2;</span> <span class="pre">print</span> <span class="pre">w1</span> <span class="pre">|</span> <span class="pre">w2;</span> <span class="pre">print</span> <span class="pre">w1</span> <span class="pre">&amp;</span> <span class="pre">w2;</span> <span class="pre">print</span> <span class="pre">w1</span> <span class="pre">^</span> <span class="pre">w2</span></code>. Przykłady te ilustrują użycie klasycznych operatorów na zbiorach, czyli: różnica (-) , suma (|), przecięcie (część wspólna, &amp;) i elementy unikalne (^).</div></blockquote>
+<p>Funkcje wykorzystywane w programie umieszczamy w osobnym pliku.</p>
+<p>:nrkodu`Kod V.2`</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/ocenyfun.py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Moduł ocenyfun zawiera funkcje wykorzystywane w programie m01_oceny.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">math</span> <span class="c"># zaimportuj moduł matematyczny</span>
+
+<span class="k">def</span> <span class="nf">drukuj</span><span class="p">(</span><span class="n">co</span><span class="p">,</span><span class="n">kom</span><span class="o">=</span><span class="s">&quot;Sekwencja zawiera: &quot;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">kom</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">co</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
+
+<span class="k">def</span> <span class="nf">srednia</span><span class="p">(</span><span class="n">oceny</span><span class="p">):</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">suma</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">mediana</span><span class="p">(</span><span class="n">oceny</span><span class="p">):</span>
+    <span class="n">oceny</span><span class="o">.</span><span class="n">sort</span><span class="p">();</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c">#parzysta ilość ocen</span>
+        <span class="n">half</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="c">#można tak:</span>
+        <span class="c">#return float(oceny[half-1]+oceny[half]) / 2.0</span>
+        <span class="c">#albo tak:</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">oceny</span><span class="p">[</span><span class="n">half</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">half</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c">#nieparzysta ilość ocen</span>
+        <span class="k">return</span> <span class="n">oceny</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">wariancja</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">srednia</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wariancja to suma kwadratów różnicy każdej oceny i średniej podzielona przez ilość ocen:</span>
+<span class="sd">    sigma = (o1-s)+(o2-s)+...+(on-s) / n, gdzie:</span>
+<span class="sd">    o1, o2, ..., on - kolejne oceny,</span>
+<span class="sd">    s - średnia ocen,</span>
+<span class="sd">    n - liczba ocen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">ocena</span> <span class="ow">in</span> <span class="n">oceny</span><span class="p">:</span>
+        <span class="n">sigma</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ocena</span><span class="o">-</span><span class="n">srednia</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">sigma</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">odchylenie</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">srednia</span><span class="p">):</span> <span class="c">#pierwiastek kwadratowy z wariancji</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">wariancja</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">srednia</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id15">
+<h3>2.5.4. JAK TO DZIAŁA<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>funkcja, argumenty funkcji, zwracanie wartości, moduł</em>.</p>
+<p>Klauzula <code class="docutils literal"><span class="pre">import</span> <span class="pre">math</span></code> udostępnia w pliku wszystkie metody z modułu
+matematycznego, dlatego musimy odwoływać się do nich za pomocą notacji
+moduł.funkcja, np.: <code class="docutils literal"><span class="pre">math.sqrt()</span></code> – zwraca pierwiastek kwadratowy.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">drukuj(co,</span> <span class="pre">kom=&quot;...&quot;)</span></code> przyjmuje dwa argumenty, <em>co</em> – listę
+lub zbiór, który drukujemy w pętli for, oraz <em>kom</em> – komunikat,
+który wyświetlamy przed wydrukiem. Argument kom jest opcjonalny,
+przypisano mu bowiem wartość domyślną, która zostanie użyta,
+jeżeli użytkownik nie poda innej w wywołaniu funkcji.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">srednia()</span></code> do zsumowania wartości ocen wykorzystuje funkcję <code class="docutils literal"><span class="pre">sum()</span></code>.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">mediana()</span></code> sortuje otrzymaną listę &#8220;w miejscu&#8221; (<code class="docutils literal"><span class="pre">oceny.sort()</span></code>), tzn. trwale zmienia porządek elementów <a class="footnote-reference" href="#f6" id="id16">[5]</a>.
+W zależności od długości listy zwraca wartość środkową (długość nieparzysta)
+lub średnią arytmetyczną dwóch środkowych wartości (długość).
+Zapis <code class="docutils literal"><span class="pre">oceny[half-1:half+1]</span></code> wycina i zwraca dwa środkowe elementy
+z listy, przy czym wyrażenie <code class="docutils literal"><span class="pre">half</span> <span class="pre">=</span> <span class="pre">len(oceny)/2</span></code> wylicza nam indeks drugiego ze środkowych elementów.</p>
+<table class="docutils footnote" frame="void" id="f6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id16">[5]</a></td><td>Przypomnijmy: alternatywna funkcja <code class="docutils literal"><span class="pre">sorted(lista)</span></code> zwraca uporządkowaną rosnąco kopię listy.</td></tr>
+</tbody>
+</table>
+<p>W funkcja <code class="docutils literal"><span class="pre">wariancja()</span></code> pętla for odczytuje kolejne oceny i w kodzie <code class="docutils literal"><span class="pre">sigma</span> <span class="pre">+=</span> <span class="pre">(ocena-srednia)**2</span></code> korzysta z operatorów skróconego dodawania (+=) i potęgowania (**), aby wyliczyć sumę kwadratów różnic kolejnych ocen i średniej.</p>
+</div>
+<div class="section" id="id17">
+<h3>2.5.5. POĆWICZ SAM<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Dopisz funkcję, która wyświetli wszystkie oceny oraz ich odchylenia od wartości średniej.</div></blockquote>
+</div>
+</div>
+<div class="section" id="vi-slowniki">
+<h2>2.6. VI. Słowniki<a class="headerlink" href="#vi-slowniki" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>2.6.1. ZADANIE<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Przygotuj słownik zawierający obce wyrazy oraz ich możliwe znaczenia. Pobierz od użytkownika dane w formacie: <em>wyraz obcy: znaczenie1, znaczenie2, ...</em> itd. Pobieranie danych kończy wpisanie słowa &#8220;koniec&#8221;. Podane dane zapisz w pliku. Użytkownik powinien mieć możliwość dodawania nowych i zmieniania zapisanych danych.</div></blockquote>
+<p>:nrkodu`Kod VI.1`</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="c"># ~/python/06_slownik_02.py</span>
+
+<span class="kn">import</span> <span class="nn">os.path</span> <span class="c"># moduł udostępniający funkcję isfile()</span>
+
+<span class="k">print</span> <span class="s">&quot;&quot;&quot;Podaj dane w formacie:</span>
+<span class="s">wyraz obcy: znaczenie1, znaczenie2</span>
+<span class="s">Aby zakończyć wprowadzanie danych, podaj 0.</span>
+<span class="s">&quot;&quot;&quot;</span>
+
+<span class="n">sFile</span><span class="o">=</span><span class="s">&quot;slownik.txt&quot;</span> <span class="c">#nazwa pliku zawierającego wyrazy i ich tłumaczenia</span>
+<span class="n">slownik</span> <span class="o">=</span> <span class="p">{}</span> <span class="c"># pusty słownik</span>
+
+<span class="k">def</span> <span class="nf">otworz</span><span class="p">(</span><span class="n">plik</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sFile</span><span class="p">):</span> <span class="c">#czy istnieje plik słownika?</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sFile</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sTxt</span><span class="p">:</span> <span class="c">#otwórz plik do odczytu</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sTxt</span><span class="p">:</span> <span class="c">#przeglądamy kolejne linie</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="c">#rozbijamy linię na wyraz obcy i tłumaczenia</span>
+                <span class="n">wobcy</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">znaczenia</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="c">#usuwamy znaki nowych linii</span>
+                <span class="n">znaczenia</span> <span class="o">=</span> <span class="n">znaczenia</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span> <span class="c">#tworzymy listę znaczeń</span>
+                <span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">]</span> <span class="o">=</span> <span class="n">znaczenia</span> <span class="c">#dodajemy do słownika wyrazy obce i ich znaczenia</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">slownik</span><span class="p">)</span> <span class="c">#zwracamy ilość elementów w słowniku</span>
+
+<span class="k">def</span> <span class="nf">zapisz</span><span class="p">(</span><span class="n">slownik</span><span class="p">):</span>
+    <span class="n">file1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sFile</span><span class="p">,</span><span class="s">&quot;w&quot;</span><span class="p">)</span> <span class="c">#otwieramy plik do zapisu, istniejący plik zostanie nadpisany(!)</span>
+    <span class="k">for</span> <span class="n">wobcy</span> <span class="ow">in</span> <span class="n">slownik</span><span class="p">:</span>
+        <span class="n">znaczenia</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">])</span> <span class="c"># &quot;sklejamy&quot; znaczenia przecinkami w jeden napis</span>
+        <span class="n">linia</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">wobcy</span><span class="p">,</span><span class="n">znaczenia</span><span class="p">])</span><span class="c"># wyraz_obcy:znaczenie1,znaczenie2,...</span>
+        <span class="k">print</span> <span class="o">&gt;&gt;</span><span class="n">file1</span><span class="p">,</span> <span class="n">linia</span> <span class="c"># zapisujemy w pliku kolejne linie</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c">#zamykamy plik</span>
+
+<span class="k">def</span> <span class="nf">oczysc</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c"># usuń początkowe lub końcowe białe znaki</span>
+    <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c"># zmień na małe litery</span>
+    <span class="k">return</span> <span class="nb">str</span>
+
+<span class="n">nowy</span> <span class="o">=</span> <span class="bp">False</span> <span class="c">#zmienna oznaczająca, że użytkownik uzupełnił lub zmienił słownik</span>
+<span class="n">ileWyrazow</span> <span class="o">=</span> <span class="n">otworz</span><span class="p">(</span><span class="n">sFile</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Wpisów w bazie:&quot;</span><span class="p">,</span> <span class="n">ileWyrazow</span>
+
+<span class="c">#główna pętla programu</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">dane</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj dane: &quot;</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">dane</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span>
+    <span class="n">wobcy</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c"># robimy to samo, co funkcja oczysc()</span>
+    <span class="k">if</span> <span class="n">wobcy</span> <span class="o">==</span> <span class="s">&#39;koniec&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">dane</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c">#sprawdzamy poprawność wprowadzonych danych</span>
+        <span class="k">if</span> <span class="n">wobcy</span> <span class="ow">in</span> <span class="n">slownik</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Wyraz&quot;</span><span class="p">,</span> <span class="n">wobcy</span><span class="p">,</span> <span class="s">&quot; i jego znaczenia są już w słowniku.&quot;</span>
+            <span class="n">op</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Zastąpić wpis (t/n)? &quot;</span><span class="p">)</span>
+        <span class="c">#czy wyrazu nie ma w słowniku? a może chcemy go zastąpić?</span>
+        <span class="k">if</span> <span class="n">wobcy</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">slownik</span> <span class="ow">or</span> <span class="n">op</span> <span class="o">==</span> <span class="s">&quot;t&quot;</span><span class="p">:</span>
+            <span class="n">znaczenia</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span> <span class="c">#podane znaczenia zapisujemy w liście</span>
+            <span class="n">znaczenia</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">oczysc</span><span class="p">,</span> <span class="n">znaczenia</span><span class="p">)</span> <span class="c">#oczyszczamy elementy listy</span>
+            <span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">]</span> <span class="o">=</span> <span class="n">znaczenia</span>
+            <span class="n">nowy</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Błędny format!&quot;</span>
+
+<span class="k">if</span> <span class="n">nowy</span><span class="p">:</span> <span class="n">zapisz</span><span class="p">(</span><span class="n">slownik</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span>
+<span class="k">print</span> <span class="s">&quot;{0: &lt;15}{1: &lt;40}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Wyraz obcy&quot;</span><span class="p">,</span><span class="s">&quot;Znaczenia&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span>
+<span class="k">for</span> <span class="n">wobcy</span> <span class="ow">in</span> <span class="n">slownik</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;{0: &lt;15}{1: &lt;40}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wobcy</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">]))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id19">
+<h3>2.6.2. JAK TO DZIAŁA<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p><strong>Pojęcia</strong>: <em>słownik, odczyt i zapis plików, formatowanie napisów.</em></p>
+<p>Słownik to struktura nieposortowanych danych w formacie klucz:wartość. Kluczami są najczęściej napisy, które wskazują na wartości dowolnego typu, np. inne napisy, liczby, listy, tuple itd. Notacja <code class="docutils literal"><span class="pre">oceny</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">'polski':'1,4,2',</span> <span class="pre">'fizyka':'4,3,1'</span> <span class="pre">}</span></code> utworzy nam słownik ocen z poszczególnych przedmiotów.  Aby zapisać coś w słowniku stosujemy notację oceny[&#8216;biologia&#8217;] = 4,2,5. Aby odczytać wartość używamy po prostu: <code class="docutils literal"><span class="pre">oceny['polski']</span></code>.</p>
+<p>W programie wykorzystujemy słownik, którego kluczami są obce wyrazy, natomiast wartościami są listy możliwych znaczeń. Przykładowy element naszego słownika wygląda więc tak: <code class="docutils literal"><span class="pre">{</span> <span class="pre">'go':'iść,pojechać'</span> <span class="pre">}</span></code>. Natomiast ten sam element zapisany w pliku będzie miał format: <em>wyraz_obcy:znaczenie1,znaczeni2,...</em>. Dlatego funkcja <code class="docutils literal"><span class="pre">otworz()</span></code> przekształca format pliku na słownik, a funkcja <code class="docutils literal"><span class="pre">zapisz()</span></code> słownik na format pliku.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">otworz(plik)</span></code> sprawdza za pomocą funkcji <code class="docutils literal"><span class="pre">isFile(plik)</span></code> z modułu <em>os.path</em>, czy podany plik istnieje na dysku. Polecenie <code class="docutils literal"><span class="pre">open(&quot;plik&quot;,</span> <span class="pre">&quot;r&quot;)</span></code> otwiera podany plik w trybie do odczytu. Wyrażenie <code class="docutils literal"><span class="pre">with</span> <span class="pre">...</span> <span class="pre">as</span> <span class="pre">sTxt</span></code> zapewnia obsługę błędów podczas dostępu do pliku (m. in. zadba o jego zamknięcie) i udostępnia zawartość pliku w zmiennej <em>sTxt</em>. Pętla <code class="docutils literal"><span class="pre">for</span> <span class="pre">line</span> <span class="pre">in</span> <span class="pre">sTxt:</span></code> odczytuje kolejne linie (czyli napisy). Metoda <code class="docutils literal"><span class="pre">.split()</span></code> zwraca listę zawierającą wydzielone według podanego znaku części ciągu, np.: <code class="docutils literal"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">line.split(&quot;:&quot;)</span></code>. Operacją odwrotną jest &#8220;sklejanie&#8221; w jeden ciąg elementów listy za pomocą podanego znaku, np. &#8221;,&#8221;.join(slownik[wobcy]). Metoda .replace(&#8220;co&#8221;,&#8221;czym&#8221;) pozwala zastąpić w ciągu wszystkie wystąpienia <em>co – czym</em>., np.: <code class="docutils literal"><span class="pre">znaczenia</span> <span class="pre">=</span> <span class="pre">t[1].replace(&quot;\n&quot;,&quot;&quot;)</span></code>.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">zapisz()</span></code> otrzymuje słownik zawierający dane odczytane z pliku na dysku i dopisane przez użytkownika. W pętli odczytujemy klucze słownika, następnie tworzymy znaczenia oddzielone przecinkami i sklejamy je z wyrazem obcym za pomocą dwukropka. Kolejne linie za pisujemy do pliku <code class="docutils literal"><span class="pre">print</span> <span class="pre">&gt;&gt;file1,</span> <span class="pre">&quot;:&quot;.join([wobcy,znaczenia])</span></code>, wykorzystując operator <code class="docutils literal"><span class="pre">&gt;&gt;</span></code> i nazwę uchwytu pliku (<em>file1</em>).</p>
+<p>W pętli głównej programu pobrane dane rozbite na wyraz obcy i jego znaczenia zapisujemy w liście <em>t</em>. Oczyszczamy pierwszy element tej listy zawierający wyraz obcy (<code class="docutils literal"><span class="pre">t[0].strip().lower()</span></code>) i sprawdzamy czy nie jest to słowo &#8220;koniec&#8221;, jeśli tak wychodzimy z pętli wprowadzanie danych (<code class="docutils literal"><span class="pre">break</span></code>). W przeciwnym wypadku sprawdzamy metodą <code class="docutils literal"><span class="pre">.count(&quot;:&quot;)</span></code>, czy dwukropek występuje we wprowadzonym ciągu tylko raz. Jeśli nie, format jest nieprawidłowy, w przeciwnym razie, o ile wyrazu nie ma w słowniku lub gdy chcemy go przedefiniować, tworzymy listę znaczeń. Funkcja <code class="docutils literal"><span class="pre">map(funkcja,</span> <span class="pre">lista)</span></code> do każdego elementu listy stosuje podaną jako argument funkcję (mapowanie funkcji). W naszym przypadku każde znaczenie z listy zostaje oczyszczone przez funkcję <code class="docutils literal"><span class="pre">oczysc()</span></code>.</p>
+<p>Na końcu drukujemy nasz słownik. Specyfikacja <code class="docutils literal"><span class="pre">{0:</span> <span class="pre">&lt;15}{1:</span> <span class="pre">&lt;40}</span></code> oznacza, że pierwszy argument umieszczony w funkcji <code class="docutils literal"><span class="pre">format()</span></code>, drukowany ma być wyrównany do lewej (&lt;) w polu o szerokości 15 znaków, drugi argument, również wyrównany do lewej, w polu o szerokości 40 znaków.</p>
+</div>
+<div class="section" id="id20">
+<h3>2.6.3. POĆWICZ SAM<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Kod drukujący słownik zamień w funkcję. Wykorzystaj ją do wydrukowania słownika odczytanego z dysku i słownika uzupełnionego przez użytkownika.</p>
+<p>Spróbuj zmienić program tak, aby umożliwiał usuwanie wpisów.</p>
+<p>Dodaj do programu możliwość uczenia się zapisanych w słowniku słówek. Niech program wyświetla kolejne słowa obce i pobiera od użytkownika możliwe znaczenia. Następnie powinien wyświetlać, które z nich są poprawne.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="vii-znam-pythona">
+<h2>2.7. VII. Znam Pythona<a class="headerlink" href="#vii-znam-pythona" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>2.7.1. ZADANIE<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Przeanalizuj podane kody dwóch programów i spróbuj sam zrozumieć, jak działają i wprowadź sugerowane zmiany.</div></blockquote>
+<p>Pierwszy program na podstawie danych pobranych od użytkownika sprawdza m. in., czy da się zbudować trójkąt.</p>
+<p>:nrkodu`Kod VII.1`</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/07_1_trojkat.py</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c">#a, b, c = input(&quot;Podaj 3 boki trójkąta (oddzielone przecinkami): &quot;)</span>
+<span class="c"># można też tak:</span>
+<span class="c">#a, b, c = [int(x) for x in raw_input(&quot;Podaj 3 boki trójkąta (oddzielone spacjami): &quot;).split()]</span>
+<span class="k">if</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">a</span><span class="o">+</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span><span class="o">+</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Z podanych boków można zbudować trójkąt.&quot;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="ow">or</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="ow">or</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;Do tego prostokątny!&quot;</span>
+
+    <span class="k">print</span> <span class="s">&quot;Obwód wynosi:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="c">#współczynnik wzoru Herona</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">c</span><span class="p">))</span> <span class="c">#pole ze wzoru Herona</span>
+    <span class="k">print</span> <span class="s">&quot;Pole wynosi:&quot;</span><span class="p">,</span> <span class="n">P</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Z podanych odcinków nie można utworzyć trójkąta prostokątnego.&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id22">
+<h3>2.7.2. POĆWICZ SAM<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Zmień program tak, aby użytkownik w przypadku podania boków, z których trójkąta zbudować się nie da, mógł spróbować kolejny raz.</div></blockquote>
+<p>Drugi program jest przykładem implementacji szyfru Cezara.</p>
+<p>:nrkodu`Kod VII.2`</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/07_2_szyfr_cezara.py</span>
+
+<span class="n">KLUCZ</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">szyfruj</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+    <span class="n">stxt</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">txt</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">txt</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">122</span> <span class="o">-</span> <span class="n">KLUCZ</span><span class="p">:</span>
+            <span class="n">stxt</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">txt</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">KLUCZ</span> <span class="o">-</span> <span class="mi">26</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stxt</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">txt</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">KLUCZ</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stxt</span><span class="p">;</span>
+
+<span class="n">utxt</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj ciąg do zaszyfrowania:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">stxt</span> <span class="o">=</span> <span class="n">szyfruj</span><span class="p">(</span><span class="n">utxt</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Ciąg zaszyfrowany:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">stxt</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id23">
+<h3>2.7.3. POĆWICZ SAM<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Napisz funkcję deszyfrującą <code class="docutils literal"><span class="pre">deszyfruj(txt)</span></code>. Dodaj do funkcji <code class="docutils literal"><span class="pre">szyfruj(),</span> <span class="pre">deszyfruj()</span></code> drugi parametr w postaci długości klucza podawanej przez użytkownika. Dodaj poprawne szyfrowanie dużych liter, obsługę białych znaków i znaków interpunkcyjnych.</div></blockquote>
+</div>
+</div>
+<div class="section" id="viii-nie-znam-pythona-jeszcze">
+<h2>2.8. VIII. Nie znam Pythona... jeszcze<a class="headerlink" href="#viii-nie-znam-pythona-jeszcze" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id24">
+<h3>2.8.1. ZADANIE<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>Wypróbuj w konsoli podane przykłady ułatwień (ang. comprehensions) Pythona:</p>
+<p>:nrkodu`Kod VIII.1`</p>
+<blockquote>
+<div># Przykład tzw. list comprehensions
+# lista kwadratów liczb od 0 do 9
+[x**2 for x in range(10)]
+# lista dwuwymiarowa [20,40] o wartościach a
+a = int(raw_input(&#8220;Podaj liczbę całkowtią: &#8221;))
+[[a for y in xrange(20)] for x in xrange(40)]
+# lista krotek (x, y), przy czym x != y
+[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]</div></blockquote>
+</div>
+<div class="section" id="lista-pojec">
+<h3>2.8.2. Lista pojęć<a class="headerlink" href="#lista-pojec" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><em>zmienna, wartość, wyrażenie, wejście i wyjście danych, instrukcja warunkowa, komentarz</em>;</li>
+<li><em>pętla, obiekt, metoda, instrukcja warunkowa zagnieżdżona, formatowanie kodu</em>;</li>
+<li><em>iteracja, kod ASCII, lista, inkrementacja, operatory arytmetyczne, logiczne, przypisania, porównania i zawierania</em>;</li>
+<li><em>tupla, lista, metoda, funkcja, zwracanie wartości, pakowanie i rozpakowanie tupli, przypisanie wielokrotne</em>;</li>
+<li><em>import, moduł, zbiór, przechwytywanie wyjątków, formatowanie napisów i danych na wyjściu</em>;</li>
+<li><em>funkcja, argumenty funkcji, zwracanie wartości</em>;</li>
+<li><em>słownik, odczyt i zapis plików</em>.</li>
+</ul>
+</div>
+<div class="section" id="materialy-pomocnicze">
+<h3>2.8.3. Materiały pomocnicze<a class="headerlink" href="#materialy-pomocnicze" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://pl.wikibooks.org/wiki/Zanurkuj_w_Pythonie">http://pl.wikibooks.org/wiki/Zanurkuj_w_Pythonie</a></li>
+<li><a class="reference external" href="http://brain.fuw.edu.pl/edu/TI:Programowanie_z_Pythonem">http://brain.fuw.edu.pl/edu/TI:Programowanie_z_Pythonem</a></li>
+<li><a class="reference external" href="http://pl.python.org/docs/tut/">http://pl.python.org/docs/tut/</a></li>
+<li><a class="reference external" href="http://en.wikibooks.org/wiki/Python_Programming/Input_and_Output">http://en.wikibooks.org/wiki/Python_Programming/Input_and_Output</a></li>
+<li><a class="reference external" href="https://wiki.python.org/moin/HandlingExceptions">https://wiki.python.org/moin/HandlingExceptions</a></li>
+<li><a class="reference external" href="http://learnpython.org/pl">http://learnpython.org/pl</a></li>
+<li><a class="reference external" href="http://www.checkio.org">http://www.checkio.org</a></li>
+<li><a class="reference external" href="http://www.codecademy.com">http://www.codecademy.com</a></li>
+<li><a class="reference external" href="https://www.coursera.org">https://www.coursera.org</a></li>
+</ol>
+<style>
+    div.code_no { text-align: right; background: #e3e3e3; padding: 6px 12px; }
+    div.highlight, div.highlight-python { margin-top: 0px; }
+</style></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pong/index.html" class="btn btn-neutral float-right" title="3. Gra w Ponga"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../basic/basic.html" class="btn btn-neutral" title="1. Python - Podstawy programowania"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Centrum Edukacji Obywatelskiej.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
