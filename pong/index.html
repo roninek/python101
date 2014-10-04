@@ -852,7 +852,8 @@ Jeśli kod przestanie działać, można szybko porzucić zmiany poniższą komen
 173
 174
 175
-176</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ai</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+176
+177</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ai</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Przeciwnik, steruje swoją rakietką na podstawie obserwacji piłeczki.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -862,6 +863,7 @@ Jeśli kod przestanie działać, można szybko porzucić zmiany poniższą komen
 
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">centerx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">racket</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Tak jak w przypadku piłeczki i rakietki dodajemy nasze <code class="docutils literal"><span class="pre">Ai</span></code> do gry,
@@ -976,7 +978,11 @@ decydował czy graczom należą się punkty i będzie ustawiał piłkę w począ
 222
 223
 224
-225</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Judge</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+225
+226
+227
+228
+229</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Judge</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sędzia gry</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1018,6 +1024,10 @@ decydował czy graczom należą się punkty i będzie ustawiał piłkę w począ
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_score</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+
+        <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="s">&quot;Player: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="s">&quot;Computer: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Tradycyjnie dodajemy instancję nowej klasy do gry:</p>
@@ -1121,7 +1131,7 @@ z klasy nadrzędnej rozszerzając lub całkowicie zmieniając jej działanie</dd
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Janusz Skonieczny &lt;<a class="reference external" href="mailto:js&#37;&#52;&#48;bravelabs&#46;pl">js<span>&#64;</span>bravelabs<span>&#46;</span>pl</a>&gt;,
 Robert Bednarz</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-10-03 o 22:28</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-10-04 o 14:12</td>
 </tr>
 </tbody>
 </table>
