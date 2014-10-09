@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. Słowniki &mdash; Python 101 0.5 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="copyright" title="Copyright" href="../copyright.html"/>
+    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
+        <link rel="next" title="8. Znam Pythona" href="basic7.html"/>
+        <link rel="prev" title="6. Listy, zbiory, moduły i funkcje" href="basic5.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Python 101</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../env.html">Środowisko systemowe i wymagane oprogramowanie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#szkolny-remix-ucznia-sru">Szkolny Remix Ucznia (SRU)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-windows">Środowisko Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-geany">Środowisko programistyczne Geany</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-pycharm">Środowisko programistyczne PyCharm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Przygotowanie katalogu projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#pobieranie-materialow">Pobieranie materiałów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#korzystanie-z-kodu-zrodlowego-w-opisie-przykladow">Korzystanie z kodu źródłowego w opisie przykładów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#synchronizacja-kodu-pomiedzy-etapami-przykladow">Synchronizacja kodu pomiędzy etapami przykładów</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../basic/basic.html">1. Python - Podstawy programowania</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#zmienne">1.1. Zmienne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#wyrazenia-warunkowe">1.2. Wyrażenia warunkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#gra-w-zgadnij-liczbe">1.3. Gra w &#8220;zgadnij liczbę&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#zadania-dodatkowe">1.4. Zadania dodatkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#petla-while">1.5. Pętla WHILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#wyrazenia-break-i-continue">1.6. Wyrażenia break i continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#petla-for">1.7. Pętla FOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#slowniczek">1.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic1.html">2. Mów mi Python – wprowadzenie do języka</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic1.html#jestem-python">2.1. Jestem Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic2.html">3. Witaj Python!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic2.html#zadanie">3.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic2.html#jak-to-dziala">3.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic2.html#pocwicz-sam">3.3. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic3.html">4. Warunki i pętle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#zadanie">4.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#jak-to-dziala">4.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#pocwicz-sam">4.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#id3">4.4. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#id4">4.5. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#id5">4.6. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic4.html">5. Listy, tuple i funkcje</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#zadanie">5.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#jak-to-dziala">5.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#pocwicz-sam">5.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#id3">5.4. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#id4">5.5. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#id5">5.6. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic5.html">6. Listy, zbiory, moduły i funkcje</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic5.html#zadanie">6.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic5.html#jak-to-dziala">6.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic5.html#pocwicz-sam">6.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic5.html#id3">6.4. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic5.html#id6">6.5. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">7. Słowniki</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zadanie">7.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jak-to-dziala">7.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pocwicz-sam">7.3. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic7.html">8. Znam Pythona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#zadanie">8.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#pocwicz-sam">8.2. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#id1">8.3. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#id2">8.4. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic8.html">9. Nie znam Pythona... jeszcze</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic8.html#zadanie">9.1. ZADANIE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic9.html">10. Pojęcia i materiały</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic9.html#lista-pojec">10.1. Lista pojęć</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic9.html#materialy-pomocnicze">10.2. Materiały pomocnicze</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pong/index.html">11. Gra w Ponga</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#przygotowanie">11.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#okienko-gry">11.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pileczka">11.3. Piłeczka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijanie-pileczki">11.4. Odbijanie piłeczki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijamy-pileczke-rakietka">11.5. Odbijamy piłeczkę rakietką</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#gramy-przeciwko-komputerowi">11.6. Gramy przeciwko komputerowi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pokazujemy-punkty">11.7. Pokazujemy punkty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">11.8. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#slowniczek">11.9. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../life/index.html">12. Gra w życie Conwaya</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#przygotowanie">12.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#okienko-gry">12.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#tworzymy-matryce-zycia">12.3. Tworzymy matrycę życia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#ukladamy-zywe-komorki-na-planszy">12.4. Układamy żywe komórki na planszy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#dodajemy-populacje-do-kontrolera-gry">12.5. Dodajemy populację do kontrolera gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#szukamy-zyjacych-sasiadow">12.6. Szukamy żyjących sąsiadów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">12.7. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#slowniczek">12.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">13. Gra w Kółko i Krzyżyk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#przygotowanie">13.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#okienko-gry">13.2. Okienko gry</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quiz/index.html">14. Quiz – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#struktura-katalogow">14.1. Struktura katalogów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#szkielet-aplikacji">14.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#definiowanie-widokow-strona-glowna">14.3. Definiowanie widoków – strona główna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#pokaz-dane-aplikacji-pytania-i-odpowiedzi">14.4. Pokaż dane aplikacji – pytania i odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#oceniamy-odpowiedzi">14.5. Oceniamy odpowiedzi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo/index.html">15. ToDo – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#katalog-plik-i-przeznaczenie-aplikacji">15.1. Katalog, plik i przeznaczenie aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#szkielet-aplikacji">15.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#definiowanie-widokow">15.3. Definiowanie widoków</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#model-bazy-danych">15.4. Model bazy danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#polaczenie-z-baza-danych">15.5. Połączenie z bazą danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pobieranie-i-wyswietlanie-danych">15.6. Pobieranie i wyświetlanie danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#formularz-dodawania-zadan">15.7. Formularz dodawania zadań</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#wyglad-aplikacji-opcja">15.8. Wygląd aplikacji (opcja)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#oznaczanie-zadan-jako-wykonane-opcja">15.9. Oznaczanie zadań jako wykonane (opcja)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pocwicz-sam">15.10. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chatter/index.html">16. Chatter – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#projekt-i-aplikacja">16.1. Projekt i aplikacja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-widok-kontroler">16.2. Model – Widok – Kontroler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-danych-i-baza">16.3. Model danych i baza</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#panel-administracyjny">16.4. Panel administracyjny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#strona-glowna-widoki-i-szablony">16.5. Strona główna – widoki i szablony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#logowanie-uzytkownikow">16.6. Logowanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#dodawanie-i-wyswietlanie-wiadomosci">16.7. Dodawanie i wyświetlanie wiadomości</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#rejestrowanie-uzytkownikow">16.8. Rejestrowanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#wylogowywanie-uzytkownikow">16.9. Wylogowywanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#pocwicz-sam">16.10. POĆWICZ SAM</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python 101</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>7. Słowniki</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/basic1/basic6.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="slowniki">
+<h1>7. Słowniki<a class="headerlink" href="#slowniki" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zadanie">
+<h2>7.1. ZADANIE<a class="headerlink" href="#zadanie" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Przygotuj słownik zawierający obce wyrazy oraz ich możliwe znaczenia. Pobierz od użytkownika dane w formacie: <em>wyraz obcy: znaczenie1, znaczenie2, ...</em> itd. Pobieranie danych kończy wpisanie słowa &#8220;koniec&#8221;. Podane dane zapisz w pliku. Użytkownik powinien mieć możliwość dodawania nowych i zmieniania zapisanych danych.</div></blockquote>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="c"># ~/python/06_slownik_02.py</span>
+
+<span class="kn">import</span> <span class="nn">os.path</span> <span class="c"># moduł udostępniający funkcję isfile()</span>
+
+<span class="k">print</span> <span class="s">&quot;&quot;&quot;Podaj dane w formacie:</span>
+<span class="s">wyraz obcy: znaczenie1, znaczenie2</span>
+<span class="s">Aby zakończyć wprowadzanie danych, podaj 0.</span>
+<span class="s">&quot;&quot;&quot;</span>
+
+<span class="n">sFile</span><span class="o">=</span><span class="s">&quot;slownik.txt&quot;</span> <span class="c">#nazwa pliku zawierającego wyrazy i ich tłumaczenia</span>
+<span class="n">slownik</span> <span class="o">=</span> <span class="p">{}</span> <span class="c"># pusty słownik</span>
+
+<span class="k">def</span> <span class="nf">otworz</span><span class="p">(</span><span class="n">plik</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sFile</span><span class="p">):</span> <span class="c">#czy istnieje plik słownika?</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sFile</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sTxt</span><span class="p">:</span> <span class="c">#otwórz plik do odczytu</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sTxt</span><span class="p">:</span> <span class="c">#przeglądamy kolejne linie</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="c">#rozbijamy linię na wyraz obcy i tłumaczenia</span>
+                <span class="n">wobcy</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">znaczenia</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="c">#usuwamy znaki nowych linii</span>
+                <span class="n">znaczenia</span> <span class="o">=</span> <span class="n">znaczenia</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span> <span class="c">#tworzymy listę znaczeń</span>
+                <span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">]</span> <span class="o">=</span> <span class="n">znaczenia</span> <span class="c">#dodajemy do słownika wyrazy obce i ich znaczenia</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">slownik</span><span class="p">)</span> <span class="c">#zwracamy ilość elementów w słowniku</span>
+
+<span class="k">def</span> <span class="nf">zapisz</span><span class="p">(</span><span class="n">slownik</span><span class="p">):</span>
+    <span class="n">file1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sFile</span><span class="p">,</span><span class="s">&quot;w&quot;</span><span class="p">)</span> <span class="c">#otwieramy plik do zapisu, istniejący plik zostanie nadpisany(!)</span>
+    <span class="k">for</span> <span class="n">wobcy</span> <span class="ow">in</span> <span class="n">slownik</span><span class="p">:</span>
+        <span class="n">znaczenia</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">])</span> <span class="c"># &quot;sklejamy&quot; znaczenia przecinkami w jeden napis</span>
+        <span class="n">linia</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">wobcy</span><span class="p">,</span><span class="n">znaczenia</span><span class="p">])</span><span class="c"># wyraz_obcy:znaczenie1,znaczenie2,...</span>
+        <span class="k">print</span> <span class="o">&gt;&gt;</span><span class="n">file1</span><span class="p">,</span> <span class="n">linia</span> <span class="c"># zapisujemy w pliku kolejne linie</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c">#zamykamy plik</span>
+
+<span class="k">def</span> <span class="nf">oczysc</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c"># usuń początkowe lub końcowe białe znaki</span>
+    <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c"># zmień na małe litery</span>
+    <span class="k">return</span> <span class="nb">str</span>
+
+<span class="n">nowy</span> <span class="o">=</span> <span class="bp">False</span> <span class="c">#zmienna oznaczająca, że użytkownik uzupełnił lub zmienił słownik</span>
+<span class="n">ileWyrazow</span> <span class="o">=</span> <span class="n">otworz</span><span class="p">(</span><span class="n">sFile</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Wpisów w bazie:&quot;</span><span class="p">,</span> <span class="n">ileWyrazow</span>
+
+<span class="c">#główna pętla programu</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">dane</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj dane: &quot;</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">dane</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span>
+    <span class="n">wobcy</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="c"># robimy to samo, co funkcja oczysc()</span>
+    <span class="k">if</span> <span class="n">wobcy</span> <span class="o">==</span> <span class="s">&#39;koniec&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">dane</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c">#sprawdzamy poprawność wprowadzonych danych</span>
+        <span class="k">if</span> <span class="n">wobcy</span> <span class="ow">in</span> <span class="n">slownik</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Wyraz&quot;</span><span class="p">,</span> <span class="n">wobcy</span><span class="p">,</span> <span class="s">&quot; i jego znaczenia są już w słowniku.&quot;</span>
+            <span class="n">op</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Zastąpić wpis (t/n)? &quot;</span><span class="p">)</span>
+        <span class="c">#czy wyrazu nie ma w słowniku? a może chcemy go zastąpić?</span>
+        <span class="k">if</span> <span class="n">wobcy</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">slownik</span> <span class="ow">or</span> <span class="n">op</span> <span class="o">==</span> <span class="s">&quot;t&quot;</span><span class="p">:</span>
+            <span class="n">znaczenia</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span> <span class="c">#podane znaczenia zapisujemy w liście</span>
+            <span class="n">znaczenia</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">oczysc</span><span class="p">,</span> <span class="n">znaczenia</span><span class="p">)</span> <span class="c">#oczyszczamy elementy listy</span>
+            <span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">]</span> <span class="o">=</span> <span class="n">znaczenia</span>
+            <span class="n">nowy</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Błędny format!&quot;</span>
+
+<span class="k">if</span> <span class="n">nowy</span><span class="p">:</span> <span class="n">zapisz</span><span class="p">(</span><span class="n">slownik</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span>
+<span class="k">print</span> <span class="s">&quot;{0: &lt;15}{1: &lt;40}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Wyraz obcy&quot;</span><span class="p">,</span><span class="s">&quot;Znaczenia&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span>
+<span class="k">for</span> <span class="n">wobcy</span> <span class="ow">in</span> <span class="n">slownik</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;{0: &lt;15}{1: &lt;40}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wobcy</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slownik</span><span class="p">[</span><span class="n">wobcy</span><span class="p">]))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="jak-to-dziala">
+<h2>7.2. JAK TO DZIAŁA<a class="headerlink" href="#jak-to-dziala" title="Permalink to this headline">¶</a></h2>
+<p><strong>Pojęcia</strong>: <em>słownik, odczyt i zapis plików, formatowanie napisów.</em></p>
+<p>Słownik to struktura nieposortowanych danych w formacie klucz:wartość. Kluczami są najczęściej napisy, które wskazują na wartości dowolnego typu, np. inne napisy, liczby, listy, tuple itd. Notacja <code class="docutils literal"><span class="pre">oceny</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">'polski':'1,4,2',</span> <span class="pre">'fizyka':'4,3,1'</span> <span class="pre">}</span></code> utworzy nam słownik ocen z poszczególnych przedmiotów.  Aby zapisać coś w słowniku stosujemy notację <code class="docutils literal"><span class="pre">oceny['biologia']</span> <span class="pre">=</span> <span class="pre">4,2,5</span></code>. Aby odczytać wartość używamy po prostu: <code class="docutils literal"><span class="pre">oceny['polski']</span></code>.</p>
+<p>W programie wykorzystujemy słownik, którego kluczami są obce wyrazy, natomiast wartościami są listy możliwych znaczeń. Przykładowy element naszego słownika wygląda więc tak: <code class="docutils literal"><span class="pre">{</span> <span class="pre">'go':'iść,pojechać'</span> <span class="pre">}</span></code>. Natomiast ten sam element zapisany w pliku będzie miał format: <em>wyraz_obcy:znaczenie1,znaczeni2,...</em>. Dlatego funkcja <code class="docutils literal"><span class="pre">otworz()</span></code> przekształca format pliku na słownik, a funkcja <code class="docutils literal"><span class="pre">zapisz()</span></code> słownik na format pliku.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">otworz(plik)</span></code> sprawdza za pomocą funkcji <code class="docutils literal"><span class="pre">isFile(plik)</span></code> z modułu <em>os.path</em>, czy podany plik istnieje na dysku. Polecenie <code class="docutils literal"><span class="pre">open(&quot;plik&quot;,</span> <span class="pre">&quot;r&quot;)</span></code> otwiera podany plik w trybie do odczytu. Wyrażenie <code class="docutils literal"><span class="pre">with</span> <span class="pre">...</span> <span class="pre">as</span> <span class="pre">sTxt</span></code> zapewnia obsługę błędów podczas dostępu do pliku (m. in. zadba o jego zamknięcie) i udostępnia zawartość pliku w zmiennej <em>sTxt</em>. Pętla <code class="docutils literal"><span class="pre">for</span> <span class="pre">line</span> <span class="pre">in</span> <span class="pre">sTxt:</span></code> odczytuje kolejne linie (czyli napisy). Metoda <code class="docutils literal"><span class="pre">.split()</span></code> zwraca listę zawierającą wydzielone według podanego znaku części ciągu, np.: <code class="docutils literal"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">line.split(&quot;:&quot;)</span></code>. Operacją odwrotną jest &#8220;sklejanie&#8221; w jeden ciąg elementów listy za pomocą podanego znaku, np. <code class="docutils literal"><span class="pre">&quot;,&quot;.join(slownik[wobcy])</span></code>. Metoda <code class="docutils literal"><span class="pre">.replace(&quot;co&quot;,&quot;czym&quot;)</span></code> pozwala zastąpić w ciągu wszystkie wystąpienia <em>co – czym</em>., np.: <code class="docutils literal"><span class="pre">znaczenia</span> <span class="pre">=</span> <span class="pre">t[1].replace(&quot;\n&quot;,&quot;&quot;)</span></code>.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">zapisz()</span></code> otrzymuje słownik zawierający dane odczytane z pliku na dysku i dopisane przez użytkownika. W pętli odczytujemy klucze słownika, następnie tworzymy znaczenia oddzielone przecinkami i sklejamy je z wyrazem obcym za pomocą dwukropka. Kolejne linie za pisujemy do pliku <code class="docutils literal"><span class="pre">print</span> <span class="pre">&gt;&gt;file1,</span> <span class="pre">&quot;:&quot;.join([wobcy,znaczenia])</span></code>, wykorzystując operator <code class="docutils literal"><span class="pre">&gt;&gt;</span></code> i nazwę uchwytu pliku (<em>file1</em>).</p>
+<p>W pętli głównej programu pobrane dane rozbite na wyraz obcy i jego znaczenia zapisujemy w liście <em>t</em>. Oczyszczamy pierwszy element tej listy zawierający wyraz obcy (<code class="docutils literal"><span class="pre">t[0].strip().lower()</span></code>) i sprawdzamy czy nie jest to słowo &#8220;koniec&#8221;, jeśli tak wychodzimy z pętli wprowadzanie danych (<code class="docutils literal"><span class="pre">break</span></code>). W przeciwnym wypadku sprawdzamy metodą <code class="docutils literal"><span class="pre">.count(&quot;:&quot;)</span></code>, czy dwukropek występuje we wprowadzonym ciągu tylko raz. Jeśli nie, format jest nieprawidłowy, w przeciwnym razie, o ile wyrazu nie ma w słowniku lub gdy chcemy go przedefiniować, tworzymy listę znaczeń. Funkcja <code class="docutils literal"><span class="pre">map(funkcja,</span> <span class="pre">lista)</span></code> do każdego elementu listy stosuje podaną jako argument funkcję (mapowanie funkcji). W naszym przypadku każde znaczenie z listy zostaje oczyszczone przez funkcję <code class="docutils literal"><span class="pre">oczysc()</span></code>.</p>
+<p>Na końcu drukujemy nasz słownik. Specyfikacja <code class="docutils literal"><span class="pre">{0:</span> <span class="pre">&lt;15}{1:</span> <span class="pre">&lt;40}</span></code> oznacza, że pierwszy argument umieszczony w funkcji <code class="docutils literal"><span class="pre">format()</span></code>, drukowany ma być wyrównany do lewej (&lt;) w polu o szerokości 15 znaków, drugi argument, również wyrównany do lewej, w polu o szerokości 40 znaków.</p>
+</div>
+<div class="section" id="pocwicz-sam">
+<h2>7.3. POĆWICZ SAM<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Kod drukujący słownik zamień w funkcję. Wykorzystaj ją do wydrukowania słownika odczytanego z dysku i słownika uzupełnionego przez użytkownika.
+Spróbuj zmienić program tak, aby umożliwiał usuwanie wpisów.
+Dodaj do programu możliwość uczenia się zapisanych w słowniku słówek. Niech program wyświetla kolejne słowa obce i pobiera od użytkownika możliwe znaczenia. Następnie powinien wyświetlać, które z nich są poprawne.</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basic7.html" class="btn btn-neutral float-right" title="8. Znam Pythona"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic5.html" class="btn btn-neutral" title="6. Listy, zbiory, moduły i funkcje"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2014, Centrum Edukacji Obywatelskiej.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

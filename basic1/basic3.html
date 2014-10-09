@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Mów mi Python – wprowadzenie do języka &mdash; Python 101 0.5 documentation</title>
+  <title>4. Warunki i pętle &mdash; Python 101 0.5 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
         <link rel="copyright" title="Copyright" href="../copyright.html"/>
     <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
-        <link rel="next" title="3. Witaj Python!" href="basic2.html"/>
-        <link rel="prev" title="1. Python - Podstawy programowania" href="../basic/basic.html"/> 
+        <link rel="next" title="5. Listy, tuple i funkcje" href="basic4.html"/>
+        <link rel="prev" title="3. Witaj Python!" href="basic2.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -85,8 +85,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../basic/basic.html#slowniczek">1.8. Słowniczek</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">2. Mów mi Python – wprowadzenie do języka</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#jestem-python">2.1. Jestem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic1.html">2. Mów mi Python – wprowadzenie do języka</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic1.html#jestem-python">2.1. Jestem Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="basic2.html">3. Witaj Python!</a><ul>
@@ -95,13 +95,13 @@
 <li class="toctree-l2"><a class="reference internal" href="basic2.html#pocwicz-sam">3.3. POĆWICZ SAM</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic3.html">4. Warunki i pętle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#zadanie">4.1. ZADANIE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#jak-to-dziala">4.2. JAK TO DZIAŁA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#pocwicz-sam">4.3. POĆWICZ SAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#id3">4.4. ZADANIE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#id4">4.5. JAK TO DZIAŁA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#id5">4.6. POĆWICZ SAM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. Warunki i pętle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zadanie">4.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jak-to-dziala">4.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pocwicz-sam">4.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.4. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4.5. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">4.6. POĆWICZ SAM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="basic4.html">5. Listy, tuple i funkcje</a><ul>
@@ -228,10 +228,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>2. Mów mi Python – wprowadzenie do języka</li>
+    <li>4. Warunki i pętle</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/basic1/basic1.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/basic1/basic3.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -239,24 +239,178 @@
 </div>
           <div role="main">
             
-  <div class="section" id="mow-mi-python-wprowadzenie-do-jezyka">
-<h1>2. Mów mi Python – wprowadzenie do języka<a class="headerlink" href="#mow-mi-python-wprowadzenie-do-jezyka" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="jestem-python">
-<h2>2.1. Jestem Python<a class="headerlink" href="#jestem-python" title="Permalink to this headline">¶</a></h2>
-<p>Python jest dynamicznie typowanym językiem interpretowanym wysokiego poziomu. Cechuje się czytelnością i zwięzłością kodu. Stworzony został w latach 90. przez Guido van Rossuma, nazwa zaś pochodzi od tytułu serialu komediowego emitowanego w BBC pt. &#8220;Latający cyrk Monty Pythona&#8221;.</p>
-<p>W systemach opartych na Linuksie interpreter Pythona jest standardowo zainstalowany, ponieważ duża część oprogramowania na nim bazuje. W systemach Microsoft Windows Pythona należy doinstalować. Funkcjonalność Pythona może być dowolnie rozszerzana dzięki licznym bibliotekom pozwalającym tworzyć aplikacje okienkowe (PyQt, PyGTK, wxPython), internetowe (Flask, Django) czy multimedialne i gry (Pygame). Istnieją również kompleksowe projekty oparte na Pythonie wspomagające naukową analizę, obliczenia i przetwarzanie danych (Anaconda, Canopy).</p>
-<p>Kodować można w dowolnym edytorze tekstowym, jednak ze względów praktycznych warto korzystać z programów ułatwiających pisanie kodu. Polecić można np. lekkie, szybkie i obsługujące wiele języków środowisko Geany, a także profesjonalne rozwiązanie, jakim jest aplikacja PyCharm. Obydwa programy działają na platformie Linux i Windows.</p>
-<p>Zanim przystąpimy do pracy w katalogu domowym utworzymy podkatalog python, w którym będziemy zapisywali nasze skrypty:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="code bash highlight-python"><div class="highlight"><pre>~ $ mkdir python
+  <div class="section" id="warunki-i-petle">
+<h1>4. Warunki i pętle<a class="headerlink" href="#warunki-i-petle" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zadanie">
+<h2>4.1. ZADANIE<a class="headerlink" href="#zadanie" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Pobierz od użytkownika trzy liczby, sprawdź, która jest najmniejsza i wydrukuj ją na ekranie.</div></blockquote>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/02_if.py</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="s">&quot;t&quot;</span>
+<span class="k">while</span> <span class="n">op</span> <span class="o">==</span> <span class="s">&quot;t&quot;</span><span class="p">:</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj trzy liczby oddzielone spacjami: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+
+    <span class="k">print</span> <span class="s">&quot;Wprowadzono liczby:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Najmniejsza: &quot;</span><span class="p">,</span>
+
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">a</span>
+        <span class="k">else</span>
+            <span class="k">print</span> <span class="n">c</span>
+    <span class="k">elif</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">c</span>
+
+    <span class="n">op</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Jeszcze raz (t/n)? &quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&quot;Nie, to nie :-(&quot;</span>
 </pre></div>
+</td></tr></table></div>
 </div>
-<p>Poznawanie Pythona zrealizujemy poprzez rozwiązywanie prostych zadań, które pozwolą zaprezentować elastyczność i łatwość tego języka. Nazwy kolejnych skryptów umieszczone są jako komentarz zawsze w czwartej linii kodu. Pliki zawierające skrypty Pythona mają zazwyczaj rozszerzenie .py. Bardzo przydatnym narzędziem podczas kodowania w Pythonie jest konsola interpretera, którą uruchomimy wydając w terminalu polecenie python lub ipython <a class="footnote-reference" href="#id2" id="id1">[1]</a>. Można w niej testować i debugować wszystkie wyrażenia, warunki, polecenia itd., z których korzystamy w skryptach.</p>
+<div class="section" id="jak-to-dziala">
+<h2>4.2. JAK TO DZIAŁA<a class="headerlink" href="#jak-to-dziala" title="Permalink to this headline">¶</a></h2>
+<p><strong>Pojęcia</strong>: <em>pętla, obiekt, metoda, instrukcja warunkowa zagnieżdżona, formatowanie kodu</em>.</p>
+<p>Pętla <code class="docutils literal"><span class="pre">while</span></code> umożliwia powtarzanie określonych operacji, czyli pozwala użytkownikowi wprowadzać
+kolejne serie liczb. Definiując pętle określamy warunek powtarzania kodu. Dopóki jest prawdziwy,
+czyli dopóki zmienna <em>op</em> ma wartość &#8220;t&#8221; pętla działa. Do wydzielania kodu przynależnego do pętli
+i innych instrukcji (np. <code class="docutils literal"><span class="pre">if</span></code>) stosujemy wcięcia. Formatując kod, możemy używać zarówno tabulatorów,
+jak i spacji, ważne aby w obrębie pliku było to konsekwentne <a class="footnote-reference" href="#id2" id="id1">[3]</a>.</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Ipython to rozszerzona konsola Pythona przeznaczona do wszelkiego rodzaju interaktywnych obliczeń.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[3]</a></td><td>Dobry styl programowania sugeruje używanie do wcięć 4 spacji.</td></tr>
 </tbody>
 </table>
+<p>W Pythonie wszystko jest obiektem, czyli typy wbudowane, np. napisy, posiadają metody (funkcje)
+wykonujące określone operacje na wartościach. W podanym kodzie funkcja <code class="docutils literal"><span class="pre">raw_input()</span></code> zwraca
+ciąg znaków wprowadzony przez użytkownika, z którego wydobywamy poszczególne słowa za pomocą
+metody <code class="docutils literal"><span class="pre">split()</span></code> typu string.
+Instrukcje warunkowe (<code class="docutils literal"><span class="pre">if</span></code>), jak i pętle, można zagnieżdżać stosując wcięcia.
+W jednej złożonej instrukcji warunkowej można sprawdzać wiele warunków (<code class="docutils literal"><span class="pre">elif:</span></code>).</p>
+</div>
+<div class="section" id="pocwicz-sam">
+<h2>4.3. POĆWICZ SAM<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Sprawdź, co się stanie, jeśli podasz liczby oddzielone przecinkiem lub podasz
+za mało liczb. Zmień program tak, aby poprawnie interpretował dane oddzielane przecinkami.</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>4.4. ZADANIE<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Wydrukuj alfabet w porządku naturalnym, a następnie odwróconym w formacie:
+&#8220;mała =&gt; duża litera&#8221;. W jednym wierszu trzeba wydrukować po pięć takich grup.</div></blockquote>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/03_petle.py</span>
+
+<span class="k">print</span> <span class="s">&quot;Alfabet w porządku naturalnym:&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">91</span><span class="p">):</span>
+    <span class="n">litera</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">litera</span> <span class="o">+</span> <span class="s">&quot; =&gt; &quot;</span> <span class="o">+</span> <span class="n">litera</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">65</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c"># warunek złożony</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">tmp</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+    <span class="k">print</span> <span class="n">tmp</span><span class="p">,</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Alfabet w porządku odwróconym:&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">litera</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+    <span class="k">print</span> <span class="n">litera</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="s">&quot;=&gt;&quot;</span><span class="p">,</span> <span class="n">litera</span><span class="p">,</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id4">
+<h2>4.5. JAK TO DZIAŁA<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>Pojęcia</strong>: <em>iteracja, pętla, kod ASCII, lista, inkrementacja, operatory arytmetyczne, logiczne, przypisania i zawierania</em>.</p>
+<p>Pętla for wykorzystuje zmienną i, która przybiera wartości z listy liczb całkowitych zwróconej przez funkcję <code class="docutils literal"><span class="pre">range()</span></code>. Parametry tej funkcji określają wartość początkową i końcową listy, przy czym wartość końcowa nie wchodzi do listy. Kod <code class="docutils literal"><span class="pre">range(122,96,-1)</span></code> generuje listę wartości malejących od 122 do 97(!) z krokiem -1.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">chr()</span></code> zwraca znak, którego kod ASCII, czyli liczbę całkowitą, przyjmuje jako argument. Metoda <code class="docutils literal"><span class="pre">lower()</span></code> typu string (napisu) zwraca małą literę, <code class="docutils literal"><span class="pre">upper()</span></code> – dużą. Wyrażenie przypisywane zmiennej <em>tmp</em> pokazuje, jak można łączyć napisy (konkatenacja).</p>
+<p>Zmienna pomocnicza <code class="docutils literal"><span class="pre">x</span></code> jest zwiększana (inkrementacja) w pętlach o 1. Wyrażenie <code class="docutils literal"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code> odpowiada wyrażeniu <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>. Pierwszy warunek wykorzystuje operator logiczny <code class="docutils literal"><span class="pre">and</span></code> (koniunkcję) i operator modulo <code class="docutils literal"><span class="pre">%</span></code> (zwraca resztę z dzielenia), aby do ciągu znaków w zmiennej <code class="docutils literal"><span class="pre">tmp</span></code> dodać znak końca linii (<code class="docutils literal"><span class="pre">\n</span></code>) za pomocą operatora <code class="docutils literal"><span class="pre">+=</span></code>. W drugim warunku używamy operatora porównania <code class="docutils literal"><span class="pre">==</span></code>.</p>
+<p>Poniżej podano wybrane operatory dostępne w Pythonie.</p>
+<ul>
+<li><p class="first"><strong>Arytmetyczne</strong>: +, -, *, /, //, %, ** (potęgowanie); znak + znak (konkatenacja napisów); znak * 10 (powielenie znaków)</p>
+</li>
+<li><p class="first"><strong>Przypisania</strong>: =, +=, -=, *=, /=, %=, **=, //=</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Logiczne</strong>: and, or, not</dt>
+<dd><p class="first last">Fałszem logicznym są: liczby zero (0, 0.0), False, None (null), puste kolekcje ([], (), {}, set()), puste napisy. Wszystko inne jest prawdą logiczną.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Zawierania</strong>: in, not in</p>
+</li>
+<li><p class="first"><strong>Porównania</strong>: ==, &gt;, &lt;, &lt;&gt;, &lt;=, &gt;= != (jest różne)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>4.6. POĆWICZ SAM<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Uprość warunek w pierwszej pętli for drukującej alfabet w porządku naturalnym tak, aby nie używać operatora modulo.
+Wydrukuj co n-tą grupę liter alfabetu, przy czym wartość <em>n</em> podaje użytkownik. Wskazówka: użyj opcjonalnego, trzeciego argumentu funkcji <code class="docutils literal"><span class="pre">range()</span></code>.
+Sprawdź działanie różnych operatorów Pythona w konsoli.</div></blockquote>
 </div>
 </div>
 
@@ -266,10 +420,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="basic2.html" class="btn btn-neutral float-right" title="3. Witaj Python!"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="basic4.html" class="btn btn-neutral float-right" title="5. Listy, tuple i funkcje"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../basic/basic.html" class="btn btn-neutral" title="1. Python - Podstawy programowania"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="basic2.html" class="btn btn-neutral" title="3. Witaj Python!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
