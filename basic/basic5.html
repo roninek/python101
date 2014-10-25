@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Listy, zbiory, moduły i funkcje &mdash; Python 101 0.5 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="copyright" title="Copyright" href="../copyright.html"/>
+    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
+        <link rel="next" title="7. Słowniki" href="basic6.html"/>
+        <link rel="prev" title="5. Listy, tuple i funkcje" href="basic4.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Python 101</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../env.html">Środowisko systemowe i wymagane oprogramowanie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#szkolny-remix-ucznia-sru">Szkolny Remix Ucznia (SRU)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-windows">Środowisko Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-geany">Środowisko programistyczne Geany</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#srodowisko-programistyczne-pycharm">Środowisko programistyczne PyCharm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Przygotowanie katalogu projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#pobieranie-materialow">Pobieranie materiałów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#korzystanie-z-kodu-zrodlowego-w-opisie-przykladow">Korzystanie z kodu źródłowego w opisie przykładów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#synchronizacja-kodu-pomiedzy-etapami-przykladow">Synchronizacja kodu pomiędzy etapami przykładów</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basic.html">1. Python - Podstawy programowania</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#zmienne">1.1. Zmienne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#wyrazenia-warunkowe">1.2. Wyrażenia warunkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#gra-w-zgadnij-liczbe">1.3. Gra w &#8220;zgadnij liczbę&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#zadania-dodatkowe">1.4. Zadania dodatkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#petla-while">1.5. Pętla WHILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#wyrazenia-break-i-continue">1.6. Wyrażenia break i continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#petla-for">1.7. Pętla FOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#slowniczek">1.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic1.html">2. Mów mi Python – wprowadzenie do języka</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic1.html#jestem-python">2.1. Jestem Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic2.html">3. Witaj Python!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic2.html#zadanie">3.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic2.html#jak-to-dziala">3.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic2.html#pocwicz-sam">3.3. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic3.html">4. Warunki i pętle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#zadanie">4.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#jak-to-dziala">4.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#pocwicz-sam">4.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#id3">4.4. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#id4">4.5. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic3.html#id5">4.6. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic4.html">5. Listy, tuple i funkcje</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#zadanie">5.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#jak-to-dziala">5.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#pocwicz-sam">5.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#id3">5.4. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#id4">5.5. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic4.html#id5">5.6. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">6. Listy, zbiory, moduły i funkcje</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zadanie">6.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jak-to-dziala">6.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pocwicz-sam">6.3. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">6.4. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">6.5. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic6.html">7. Słowniki</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic6.html#zadanie">7.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic6.html#jak-to-dziala">7.2. JAK TO DZIAŁA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic6.html#pocwicz-sam">7.3. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic7.html">8. Znam Pythona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#zadanie">8.1. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#pocwicz-sam">8.2. POĆWICZ SAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#id1">8.3. ZADANIE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic7.html#id2">8.4. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic8.html">9. Nie znam Pythona... jeszcze</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic8.html#zadanie">9.1. ZADANIE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic9.html">10. Pojęcia i materiały</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic9.html#lista-pojec">10.1. Lista pojęć</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic9.html#materialy-pomocnicze">10.2. Materiały pomocnicze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic9.html#zrodlo">10.3. Źródło</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pong/index.html">11. Gra w Ponga</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#przygotowanie">11.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#okienko-gry">11.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pileczka">11.3. Piłeczka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijanie-pileczki">11.4. Odbijanie piłeczki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#odbijamy-pileczke-rakietka">11.5. Odbijamy piłeczkę rakietką</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#gramy-przeciwko-komputerowi">11.6. Gramy przeciwko komputerowi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#pokazujemy-punkty">11.7. Pokazujemy punkty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">11.8. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pong/index.html#slowniczek">11.9. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../life/index.html">12. Gra w życie Conwaya</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#przygotowanie">12.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#okienko-gry">12.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#tworzymy-matryce-zycia">12.3. Tworzymy matrycę życia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#ukladamy-zywe-komorki-na-planszy">12.4. Układamy żywe komórki na planszy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#dodajemy-populacje-do-kontrolera-gry">12.5. Dodajemy populację do kontrolera gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#szukamy-zyjacych-sasiadow">12.6. Szukamy żyjących sąsiadów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">12.7. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#slowniczek">12.8. Słowniczek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">13. Gra w Kółko i Krzyżyk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#przygotowanie">13.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#okienko-gry">13.2. Okienko gry</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quiz/index.html">14. Quiz – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#struktura-katalogow">14.1. Struktura katalogów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#szkielet-aplikacji">14.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#definiowanie-widokow-strona-glowna">14.3. Definiowanie widoków – strona główna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#pokaz-dane-aplikacji-pytania-i-odpowiedzi">14.4. Pokaż dane aplikacji – pytania i odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#oceniamy-odpowiedzi">14.5. Oceniamy odpowiedzi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo/index.html">15. ToDo – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#katalog-plik-i-przeznaczenie-aplikacji">15.1. Katalog, plik i przeznaczenie aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#szkielet-aplikacji">15.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#definiowanie-widokow">15.3. Definiowanie widoków</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#model-bazy-danych">15.4. Model bazy danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#polaczenie-z-baza-danych">15.5. Połączenie z bazą danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pobieranie-i-wyswietlanie-danych">15.6. Pobieranie i wyświetlanie danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#formularz-dodawania-zadan">15.7. Formularz dodawania zadań</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#wyglad-aplikacji-opcja">15.8. Wygląd aplikacji (opcja)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#oznaczanie-zadan-jako-wykonane-opcja">15.9. Oznaczanie zadań jako wykonane (opcja)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pocwicz-sam">15.10. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chatter/index.html">16. Chatter – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#projekt-i-aplikacja">16.1. Projekt i aplikacja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-widok-kontroler">16.2. Model – Widok – Kontroler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-danych-i-baza">16.3. Model danych i baza</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#panel-administracyjny">16.4. Panel administracyjny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#strona-glowna-widoki-i-szablony">16.5. Strona główna – widoki i szablony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#logowanie-uzytkownikow">16.6. Logowanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#dodawanie-i-wyswietlanie-wiadomosci">16.7. Dodawanie i wyświetlanie wiadomości</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#rejestrowanie-uzytkownikow">16.8. Rejestrowanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#wylogowywanie-uzytkownikow">16.9. Wylogowywanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#pocwicz-sam">16.10. POĆWICZ SAM</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python 101</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>6. Listy, zbiory, moduły i funkcje</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/basic/basic5.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="listy-zbiory-moduly-i-funkcje">
+<h1>6. Listy, zbiory, moduły i funkcje<a class="headerlink" href="#listy-zbiory-moduly-i-funkcje" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zadanie">
+<h2>6.1. ZADANIE<a class="headerlink" href="#zadanie" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Napisz program, który umożliwi wprowadzanie ocen z podanego przedmiotu ścisłego (np. fizyki), następnie policzy i wyświetla średnią, medianę i odchylenie standardowe wprowadzonych ocen. Funkcje pomocnicze i statystyczne umieść w osobnym module.</div></blockquote>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/05_oceny_03.py</span>
+
+<span class="c"># importujemy funkcje z modułu ocenyfun zapisanego w pliku ocenyfun.py</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">drukuj</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">srednia</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">mediana</span>
+<span class="kn">from</span> <span class="nn">ocenyfun</span> <span class="kn">import</span> <span class="n">odchylenie</span>
+
+<span class="n">przedmioty</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;polski&#39;</span><span class="p">,</span><span class="s">&#39;angielski&#39;</span><span class="p">])</span> <span class="c">#definicja zbioru</span>
+<span class="n">drukuj</span><span class="p">(</span><span class="n">przedmioty</span><span class="p">,</span> <span class="s">&quot;Lista przedmiotów zawiera: &quot;</span><span class="p">)</span> <span class="c">#wywołanie funkcji z modułu ocenyfun</span>
+
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Aby przerwać wprowadzanie przedmiotów, naciśnij Enter.&quot;</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">przedmiot</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj nazwę przedmiotu: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">przedmiot</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">przedmiot</span> <span class="ow">in</span> <span class="n">przedmioty</span><span class="p">:</span> <span class="c">#czy przedmiot jest w zbiorze?</span>
+            <span class="k">print</span> <span class="s">&quot;Ten przedmiot już mamy :-)&quot;</span>
+        <span class="n">przedmioty</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">przedmiot</span><span class="p">)</span> <span class="c">#dodaj przedmiot do zbioru</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">drukuj</span><span class="p">(</span><span class="n">przedmioty</span><span class="p">,</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Twoje przedmioty: &quot;</span><span class="p">)</span>
+        <span class="n">przedmiot</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Z którego przedmiotu wprowadzisz oceny? &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">przedmiot</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">przedmioty</span><span class="p">:</span> <span class="c">#jeżeli przedmiotu nie ma w zbiorze</span>
+            <span class="k">print</span> <span class="s">&quot;Brak takiego przedmiotu, możesz go dodać.&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span> <span class="c"># wyjście z pętli</span>
+
+<span class="n">oceny</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># pusta lista ocen</span>
+<span class="n">ocena</span> <span class="o">=</span> <span class="bp">None</span> <span class="c"># zmienna sterująca pętlą i do pobierania ocen</span>
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Aby przerwać wprowadzanie ocen, podaj 0 (zero).&quot;</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">ocena</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span> <span class="c">#mechanizm obsługi błędów</span>
+        <span class="n">ocena</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Podaj ocenę (1-6): &quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ocena</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">ocena</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">):</span>
+            <span class="n">oceny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ocena</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">ocena</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Błędna ocena.&quot;</span>
+        <span class="n">ocena</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Błędne dane!&quot;</span>
+
+<span class="n">drukuj</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">przedmiot</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; - wprowadzone oceny: &quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">srednia</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="c"># wywołanie funkcji z modułu ocenyfun</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">mediana</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="c"># wywołanie funkcji z modułu ocenyfun</span>
+<span class="n">o</span> <span class="o">=</span> <span class="n">odchylenie</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c"># wywołanie funkcji z modułu ocenyfun</span>
+<span class="k">print</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Średnia: {0:5.2f}</span><span class="se">\n</span><span class="s">Mediana: {1:5.2f}</span><span class="se">\n</span><span class="s">Odchylenie: {2:5.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="jak-to-dziala">
+<h2>6.2. JAK TO DZIAŁA<a class="headerlink" href="#jak-to-dziala" title="Permalink to this headline">¶</a></h2>
+<p><strong>Pojęcia</strong>: <em>import, moduł, zbiór, przechwytywanie wyjątków, formatowanie napisów i danych na wyjściu</em>.</p>
+<p>Klauza <code class="docutils literal"><span class="pre">from</span> <span class="pre">moduł</span> <span class="pre">import</span> <span class="pre">funkcja</span></code> umożliwia wykorzystanie w programie funkcji zdefiniowanych w innych modułach i zapisanych w osobnych plikach. Dzięki temu utrzymujemy przejrzystość programu głównego, a jednocześnie możemy funkcje z modułów wykorzystywać, importując je w innych programach. Nazwa modułu to nazwa pliku z kodem pozbawiona jednak rozszerzenia <em>.py</em>. Moduł musi być dostępny w ścieżce przeszukiwania <a class="footnote-reference" href="#id2" id="id1">[5]</a>, aby można go było poprawnie dołączyć.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[5]</a></td><td>W przypadku prostych programów zapisuj moduły w tym samym katalogu co program główny.</td></tr>
+</tbody>
+</table>
+<p>Instrukcja <code class="docutils literal"><span class="pre">set()</span></code> tworzy zbiór, czyli nieuporządkowany zestaw niepowtarzalnych (!) elementów. Instrukcje <code class="docutils literal"><span class="pre">if</span> <span class="pre">przedmiot</span> <span class="pre">in</span> <span class="pre">przedmioty</span></code> i <code class="docutils literal"><span class="pre">if</span> <span class="pre">przedmiot</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">przedmioty</span></code> za pomocą operatorów zawierania <code class="docutils literal"><span class="pre">(not)</span> <span class="pre">in</span></code> sprawdzają, czy podany przedmiot już jest lub nie w zbiorze. Polecenie <code class="docutils literal"><span class="pre">przedmioty.add()</span></code> pozwala dodawać elementy do zbioru, przy czym jeżeli element jest już w zbiorze, nie zostanie dodany. Polecenie <code class="docutils literal"><span class="pre">przedmioty.remove()</span></code> usunnie podany jako argument element ze zbioru.</p>
+<p>Oceny z wybranego przedmiotu pobieramy w pętli dopóty, dopóki użytkownik nie wprowadzi 0 (zera). Blok <code class="docutils literal"><span class="pre">try...except</span></code> pozwala przechwycić wyjątki, czyli w naszym przypadku niemożność przekształcenia wprowadzonej wartości na liczbę całkowitą. Jeżeli funkcja <code class="docutils literal"><span class="pre">int()</span></code> zwróci wyjątek, wykonywane są instrukcje w bloku <code class="docutils literal"><span class="pre">except</span> <span class="pre">ValueError:</span></code>, w przeciwnym razie po sprawdzeniu poprawności oceny dodajemy ją jako liczbę zmiennoprzecinkową (typ <em>float</em>) do listy: <code class="docutils literal"><span class="pre">oceny.append(float(ocena))</span></code>.</p>
+<p>Metoda <code class="docutils literal"><span class="pre">.capitalize()</span></code> pozwala wydrukować podany napis dużą literą.</p>
+<p>W funkcji <code class="docutils literal"><span class="pre">print(...).format(s,m,o)</span></code> zastosowano formatowanie drukowanych wartości, do których odwołujemy się w specyfikacji <code class="docutils literal"><span class="pre">{0:5.2f}</span></code>. Pierwsza cyfra wskazuje, którą wartość z numerowanej od 0 (zera) listy, umieszczonej w funkcji <code class="docutils literal"><span class="pre">format()</span></code>, wydrukować; np. aby wydrukować drugą wartość, trzeba by użyć kodu <code class="docutils literal"><span class="pre">{1:}</span></code>.Po dwukropku podajemy szerokość pola przeznaczonego na wydruk, po kropce ilość miejsc po przecinku, symbol <em>f</em> oznacza natomiast liczbę zmiennoprzecinkową stałej precyzji.</p>
+</div>
+<div class="section" id="pocwicz-sam">
+<h2>6.3. POĆWICZ SAM<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>W konsoli Pythona utwórz listę wyrazy zawierającą elementy: <em>abrakadabra</em> i <em>kordoba</em>. Utwórz zbiór <em>w1</em> poleceniem <code class="docutils literal"><span class="pre">set(wyrazy[0])</span></code>. Oraz zbiór <em>w2</em> poleceniem <code class="docutils literal"><span class="pre">set(wyrazy[1])</span></code>. Wykonaj kolejno polecenia: <code class="docutils literal"><span class="pre">print</span> <span class="pre">w1</span> <span class="pre">–</span> <span class="pre">w2;</span> <span class="pre">print</span> <span class="pre">w1</span> <span class="pre">|</span> <span class="pre">w2;</span> <span class="pre">print</span> <span class="pre">w1</span> <span class="pre">&amp;</span> <span class="pre">w2;</span> <span class="pre">print</span> <span class="pre">w1</span> <span class="pre">^</span> <span class="pre">w2</span></code>. Przykłady te ilustrują użycie klasycznych operatorów na zbiorach, czyli: różnica (-) , suma (|), przecięcie (część wspólna, &amp;) i elementy unikalne (^).</div></blockquote>
+<p>Funkcje wykorzystywane w programie umieszczamy w osobnym pliku.</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<span class="c"># -*- coding: UTF-8 -*-</span>
+
+<span class="c"># ~/python/ocenyfun.py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Moduł ocenyfun zawiera funkcje wykorzystywane w programie m01_oceny.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">math</span> <span class="c"># zaimportuj moduł matematyczny</span>
+
+<span class="k">def</span> <span class="nf">drukuj</span><span class="p">(</span><span class="n">co</span><span class="p">,</span><span class="n">kom</span><span class="o">=</span><span class="s">&quot;Sekwencja zawiera: &quot;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">kom</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">co</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">i</span><span class="p">,</span>
+
+<span class="k">def</span> <span class="nf">srednia</span><span class="p">(</span><span class="n">oceny</span><span class="p">):</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">suma</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">mediana</span><span class="p">(</span><span class="n">oceny</span><span class="p">):</span>
+    <span class="n">oceny</span><span class="o">.</span><span class="n">sort</span><span class="p">();</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c">#parzysta ilość ocen</span>
+        <span class="n">half</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="c">#można tak:</span>
+        <span class="c">#return float(oceny[half-1]+oceny[half]) / 2.0</span>
+        <span class="c">#albo tak:</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">oceny</span><span class="p">[</span><span class="n">half</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">half</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c">#nieparzysta ilość ocen</span>
+        <span class="k">return</span> <span class="n">oceny</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">wariancja</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">srednia</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wariancja to suma kwadratów różnicy każdej oceny i średniej podzielona przez ilość ocen:</span>
+<span class="sd">    sigma = (o1-s)+(o2-s)+...+(on-s) / n, gdzie:</span>
+<span class="sd">    o1, o2, ..., on - kolejne oceny,</span>
+<span class="sd">    s - średnia ocen,</span>
+<span class="sd">    n - liczba ocen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">ocena</span> <span class="ow">in</span> <span class="n">oceny</span><span class="p">:</span>
+        <span class="n">sigma</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ocena</span><span class="o">-</span><span class="n">srednia</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">sigma</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">odchylenie</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">srednia</span><span class="p">):</span> <span class="c">#pierwiastek kwadratowy z wariancji</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">wariancja</span><span class="p">(</span><span class="n">oceny</span><span class="p">,</span><span class="n">srednia</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id3">
+<h2>6.4. JAK TO DZIAŁA<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Pojęcia</strong>: <em>funkcja, argumenty funkcji, zwracanie wartości, moduł</em>.</p>
+<p>Klauzula <code class="docutils literal"><span class="pre">import</span> <span class="pre">math</span></code> udostępnia w pliku wszystkie metody z modułu
+matematycznego, dlatego musimy odwoływać się do nich za pomocą notacji
+moduł.funkcja, np.: <code class="docutils literal"><span class="pre">math.sqrt()</span></code> – zwraca pierwiastek kwadratowy.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">drukuj(co,</span> <span class="pre">kom=&quot;...&quot;)</span></code> przyjmuje dwa argumenty, <em>co</em> – listę
+lub zbiór, który drukujemy w pętli for, oraz <em>kom</em> – komunikat,
+który wyświetlamy przed wydrukiem. Argument <em>kom</em> jest opcjonalny,
+przypisano mu bowiem wartość domyślną, która zostanie użyta,
+jeżeli użytkownik nie poda innej w wywołaniu funkcji.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">srednia()</span></code> do zsumowania wartości ocen wykorzystuje funkcję <code class="docutils literal"><span class="pre">sum()</span></code>.</p>
+<p>Funkcja <code class="docutils literal"><span class="pre">mediana()</span></code> sortuje otrzymaną listę &#8220;w miejscu&#8221; (<code class="docutils literal"><span class="pre">oceny.sort()</span></code>), tzn. trwale zmienia porządek elementów <a class="footnote-reference" href="#id5" id="id4">[6]</a>.
+W zależności od długości listy zwraca wartość środkową (długość nieparzysta)
+lub średnią arytmetyczną dwóch środkowych wartości (długość).
+Zapis <code class="docutils literal"><span class="pre">oceny[half-1:half+1]</span></code> wycina i zwraca dwa środkowe elementy
+z listy, przy czym wyrażenie <code class="docutils literal"><span class="pre">half</span> <span class="pre">=</span> <span class="pre">len(oceny)/2</span></code> wylicza nam indeks drugiego ze środkowych elementów.</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[6]</a></td><td>Przypomnijmy: alternatywna funkcja <code class="docutils literal"><span class="pre">sorted(lista)</span></code> zwraca uporządkowaną rosnąco kopię listy.</td></tr>
+</tbody>
+</table>
+<p>W funkcja <code class="docutils literal"><span class="pre">wariancja()</span></code> pętla for odczytuje kolejne oceny i w kodzie <code class="docutils literal"><span class="pre">sigma</span> <span class="pre">+=</span> <span class="pre">(ocena-srednia)**2</span></code> korzysta z operatorów skróconego dodawania (+=) i potęgowania (**), aby wyliczyć sumę kwadratów różnic kolejnych ocen i średniej.</p>
+</div>
+<div class="section" id="id6">
+<h2>6.5. POĆWICZ SAM<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Dopisz funkcję, która wyświetli wszystkie oceny oraz ich odchylenia od wartości średniej.</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basic6.html" class="btn btn-neutral float-right" title="7. Słowniki"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic4.html" class="btn btn-neutral" title="5. Listy, tuple i funkcje"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2014, Centrum Edukacji Obywatelskiej.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
