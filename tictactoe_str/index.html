@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11. Gra w Kółko i Krzyżyk (str) &mdash; Python 101 0.5 documentation</title>
+  <title>10. Gra w Kółko i Krzyżyk (str) &mdash; Python 101 0.5 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
         <link rel="copyright" title="Copyright" href="../copyright.html"/>
     <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
-        <link rel="next" title="12. Gra w Kółko i Krzyżyk (obj)" href="../tictactoe/index.html"/>
-        <link rel="prev" title="10. Gra w życie Conwaya" href="../life/index.html"/> 
+        <link rel="next" title="11. Gra w Kółko i Krzyżyk (obj)" href="../tictactoe/index.html"/>
+        <link rel="prev" title="9. Gra w Ponga (obj)" href="../pong/index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -137,65 +137,72 @@
 <li class="toctree-l2"><a class="reference internal" href="../pong/index.html#slowniczek">9.9. Słowniczek</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../life/index.html">10. Gra w życie Conwaya</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#przygotowanie">10.1. Przygotowanie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#okienko-gry">10.2. Okienko gry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#tworzymy-matryce-zycia">10.3. Tworzymy matrycę życia</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#ukladamy-zywe-komorki-na-planszy">10.4. Układamy żywe komórki na planszy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#dodajemy-populacje-do-kontrolera-gry">10.5. Dodajemy populację do kontrolera gry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#szukamy-zyjacych-sasiadow">10.6. Szukamy żyjących sąsiadów</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">10.7. Zadania dodatkowe i rzeczy które można poprawić</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../life/index.html#slowniczek">10.8. Słowniczek</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">10. Gra w Kółko i Krzyżyk (str)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zmienne-i-plansza-gry">10.1. Zmienne i plansza gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rysuj-plansze-gry">10.2. Rysuj planszę gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sztuczna-inteligencja">10.3. Sztuczna inteligencja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glowna-petla-programu">10.4. Główna pętla programu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pocwicz-sam">10.5. Poćwicz sam</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">11. Gra w Kółko i Krzyżyk (str)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#zmienne-i-plansza-gry">11.1. Zmienne i plansza gry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rysuj-plansze-gry">11.2. Rysuj planszę gry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sztuczna-inteligencja">11.3. Sztuczna inteligencja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#glowna-petla-programu">11.4. Główna pętla programu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pocwicz-sam">11.5. Poćwicz sam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">11. Gra w Kółko i Krzyżyk (obj)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#przygotowanie">11.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#okienko-gry">11.2. Okienko gry</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../tictactoe/index.html">12. Gra w Kółko i Krzyżyk (obj)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#przygotowanie">12.1. Przygotowanie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tictactoe/index.html#okienko-gry">12.2. Okienko gry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../life_str/index.html">12. Gra w życie Conwaya (str)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../life_str/index.html#zmienne-i-plansza-gry">12.1. Zmienne i plansza gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life_str/index.html#populacja-komorek">12.2. Populacja komórek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life_str/index.html#glowna-petla-programu">12.3. Główna pętla programu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life_str/index.html#pocwicz-sam">12.4. Poćwicz sam</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../quiz/index.html">13. Quiz – aplikacja internetowa</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#struktura-katalogow">13.1. Struktura katalogów</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#szkielet-aplikacji">13.2. Szkielet aplikacji</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#definiowanie-widokow-strona-glowna">13.3. Definiowanie widoków – strona główna</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#pokaz-dane-aplikacji-pytania-i-odpowiedzi">13.4. Pokaż dane aplikacji – pytania i odpowiedzi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#oceniamy-odpowiedzi">13.5. Oceniamy odpowiedzi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../life/index.html">13. Gra w życie Conwaya</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#przygotowanie">13.1. Przygotowanie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#okienko-gry">13.2. Okienko gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#tworzymy-matryce-zycia">13.3. Tworzymy matrycę życia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#ukladamy-zywe-komorki-na-planszy">13.4. Układamy żywe komórki na planszy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#dodajemy-populacje-do-kontrolera-gry">13.5. Dodajemy populację do kontrolera gry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#szukamy-zyjacych-sasiadow">13.6. Szukamy żyjących sąsiadów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#zadania-dodatkowe-i-rzeczy-ktore-mozna-poprawic">13.7. Zadania dodatkowe i rzeczy które można poprawić</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../life/index.html#slowniczek">13.8. Słowniczek</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../todo/index.html">14. ToDo – aplikacja internetowa</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#katalog-plik-i-przeznaczenie-aplikacji">14.1. Katalog, plik i przeznaczenie aplikacji</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#szkielet-aplikacji">14.2. Szkielet aplikacji</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#definiowanie-widokow">14.3. Definiowanie widoków</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#model-bazy-danych">14.4. Model bazy danych</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#polaczenie-z-baza-danych">14.5. Połączenie z bazą danych</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pobieranie-i-wyswietlanie-danych">14.6. Pobieranie i wyświetlanie danych</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#formularz-dodawania-zadan">14.7. Formularz dodawania zadań</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#wyglad-aplikacji-opcja">14.8. Wygląd aplikacji (opcja)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#oznaczanie-zadan-jako-wykonane-opcja">14.9. Oznaczanie zadań jako wykonane (opcja)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pocwicz-sam">14.10. POĆWICZ SAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quiz/index.html">14. Quiz – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#struktura-katalogow">14.1. Struktura katalogów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#szkielet-aplikacji">14.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#definiowanie-widokow-strona-glowna">14.3. Definiowanie widoków – strona główna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#pokaz-dane-aplikacji-pytania-i-odpowiedzi">14.4. Pokaż dane aplikacji – pytania i odpowiedzi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/index.html#oceniamy-odpowiedzi">14.5. Oceniamy odpowiedzi</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chatter/index.html">15. Chatter – aplikacja internetowa</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#projekt-i-aplikacja">15.1. Projekt i aplikacja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-widok-kontroler">15.2. Model – Widok – Kontroler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-danych-i-baza">15.3. Model danych i baza</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#panel-administracyjny">15.4. Panel administracyjny</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#strona-glowna-widoki-i-szablony">15.5. Strona główna – widoki i szablony</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#logowanie-uzytkownikow">15.6. Logowanie użytkowników</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#dodawanie-i-wyswietlanie-wiadomosci">15.7. Dodawanie i wyświetlanie wiadomości</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#rejestrowanie-uzytkownikow">15.8. Rejestrowanie użytkowników</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#wylogowywanie-uzytkownikow">15.9. Wylogowywanie użytkowników</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#pocwicz-sam">15.10. POĆWICZ SAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo/index.html">15. ToDo – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#katalog-plik-i-przeznaczenie-aplikacji">15.1. Katalog, plik i przeznaczenie aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#szkielet-aplikacji">15.2. Szkielet aplikacji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#definiowanie-widokow">15.3. Definiowanie widoków</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#model-bazy-danych">15.4. Model bazy danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#polaczenie-z-baza-danych">15.5. Połączenie z bazą danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pobieranie-i-wyswietlanie-danych">15.6. Pobieranie i wyświetlanie danych</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#formularz-dodawania-zadan">15.7. Formularz dodawania zadań</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#wyglad-aplikacji-opcja">15.8. Wygląd aplikacji (opcja)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#oznaczanie-zadan-jako-wykonane-opcja">15.9. Oznaczanie zadań jako wykonane (opcja)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo/index.html#pocwicz-sam">15.10. POĆWICZ SAM</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">16. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chatter/index.html">16. Chatter – aplikacja internetowa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#projekt-i-aplikacja">16.1. Projekt i aplikacja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-widok-kontroler">16.2. Model – Widok – Kontroler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#model-danych-i-baza">16.3. Model danych i baza</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#panel-administracyjny">16.4. Panel administracyjny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#strona-glowna-widoki-i-szablony">16.5. Strona główna – widoki i szablony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#logowanie-uzytkownikow">16.6. Logowanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#dodawanie-i-wyswietlanie-wiadomosci">16.7. Dodawanie i wyświetlanie wiadomości</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#rejestrowanie-uzytkownikow">16.8. Rejestrowanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#wylogowywanie-uzytkownikow">16.9. Wylogowywanie użytkowników</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chatter/index.html#pocwicz-sam">16.10. POĆWICZ SAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">17. FAQ</a></li>
 </ul>
 
         
@@ -219,7 +226,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>11. Gra w Kółko i Krzyżyk (str)</li>
+    <li>10. Gra w Kółko i Krzyżyk (str)</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../_sources/tictactoe_str/index.txt" rel="nofollow"> View page source</a>
@@ -231,14 +238,14 @@
           <div role="main">
             
   <div class="section" id="gra-w-kolko-i-krzyzyk-str">
-<h1>11. Gra w Kółko i Krzyżyk (str)<a class="headerlink" href="#gra-w-kolko-i-krzyzyk-str" title="Permalink to this headline">¶</a></h1>
+<h1>10. Gra w Kółko i Krzyżyk (str)<a class="headerlink" href="#gra-w-kolko-i-krzyzyk-str" title="Permalink to this headline">¶</a></h1>
 <p>Klasyczna gra w kółko i krzyżyk zrealizowana przy pomocy  <a class="reference external" href="http://www.pygame.org/wiki/tutorials">PyGame</a>. Wersja strukturalna.
 Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutorials">PyGame</a> ułatwia tworzenie aplikacji multimedialnych, w tym gier.</p>
 <div class="figure">
 <img alt="../_images/tictactoe.png" src="../_images/tictactoe.png" />
 </div>
 <div class="section" id="zmienne-i-plansza-gry">
-<h2>11.1. Zmienne i plansza gry<a class="headerlink" href="#zmienne-i-plansza-gry" title="Permalink to this headline">¶</a></h2>
+<h2>10.1. Zmienne i plansza gry<a class="headerlink" href="#zmienne-i-plansza-gry" title="Permalink to this headline">¶</a></h2>
 <p>Tworzymy plik <code class="docutils literal"><span class="pre">tictactoe.py</span></code> w terminalu lub w wybranym edytorze i zaczynamy od zdefiniowania zmiennych określających właściwości obiektów w naszej grze.</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -288,7 +295,7 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
 <p>W instrukcji <code class="docutils literal"><span class="pre">pygame.display.set_mode()</span></code> inicjalizujemy okno gry o rozmiarach 150x150 pikseli i 32 bitowej głębi kolorów. Tworzymy w ten sposób powierzchnię główną do rysowania zapisaną w zmiennej <code class="docutils literal"><span class="pre">OKNOGRY</span></code>. <code class="docutils literal"><span class="pre">POLE_GRY</span></code> to lista elementów reprezentujących pola planszy, które mogą być puste (wartość 0), zawierać kółka gracza (wartość 1) lub komputera (wartość 2). Pozostałe zmienne określają, do kogo należy następny ruch, kto wygrał i czy nastąpił koniec gry.</p>
 </div>
 <div class="section" id="rysuj-plansze-gry">
-<h2>11.2. Rysuj planszę gry<a class="headerlink" href="#rysuj-plansze-gry" title="Permalink to this headline">¶</a></h2>
+<h2>10.2. Rysuj planszę gry<a class="headerlink" href="#rysuj-plansze-gry" title="Permalink to this headline">¶</a></h2>
 <p>Planszę można narysować na wiele sposobów, np. tak:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>24
 25
@@ -336,7 +343,7 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
 <p>Pierwsza funkcja, <code class="docutils literal"><span class="pre">rysuj_plansze()</span></code>, wykorzystując zagnieżdżone pętle, rysuje nam 9 kwadratów o białym obramowaniu i szerokości 50 pikseli (formalnie są to obiekty <a class="reference internal" href="#term-rect"><em class="xref std std-term">Rect</em></a> zwracane przez metodę <code class="docutils literal"><span class="pre">pygame.draw.rect()</span></code>). Zadaniem funkcji <code class="docutils literal"><span class="pre">rysuj_pole_gry()</span></code> jest narysowanie w zależności od stanu planszy gry zapisanego w liście <code class="docutils literal"><span class="pre">POLE_GRY</span></code> kółek o niebieskim (gracz) lub czerwonym (komputer) kolorze za pomocą metody <code class="docutils literal"><span class="pre">pygame.draw.circle()</span></code>.</p>
 </div>
 <div class="section" id="sztuczna-inteligencja">
-<h2>11.3. Sztuczna inteligencja<a class="headerlink" href="#sztuczna-inteligencja" title="Permalink to this headline">¶</a></h2>
+<h2>10.3. Sztuczna inteligencja<a class="headerlink" href="#sztuczna-inteligencja" title="Permalink to this headline">¶</a></h2>
 <p>Decydującą rolę w grze odgrywa komputer, od którego inteligencji zależy, czy rozgrywka przyniesie jakąś satysfakcję. Dopisujemy więc funkcje obsługujące sztuczną inteligencję:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 46
  47
@@ -461,7 +468,7 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
 <p>O ile na planszy nie ma układu wygrywającego lub nie ma konieczności blokowania gracza, komputer w pętli losuje przypadkowe pole (<code class="docutils literal"><span class="pre">random.randrange(0,9)</span></code>), dopóki nie znajdzie pustego, i przekazuje jego indeks do funkcji <code class="docutils literal"><span class="pre">postaw_znak()</span></code>.</p>
 </div>
 <div class="section" id="glowna-petla-programu">
-<h2>11.4. Główna pętla programu<a class="headerlink" href="#glowna-petla-programu" title="Permalink to this headline">¶</a></h2>
+<h2>10.4. Główna pętla programu<a class="headerlink" href="#glowna-petla-programu" title="Permalink to this headline">¶</a></h2>
 <p>Programy interaktywne, w tym gry, reagujące na działania użytkownika, takie jak ruchy czy kliknięcia myszą, działają w pętli, której zadaniem jest:</p>
 <ol class="arabic simple">
 <li>przechwycenie i obsługa działań użytkownika, czyli tzw. zdarzeń (ruchy, kliknięcia myszą, naciśnięcie klawiszy),</li>
@@ -608,18 +615,20 @@ Ostatnie linie kodu wypełniają okno gry kolorem (<code class="docutils literal
 </div>
 </div>
 <div class="section" id="pocwicz-sam">
-<h2>11.5. Poćwicz sam<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h2>
+<h2>10.5. Poćwicz sam<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>Zmień grę tak, aby zaczynał ją komputer.
 Dodaj do gry możliwość rozgrywki wielokrotnej bez konieczności ponownego uruchamiania skryptu.
 Zmodyfikuj funkcję rysującą pole gry tak, aby komputer rysował krzyżyki, a nie kółka.</div></blockquote>
 <div class="section" id="zrodla">
-<h3>11.5.1. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h3>
+<h3>10.5.1. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h3>
 <p>Wszystkie kody możesz pobrać w formie archiwum: <a class="reference download internal" href="../_downloads/tictactoe_str.zip"><code class="xref download docutils literal"><span class="pre">tictactoe_str.zip</span></code></a></p>
 </div>
 <div class="section" id="slownik">
-<h3>11.5.2. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
+<h3>10.5.2. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
 <dl class="glossary docutils">
+<dt id="term-klatki-na-sekunde-fps">Klatki na sekundę (FPS)</dt>
+<dd>liczba klatek wyświetlanych w ciągu sekundy, czyli częstotliwość, z jaką statyczne obrazy pojawiają się na ekranie. Jest ona miarą płynności wyświetlania ruchomych obrazów.</dd>
 <dt id="term-kanal-alfa-ang-alpha-channel">Kanał alfa (ang. alpha channel)</dt>
 <dd>w grafice komputerowej jest kanałem, który definiuje przezroczyste obszary grafiki. Jest on zapisywany dodatkowo wewnątrz grafiki razem z trzema wartościami barw składowych RGB.</dd>
 <dt id="term-inicjalizacja">Inicjalizacja</dt>
@@ -640,6 +649,8 @@ Zmodyfikuj funkcję rysującą pole gry tak, aby komputer rysował krzyżyki, a 
 <dd>obiekt reprezentujący dowolny obrazek (grafikę), który ma określoną rozdzielczość (szerokość i wysokość) oraz format pikseli (głębokość, przezroczystość); SRCALPHA – oznacza, że format pikseli będzie zawierać ustawienie alfa (przezroczystości); <code class="docutils literal"><span class="pre">.fill()</span></code> – wypełnia obrazek kolorem; <code class="docutils literal"><span class="pre">.get_rect()</span></code> – zwraca prostokąt zawierający obrazek, czyli obiekt <strong>Rect</strong>; <code class="docutils literal"><span class="pre">.convert_alpha()</span></code> – zmienia format pikseli, w tym przezroczystość; <code class="docutils literal"><span class="pre">.blit()</span></code> – rysuje jeden obrazek na drugim, parametry: źródło, cel.</dd>
 <dt id="term-pygame-draw-ellipse">pygame.draw.ellipse()</dt>
 <dd>rysuje okrągły kształt wewnątrz prostokąta, parametry: przestrzeń, kolor, prostokąt.</dd>
+<dt id="term-pygame-draw-rect">pygame.draw.rect()</dt>
+<dd>rysuje prostokąt na wskazanej powierzchni, parametry: powierzchnia, kolor, obiekt Rect, grubość obramowania.</dd>
 <dt id="term-pygame-font-font">pygame.font.Font()</dt>
 <dd>tworzy obiekt czcionki z podanego pliku; <code class="docutils literal"><span class="pre">.render()</span></code> – tworzy nową powierzchnię z podanym tekstem, parametry: tekst, antyalias, kolor, tło.</dd>
 <dt id="term-pygame-event-get">pygame.event.get()</dt>
@@ -647,18 +658,18 @@ Zmodyfikuj funkcję rysującą pole gry tak, aby komputer rysował krzyżyki, a 
 <dt id="term-sdl-simple-directmedia-layer">SDL (Simple DirectMedia Layer)</dt>
 <dd>międzyplatformowa biblioteka ułatwiająca tworzenie gier i programów multimedialnych.</dd>
 <dt id="term-rect">Rect</dt>
-<dd>obiekt <code class="docutils literal"><span class="pre">pygame.Rect</span></code> przechowujący współrzędne prostokąta; <code class="docutils literal"><span class="pre">.centerx,</span> <span class="pre">.x,</span> <span class="pre">.y,</span> <span class="pre">.top,</span> <span class="pre">.bottom,</span> <span class="pre">.left,</span> <span class="pre">.right</span></code> – wirtualne własności obiektu prostokąta określające jego położenie; <code class="docutils literal"><span class="pre">.colliderect()</span></code> – metoda sprawdza czy dwa prostokąty nachodzą na siebie.</dd>
+<dd>obiekt pygame.Rect przechowujący współrzędne prostokąta; <code class="docutils literal"><span class="pre">.centerx,</span> <span class="pre">.x,</span> <span class="pre">.y,</span> <span class="pre">.top,</span> <span class="pre">.bottom,</span> <span class="pre">.left,</span> <span class="pre">.right</span></code> – wirtualne własności obiektu prostokąta określające jego położenie; <code class="docutils literal"><span class="pre">.colliderect()</span></code> – metoda sprawdza czy dwa prostokąty nachodzą na siebie.</dd>
 </dl>
 </div>
 <div class="section" id="metryka">
-<h3>11.5.3. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
+<h3>10.5.3. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;, Łukasz Zarzecki</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-11-04 o 21:55</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-11-09 o 18:42</td>
 </tr>
 </tbody>
 </table>
@@ -694,10 +705,10 @@ Zmodyfikuj funkcję rysującą pole gry tak, aby komputer rysował krzyżyki, a 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tictactoe/index.html" class="btn btn-neutral float-right" title="12. Gra w Kółko i Krzyżyk (obj)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../tictactoe/index.html" class="btn btn-neutral float-right" title="11. Gra w Kółko i Krzyżyk (obj)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../life/index.html" class="btn btn-neutral" title="10. Gra w życie Conwaya"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../pong/index.html" class="btn btn-neutral" title="9. Gra w Ponga (obj)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
