@@ -454,7 +454,7 @@ Biblioteka PyGame ułatwia tworzenie aplikacji multimedialnych, w tym gier.</p>
 <li>Martwa komórka z 3 żywymi sąsiadami ożywa.</li>
 </ol>
 <p>Funkcja iteruje po każdym elemencie <code class="docutils literal"><span class="pre">POLA_GRY</span></code> i sprawdza stan sąsiadów każdej komórki, w wierszu 1 powyżej komórki, w wierszu 2 na tym samym poziomie i w wierszu 3 poniżej. Konstrukcja <code class="docutils literal"><span class="pre">try...except</span></code> pozwala obsłużyć sytuacje wyjątkowe (błędy), a więc komórki skrajne, które nie mają sąsiadów u góry czy u dołu, z lewej bądź z prawej strony: w takim przypadku wywoływana jest instrukcja <code class="docutils literal"><span class="pre">pass</span></code>, czyli nie rób nic :-). Końcowa złożona instrukcja warunkowa <code class="docutils literal"><span class="pre">if</span></code> ożywia lub uśmierca sprawdzaną komórkę w zależności od stanu sąsiednich komórek (czyli zmiennej <code class="docutils literal"><span class="pre">populacja</span></code>).</p>
-<p>Zadaniem funkcji <code class="docutils literal"><span class="pre">rysuj_populacje()</span></code> jest narysowanie kwadratów (obiekty <a class="reference internal" href="#term-rect"><em class="xref std std-term">Rect</em></a>) o białych bokach w rozmiarze 10 pikseli dla pól (elementów), które w liście <code class="docutils literal"><span class="pre">POLE_GRY</span></code> są żywe (mają wartość 1).</p>
+<p>Zadaniem funkcji <code class="docutils literal"><span class="pre">rysuj_populacje()</span></code> jest narysowanie kwadratów (obiekty <a class="reference internal" href="../tictactoe_str/index.html#term-rect"><em class="xref std std-term">Rect</em></a>) o białych bokach w rozmiarze 10 pikseli dla pól (elementów), które w liście <code class="docutils literal"><span class="pre">POLE_GRY</span></code> są żywe (mają wartość 1).</p>
 </div>
 <div class="section" id="glowna-petla-programu">
 <h2>12.3. Główna pętla programu<a class="headerlink" href="#glowna-petla-programu" title="Permalink to this headline">¶</a></h2>
@@ -562,7 +562,10 @@ Spróbuj zmodyfikować kod tak, aby plansza gry była biała, a komórki rysowan
 jako kolorowe kwadraty o różniącym się od wypełnienia obramowaniu.</div></blockquote>
 <div class="section" id="zrodla">
 <h3>12.4.1. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h3>
-<p>Wszystkie kody możesz pobrać w formie archiwum: <a class="reference download internal" href="../_downloads/life_str.zip"><code class="xref download docutils literal"><span class="pre">life_str.zip</span></code></a></p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/life_str.zip"><code class="xref download docutils literal"><span class="pre">life_str.zip</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/life_str.pdf"><code class="xref download docutils literal"><span class="pre">life_str.pdf</span></code></a></li>
+</ul>
 </div>
 <div class="section" id="slownik">
 <h3>12.4.2. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
@@ -609,7 +612,7 @@ jako kolorowe kwadraty o różniącym się od wypełnienia obramowaniu.</div></b
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Łukasz Zarzecki, Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-11-09 o 18:50</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-11-13 o 23:10</td>
 </tr>
 </tbody>
 </table>
