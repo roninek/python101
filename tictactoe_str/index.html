@@ -157,7 +157,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../life_str/index.html#pocwicz-sam">12.4. Poćwicz sam</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../life/index.html">13. Gra w życie Conwaya</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../life/index.html">13. Gra w życie Conwaya (obj)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../life/index.html#przygotowanie">13.1. Przygotowanie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../life/index.html#okienko-gry">13.2. Okienko gry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../life/index.html#tworzymy-matryce-zycia">13.3. Tworzymy matrycę życia</a></li>
@@ -445,12 +445,12 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
 
     <span class="c"># sprawdź, czy komputer może wygrać</span>
     <span class="n">pole</span> <span class="o">=</span> <span class="n">sprawdz_pola</span><span class="p">(</span><span class="n">uklady_wygrywam</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">pole</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pole</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">postaw_znak</span><span class="p">(</span><span class="n">pole</span><span class="p">,</span> <span class="n">RUCH</span><span class="p">)</span>
 
     <span class="c"># jeżeli komputer nie może wygrać, blokuj gracza</span>
     <span class="n">pole</span> <span class="o">=</span> <span class="n">sprawdz_pola</span><span class="p">(</span><span class="n">uklady_blokuje</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">pole</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pole</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">postaw_znak</span><span class="p">(</span><span class="n">pole</span><span class="p">,</span> <span class="n">RUCH</span><span class="p">)</span>
 
     <span class="c"># jeżeli nie można wygrać i gracza nie trzeba blokować, wylosuj pole</span>
@@ -464,7 +464,7 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
 </td></tr></table></div>
 <p>Za sposób gry komputera odpowiada funkcja <code class="docutils literal"><span class="pre">ai_ruch()</span></code> (<em>ai</em> – ang. <em>artificial intelligence</em>, sztuczna inteligencja). Na początku zawiera ona definicje dwóch list (<code class="docutils literal"><span class="pre">uklady_wygrywam,</span> <span class="pre">uklady_blokuje</span></code>), zawierających układy wartości, dla których komputer wygrywa oraz które powinien zablokować, aby nie wygrał gracz. O tym, które pole należy zaznaczyć, decyduje funkcja <code class="docutils literal"><span class="pre">sprawdz_pola()</span></code> przyjmująca jako argument najpierw układy wygrywające, później blokujące.</p>
 <p>Podstawą działania funkcji <code class="docutils literal"><span class="pre">sprawdz_pola()</span></code> jest lista <code class="docutils literal"><span class="pre">POLA_INDEKSY</span></code> zawierająca jako elementy listy indeksów pól tworzących wiersze, kolumny i przekątne <code class="docutils literal"><span class="pre">POLA_GRY</span></code> (czyli planszy). Pętla <code class="docutils literal"><span class="pre">for</span> <span class="pre">lista</span> <span class="pre">in</span> <span class="pre">POLA_INDEKSY:</span></code> pobiera kolejne listy, tworzy w liście pomocniczej kol trójkę wartości odczytanych z <code class="docutils literal"><span class="pre">POLA_GRY</span></code> i próbuje ją dopasować do przekazanego jako argument układu wygrywającego lub blokującego. Jeżeli znajdzie dopasowanie zwraca liczbę oznaczającą gracza lub komputer, o ile opcjonalny argument <code class="docutils literal"><span class="pre">WYGRANY</span></code> ma wartość inną niż <code class="docutils literal"><span class="pre">None</span></code>, w przeciwnym razie zwracany jest indeks <code class="docutils literal"><span class="pre">POLA_GRY</span></code>, na którym komputer powinien postawić swój znak.</p>
-<p>Jeżeli indeks zwrócony przez funkcję <code class="docutils literal"><span class="pre">sprawdz_pola()</span></code> jest pozytywny, przekazywany jest do funkcji <code class="docutils literal"><span class="pre">postaw_znak()</span></code>, której zadaniem jest zapisanie w <code class="docutils literal"><span class="pre">POLU_GRY</span></code> pod otrzymanym indeksem wartości symbolizującej znak komputera (czyli 2) oraz nadanie i zwrócenie zmiennej RUCH wskazującej na gracza (wartość 1).</p>
+<p>Jeżeli indeks zwrócony przez funkcję <code class="docutils literal"><span class="pre">sprawdz_pola()</span></code> jest inny niż <code class="docutils literal"><span class="pre">None</span></code>, przekazywany jest do funkcji <code class="docutils literal"><span class="pre">postaw_znak()</span></code>, której zadaniem jest zapisanie w <code class="docutils literal"><span class="pre">POLU_GRY</span></code> pod otrzymanym indeksem wartości symbolizującej znak komputera (czyli 2) oraz nadanie i zwrócenie zmiennej RUCH wskazującej na gracza (wartość 1).</p>
 <p>O ile na planszy nie ma układu wygrywającego lub nie ma konieczności blokowania gracza, komputer w pętli losuje przypadkowe pole (<code class="docutils literal"><span class="pre">random.randrange(0,9)</span></code>), dopóki nie znajdzie pustego, i przekazuje jego indeks do funkcji <code class="docutils literal"><span class="pre">postaw_znak()</span></code>.</p>
 </div>
 <div class="section" id="glowna-petla-programu">
@@ -564,10 +564,10 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
         <span class="n">tekst</span> <span class="o">=</span> <span class="s">u&#39;Wygrał komputer!&#39;</span>
     <span class="k">elif</span> <span class="n">WYGRANY</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="n">tekst</span> <span class="o">=</span> <span class="s">&#39;Remis!&#39;</span>
-    <span class="n">text_surf</span> <span class="o">=</span> <span class="n">fontObj</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
-    <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text_surf</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
-    <span class="n">text_rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
-    <span class="n">OKNOGRY</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text_surf</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+    <span class="n">tekst_obr</span> <span class="o">=</span> <span class="n">fontObj</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+    <span class="n">tekst_prost</span> <span class="o">=</span> <span class="n">tekst_obr</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+    <span class="n">tekst_prost</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+    <span class="n">OKNOGRY</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">tekst_obr</span><span class="p">,</span> <span class="n">tekst_prost</span><span class="p">)</span>
 
 <span class="c"># pętla główna programu</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
@@ -583,7 +583,7 @@ Biblioteka <a class="reference external" href="http://www.pygame.org/wiki/tutori
                 <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">button</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c"># jeżeli naciśnięto pierwszy przycisk</span>
                         <span class="n">mouseX</span><span class="p">,</span> <span class="n">mouseY</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span> <span class="c"># rozpakowanie tupli</span>
-                        <span class="n">pole</span> <span class="o">=</span> <span class="p">((</span><span class="n">mouseY</span><span class="o">//</span><span class="mi">50</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">mouseX</span><span class="o">//</span><span class="mi">50</span><span class="p">)</span> <span class="c"># wylicz indeks klikniętego pola</span>
+                        <span class="n">pole</span> <span class="o">=</span> <span class="p">((</span><span class="n">mouseY</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">mouseX</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span> <span class="c"># wylicz indeks klikniętego pola</span>
                         <span class="n">RUCH</span> <span class="o">=</span> <span class="n">postaw_znak</span><span class="p">(</span><span class="n">pole</span><span class="p">,</span> <span class="n">RUCH</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">RUCH</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
                 <span class="n">RUCH</span> <span class="o">=</span> <span class="n">ai_ruch</span><span class="p">(</span><span class="n">RUCH</span><span class="p">)</span>
@@ -626,6 +626,19 @@ Zmodyfikuj funkcję rysującą pole gry tak, aby komputer rysował krzyżyki, a 
 <li><a class="reference download internal" href="../_downloads/tictactoe_str.zip"><code class="xref download docutils literal"><span class="pre">tictactoe_str.zip</span></code></a></li>
 <li><a class="reference download internal" href="../_downloads/tictactoe_str.pdf"><code class="xref download docutils literal"><span class="pre">tictactoe_str.pdf</span></code></a></li>
 </ul>
+<p>Kolejne wersje tworzenego kodu można pobierać wydając polecenia:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span>git checkout -f tic/str1
+~/python101<span class="nv">$ </span>git checkout -f tic/str2
+~/python101<span class="nv">$ </span>git checkout -f tic/str3
+~/python101<span class="nv">$ </span>git checkout -f tic/str4
+</pre></div>
+</div>
+<p>Uruchamiamy je wydając polecenie:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span><span class="nb">cd </span>docs/tictactoe_str
+~/python101/docs/tictactoe_str<span class="nv">$ </span>python tictactoe_strx.py
+</pre></div>
+</div>
+<p>- gdzie <em>x</em> jest numerem kolejnej wersji kodu.</p>
 </div>
 <div class="section" id="slownik">
 <h3>10.5.2. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
@@ -672,7 +685,7 @@ Zmodyfikuj funkcję rysującą pole gry tak, aby komputer rysował krzyżyki, a 
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;, Łukasz Zarzecki</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-11-13 o 23:10</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-11-18 o 18:26</td>
 </tr>
 </tbody>
 </table>
