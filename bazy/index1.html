@@ -249,7 +249,7 @@ wbudowanego modułu <a class="reference external" href="https://docs.python.org/
 <a class="reference external" href="http://peewee.readthedocs.org/en/latest/index.html">Peewee</a> oraz <a class="reference external" href="http://www.sqlalchemy.org">SQLAlchemy</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Poniższe przykłady wykorzystywać będą prostą, wydajną, wykorzystywaną
+<p class="last">Poniższe przykłady wykorzystywać będą prostą, wydajną, stosowaną
 zarówno w prostych, jak i zaawansowanych projektach, <a class="reference external" href="http://www.sqlite.org/">bazę danych SQLite3</a>.
 Gdy zajdzie potrzeba, można je jednak wyorzystać w pracy z innymi
 bazami, takimi jak np. MySQL, MariaDB czy PostgresSQL.
@@ -262,7 +262,7 @@ z pobranego <a class="reference external" href="http://www.sqlite.org/download.h
 <div class="section" id="sql">
 <h2>14.1. SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
 <p>Jak wiadomo, do obsługi bazy danych wykorzystywany jest strukturalny
-język zapytań <a class="reference external" href="http://pl.wikipedia.org/wiki/SQL">SQL</a> Jest on m.in. przedmiotem nauki na lekcjach informatyki
+język zapytań <a class="reference external" href="http://pl.wikipedia.org/wiki/SQL">SQL</a>. Jest on m.in. przedmiotem nauki na lekcjach informatyki
 na poziomie rozszerzonym w szkołach ponadgimnazjalnych. Używając Pythona
 można łatwo i efektywnie pokazać używanie SQL-a, zarówno z poziomu wiersza
 poleceń, jak również z poziomu aplikacji internetowych WWW. Na początku
@@ -313,7 +313,7 @@ Skrypt możemy uruchomić poleceniem podanym niżej, ale na razie nic się jeszc
 </div>
 <div class="section" id="model-bazy">
 <h3>14.1.2. Model bazy<a class="headerlink" href="#model-bazy" title="Permalink to this headline">¶</a></h3>
-<p>Zanim będziemy mogli wykonywać podstaowe operacje na bazie danych określane skrótem
+<p>Zanim będziemy mogli wykonywać podstawowe operacje na bazie danych określane skrótem
 <a class="reference internal" href="#term-crud"><em class="xref std std-term">CRUD</em></a> – <em>Create</em> (tworzenie), <em>Read</em> (odczyt), <em>Update</em> (aktualizacja), <em>Delete</em> (usuwanie) -
 musimy utworzyć tabele i relacje między nimi według zaprojektowanego schematu.
 Do naszego pliku dopisujemy więc następujący kod:</p>
@@ -433,7 +433,7 @@ bazę do interpretera. Do dyspozycji mamy polecenia:</p>
 argumentów wspominanej metody <code class="docutils literal"><span class="pre">.execute()</span></code>, możemy też dodawać wiele rekordów
 na raz posługując się funkcją <code class="docutils literal"><span class="pre">.executemany()</span></code>. Zarówno w jednym, jak i drugim
 przypadku wartości pól nie należy umieszczać bezpośrednio w zapytaniu SQL
-ze względu na możliwe błędy lub ataki typu SQL injection (&#8220;wstrzyknięcia&#8221; kodu SQL).
+ze względu na możliwe błędy lub ataki typu <cite>SQL injection &lt;http://pl.wikipedia.org/wiki/SQL_injection&gt;</cite> (&#8220;wstrzyknięcia&#8221; kodu SQL).
 Zamiast tego używamy zastępników (ang. <em>placeholder</em>) w postaci znaków zapytania.
 Wartości przekazujemy w tupli lub tuplach jako drugi argument.</p>
 <p>Warto zwrócić uwagę, na trudności wynikające z relacyjnej struktury bazy danych.
@@ -511,8 +511,8 @@ metody <code class="docutils literal"><span class="pre">.execute()</span></code>
 Póżniej konstruujemy zapytanie <em>UPDATE</em> wykorzystując zastępniki i wartości
 przekazywane w tupli (zwróć uwagę na dodatkowy przecinek(!)) – w efekcie zmieniamy
 przypisanie ucznia do klasy.</p>
-<p>Nastęþnie usuwamy dane ucznia o identyfikatorze 3, używając polecenia SQL
-<em>DELETE</em>. Wywołanie funkcji <code class="docutils literal"><span class="pre">czytajdane()</span></code> wyśwetla zawartość bazy po zmianach.</p>
+<p>Następnie usuwamy dane ucznia o identyfikatorze 3, używając polecenia SQL
+<em>DELETE</em>. Wywołanie funkcji <code class="docutils literal"><span class="pre">czytajdane()</span></code> wyświetla zawartość bazy po zmianach.</p>
 <p>Na koniec zamykamy połącznie z bazą, wywołując metodę <code class="docutils literal"><span class="pre">.close()</span></code>, dzięki
 czemu zapisujemy dokonane zmiany i zwalniamy zarezerwowane przez skrypt zasoby.</p>
 </div>
@@ -558,6 +558,20 @@ którego celem jest wydobycie z bazy określonych danych lub ich modyfikacja.</d
 <ul class="simple">
 <li><a class="reference download internal" href="../_downloads/sqlraw.zip"><code class="xref download docutils literal"><span class="pre">sqlraw.zip</span></code></a></li>
 </ul>
+<p>Kolejne wersje tworzenego kodu można pobierać wydając polecenia:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span>git checkout -f sqlraw1
+~/python101<span class="nv">$ </span>git checkout -f sqlraw2
+~/python101<span class="nv">$ </span>git checkout -f sqlraw3
+~/python101<span class="nv">$ </span>git checkout -f sqlraw4
+~/python101<span class="nv">$ </span>git checkout -f sqlraw5
+</pre></div>
+</div>
+<p>Uruchamiamy je wydając polecenie:</p>
+<div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span><span class="nb">cd </span>docs/bazy
+~/python101/docs/bazy<span class="nv">$ </span>python sqlrawx.py
+</pre></div>
+</div>
+<p>- gdzie <em>x</em> jest numerem kolejnej wersji kodu.</p>
 </div>
 <div class="section" id="metryka">
 <h3>14.2.4. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
@@ -567,7 +581,7 @@ którego celem jest wydobycie z bazy określonych danych lub ich modyfikacja.</d
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Robert Bednarz (<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-06 o 21:00</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-06 o 21:47</td>
 </tr>
 </tbody>
 </table>
