@@ -170,6 +170,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bazy/index1.html">14. Bazy danych w Pythonie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../bazy/index1.html#sql">14.1. SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bazy/index1.html#systemy-orm">14.2. Systemy ORM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../quiz/index.html">15. Quiz – aplikacja internetowa</a><ul>
@@ -247,7 +248,7 @@
 <div class="section" id="katalog-plik-i-przeznaczenie-aplikacji">
 <h2>16.1. Katalog, plik i przeznaczenie aplikacji<a class="headerlink" href="#katalog-plik-i-przeznaczenie-aplikacji" title="Permalink to this headline">¶</a></h2>
 <p>Zaczynamy od utworzenia katalogu projektu ToDo w katalogu domowym użytkownika, a w nim pliku <code class="file docutils literal"><span class="pre">todo.py</span></code>:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~ <span class="nv">$ </span>mkdir todo; <span class="nb">cd </span>todo; touch todo.py
+<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~ <span class="nv">$ </span>mkdir todo<span class="p">;</span> <span class="nb">cd </span>todo<span class="p">;</span> touch todo.py
 </pre></div>
 </div>
 <p>Aplikacja ma pozwalać na dodawanie z określoną datą, przeglądanie i oznaczanie jako wykonane różnych zadań, które zapisywane będą w bazie danych SQLite.</p>
@@ -354,7 +355,7 @@ values (null, &#39;Nakarmić psa&#39;, 0, datetime(current_timestamp));
 <p>Tworzymy bazę danych w pliku <code class="file docutils literal"><span class="pre">db.sqlite</span></code>, łączymy się z nią i próbujemy wyświetlić dane, które powinny były zostać zapisane w tabeli <em>entries</em>:</p>
 <div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>sqlite3 db.sqlite &lt; schema.sql
 sqlite3 db.sqlite
-<span class="k">select</span> <span class="se">\*</span> from entries;
+<span class="k">select</span> <span class="se">\*</span> from entries<span class="p">;</span>
 </pre></div>
 </div>
 <div class="figure">
@@ -822,7 +823,7 @@ Wprowadź osobne listy zadań dla każdego użytkownika.</div></blockquote>
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Tomasz Nowacki,
 Robert Bednarz</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-06 o 15:01</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-11 o 15:19</td>
 </tr>
 </tbody>
 </table>
@@ -834,7 +835,7 @@ Robert Bednarz</td>
         <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
     Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
     udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
-    Centrum Edudkacji Europejsci</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
     Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
 </p>
 

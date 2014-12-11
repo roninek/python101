@@ -170,6 +170,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../bazy/index1.html">14. Bazy danych w Pythonie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../bazy/index1.html#sql">14.1. SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bazy/index1.html#systemy-orm">14.2. Systemy ORM</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">15. Quiz – aplikacja internetowa</a><ul>
@@ -247,7 +248,7 @@
 <div class="section" id="struktura-katalogow">
 <h2>15.1. Struktura katalogów<a class="headerlink" href="#struktura-katalogow" title="Permalink to this headline">¶</a></h2>
 <p>W katalogu użytkownika tworzymy nowy katalog dla aplikacji <code class="file docutils literal"><span class="pre">quiz</span></code>, a w nim plik główny <code class="file docutils literal"><span class="pre">quiz.py</span></code>:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~<span class="nv">$ </span>mkdir quiz; <span class="nb">cd </span>quiz; touch quiz.py
+<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~<span class="nv">$ </span>mkdir quiz<span class="p">;</span> <span class="nb">cd </span>quiz<span class="p">;</span> touch quiz.py
 </pre></div>
 </div>
 <p>Aplikacja na przykładzie quizu – użytkownik zaznacza w formularzu poprawne odpowiedzi na pytania i otrzymuje ocenę – ma pokazać podstawową strukturę frameworka Flask.</p>
@@ -326,7 +327,7 @@ uproszczeniu możemy widok utożsamiać z pojedynczą stroną w ramach aplikacji
 </pre></div>
 </td></tr></table></div>
 <p>Zauważmy, że widok <code class="docutils literal"><span class="pre">index()</span></code> za pomocą dekoratora <code class="docutils literal"><span class="pre">&#64;app.route('/')</span></code> związaliśmy z adresem głównym (/). Dalej w katalogu <code class="file docutils literal"><span class="pre">quiz</span></code> tworzymy podkatalog <code class="file docutils literal"><span class="pre">templates</span></code>, a w nim szablon <code class="file docutils literal"><span class="pre">index.html</span></code>, wydajemy polecenia w terminalu:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~/python101/modul3/zadanie1<span class="nv">$ </span>mkdir templates; <span class="nb">cd </span>templates; touch index.html
+<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~/python101/modul3/zadanie1<span class="nv">$ </span>mkdir templates<span class="p">;</span> <span class="nb">cd </span>templates<span class="p">;</span> touch index.html
 </pre></div>
 </div>
 <p>Do pliku <code class="file docutils literal"><span class="pre">index.html</span></code> wstawiamy przykładowy kod HTML:</p>
@@ -655,7 +656,7 @@ pytania), jak i <a class="reference internal" href="../todo/index.html#term-post
 Robert Bednarz,
 Janusz Skonieczny</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-06 o 15:01</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-11 o 15:19</td>
 </tr>
 </tbody>
 </table>
@@ -667,7 +668,7 @@ Janusz Skonieczny</td>
         <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
     Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
     udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
-    Centrum Edudkacji Europejsci</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
     Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
 </p>
 

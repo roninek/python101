@@ -397,7 +397,7 @@ Biblioteka PyGame ułatwia tworzenie aplikacji multimedialnych, w tym gier.</p>
 <span class="n">pilka_prost</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">OKNOGRY_WYS</span><span class="o">/</span><span class="mi">2</span>
 </pre></div>
 </td></tr></table></div>
-<p>Schemat dodawania obiektów graficznych jest prosty. Po określeniu wymiarów obiektu (szerokości i wysokości), tworzymy powierzchnię (<code class="docutils literal"><span class="pre">pygame.Surface</span></code>), którą wypełniamy odpowiednim kolorem (<code class="docutils literal"><span class="pre">.fill()</span></code>). W przypadku piłki do metody <code class="docutils literal"><span class="pre">Surface()</span></code> przekazujemy dodatkowe argumenty (<code class="docutils literal"><span class="pre">pygame.SRCALPHA</span></code>) umożliwiające uzyskanie powierzchni z przezroczystymi pikselami (z&nbsp;kanałem alpha), na której rysujemy koło (<code class="docutils literal"><span class="pre">pygame.draw.ellipse()</span></code>) o&nbsp;podanym kolorze, środku i rozmiarach. W kolejnym kroku pobieramy prostokąt (np. <code class="docutils literal"><span class="pre">paletka1_prost</span> <span class="pre">=</span> <span class="pre">paletka1_obr.get_rect()</span></code>) zajmowany przez obiekt, za pomocą którego łatwiej ustawić wstępne położenie obiektu, a później nim manipulować (właściwości <code class="docutils literal"><span class="pre">.x</span></code> i <code class="docutils literal"><span class="pre">.y</span></code> obiektu <a class="reference internal" href="#term-rect"><em class="xref std std-term">Rect</em></a> zwróconego przez metodę <code class="docutils literal"><span class="pre">.get_rect()</span></code>).</p>
+<p>Schemat dodawania obiektów graficznych jest prosty. Po określeniu wymiarów obiektu (szerokości i wysokości), tworzymy powierzchnię (<code class="docutils literal"><span class="pre">pygame.Surface</span></code>), którą wypełniamy odpowiednim kolorem (<code class="docutils literal"><span class="pre">.fill()</span></code>). W przypadku piłki do metody <code class="docutils literal"><span class="pre">Surface()</span></code> przekazujemy dodatkowe argumenty (<code class="docutils literal"><span class="pre">pygame.SRCALPHA</span></code>) umożliwiające uzyskanie powierzchni z przezroczystymi pikselami (z&nbsp;kanałem alpha), na której rysujemy koło (<code class="docutils literal"><span class="pre">pygame.draw.ellipse()</span></code>) o&nbsp;podanym kolorze, środku i rozmiarach. W kolejnym kroku pobieramy prostokąt (np. <code class="docutils literal"><span class="pre">paletka1_prost</span> <span class="pre">=</span> <span class="pre">paletka1_obr.get_rect()</span></code>) zajmowany przez obiekt, za pomocą którego łatwiej ustawić wstępne położenie obiektu, a później nim manipulować (właściwości <code class="docutils literal"><span class="pre">.x</span></code> i <code class="docutils literal"><span class="pre">.y</span></code> obiektu <a class="reference internal" href="../tictactoe_str/index.html#term-rect"><em class="xref std std-term">Rect</em></a> zwróconego przez metodę <code class="docutils literal"><span class="pre">.get_rect()</span></code>).</p>
 </div>
 <div class="section" id="wyswietlanie-tekstu">
 <h2>8.3. Wyświetlanie tekstu<a class="headerlink" href="#wyswietlanie-tekstu" title="Permalink to this headline">¶</a></h2>
@@ -720,7 +720,7 @@ Dodaj trzecią paletkę, która co jakiś czas będzie &#8220;przelatywać&#8221
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Łukasz Zarzecki, Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-06 o 21:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-11 o 15:19</td>
 </tr>
 </tbody>
 </table>
@@ -732,7 +732,7 @@ Dodaj trzecią paletkę, która co jakiś czas będzie &#8220;przelatywać&#8221
         <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
     Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
     udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
-    Centrum Edudkacji Europejsci</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
     Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
 </p>
 

@@ -459,7 +459,7 @@ Biblioteka PyGame ułatwia tworzenie aplikacji multimedialnych, w tym gier.</p>
 <li>Martwa komórka z 3 żywymi sąsiadami ożywa.</li>
 </ol>
 <p>Funkcja iteruje po każdym elemencie <code class="docutils literal"><span class="pre">POLA_GRY</span></code> i sprawdza stan sąsiadów każdej komórki, w wierszu 1 powyżej komórki, w wierszu 2 na tym samym poziomie i w wierszu 3 poniżej. Konstrukcja <code class="docutils literal"><span class="pre">try...except</span></code> pozwala obsłużyć sytuacje wyjątkowe (błędy), a więc komórki skrajne, które nie mają sąsiadów u góry czy u dołu, z lewej bądź z prawej strony: w takim przypadku wywoływana jest instrukcja <code class="docutils literal"><span class="pre">pass</span></code>, czyli nie rób nic :-). Końcowa złożona instrukcja warunkowa <code class="docutils literal"><span class="pre">if</span></code> ożywia lub uśmierca sprawdzaną komórkę w zależności od stanu sąsiednich komórek (czyli zmiennej <code class="docutils literal"><span class="pre">populacja</span></code>).</p>
-<p>Zadaniem funkcji <code class="docutils literal"><span class="pre">rysuj_populacje()</span></code> jest narysowanie kwadratów (obiekty <a class="reference internal" href="../pong_str/index.html#term-rect"><em class="xref std std-term">Rect</em></a>) o białych bokach w rozmiarze 10 pikseli dla pól (elementów), które w liście <code class="docutils literal"><span class="pre">POLE_GRY</span></code> są żywe (mają wartość 1).</p>
+<p>Zadaniem funkcji <code class="docutils literal"><span class="pre">rysuj_populacje()</span></code> jest narysowanie kwadratów (obiekty <a class="reference internal" href="../tictactoe_str/index.html#term-rect"><em class="xref std std-term">Rect</em></a>) o białych bokach w rozmiarze 10 pikseli dla pól (elementów), które w liście <code class="docutils literal"><span class="pre">POLE_GRY</span></code> są żywe (mają wartość 1).</p>
 </div>
 <div class="section" id="glowna-petla-programu">
 <h2>12.3. Główna pętla programu<a class="headerlink" href="#glowna-petla-programu" title="Permalink to this headline">¶</a></h2>
@@ -629,7 +629,7 @@ jako kolorowe kwadraty o różniącym się od wypełnienia obramowaniu.</div></b
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Łukasz Zarzecki, Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-06 o 21:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-11 o 15:19</td>
 </tr>
 </tbody>
 </table>
@@ -641,7 +641,7 @@ jako kolorowe kwadraty o różniącym się od wypełnienia obramowaniu.</div></b
         <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
     Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
     udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
-    Centrum Edudkacji Europejsci</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
     Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
 </p>
 
