@@ -1,0 +1,9 @@
+Zaczynamy!
+----------
+
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+
+    git
+    hg
