@@ -169,6 +169,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">13. Bazy danych w Pythonie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sql">13.1. SQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#systemy-orm">13.2. Systemy ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialy">13.3. Materiały</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../quiz/index.html">14. Quiz – aplikacja internetowa</a><ul>
@@ -613,17 +614,12 @@ tak jak robiliśmy to już wczesniej, jako argument metody <code class="docutils
 <div class="section" id="pocwicz-sam">
 <h3>13.1.7. Poćwicz sam<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div>Spróbuj napisać prosty konsolowy interfejs do zarządzania bazą danych.
-Wykorzystaj omówiony kod, aby umożliwić użytkownikowi: przeglądanie,
-wstawianie nowych danych z klawiatury, modyfikowanie i ich usuwanie.</div></blockquote>
-</div>
-<div class="section" id="materialy">
-<h3>13.1.8. Materiały<a class="headerlink" href="#materialy" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Dokumentacja modułu sqlite3 Pythona: <a class="reference external" href="https://docs.python.org/2/library/sqlite3.html">https://docs.python.org/2/library/sqlite3.html</a></li>
-<li>Dokumentacja bazy SQLite3: <a class="reference external" href="http://www.sqlite.org/">http://www.sqlite.org/</a></li>
-<li>O języku SQL: <a class="reference external" href="http://pl.wikipedia.org/wiki/SQL">http://pl.wikipedia.org/wiki/SQL</a></li>
-</ol>
+<div><p>Postaraj się przedstawioną aplikację wyposażyć w konsolowy interfejs,
+który umożliwi operacje odczytu, zapisu, modyfikowania i usuwania rekordów.
+Dane powinny być pobierane z klawiatury od użytkownika.</p>
+<p>Zobacz, jak zintegrować obsługę bazy danych przy użyciu modułu <em>sqlite3</em>
+Pythona z aplikacją internetową na przykładzie scenariusza &#8220;ToDo&#8221;.</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="systemy-orm">
@@ -645,11 +641,13 @@ w trzech krokach:</p>
 w Pythona modułu sqlite3, zrealizować przy użyciu technik ORM.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Wyjaśnienia podanego niżej kodu są w wielu miejscach uproszczone,
-ze względu na przejrzystość i poglądowość instrukcji nie wgłębiamy
-się w techniczne różnice w implementacji technik ORM w obydwu omawianych
-rozwiązaniach. Również terminy, których używamy, nie zawsze ściśle
-odpowiadają opisywanym mechanizmom.</p>
+<p class="last">Wyjaśnienia podanego niżej kodu są w wielu miejscach uproszczone.
+Ze względu na przejrzystość i poglądowość instrukcji nie wgłębiamy
+się w techniczne różnice w implementacji technik ORM w obydwu
+rozwiązaniach. Poznanie ich interfejsu jest wystarczające, aby
+efektywnie obsługiwać bazy danych. Co ciekawe, dopóki używamy
+bazy SQLite3, systemy ORM można traktować jako swego rodzaju
+nakładkę na owmówiony wyżej moduł <em>sqlite3</em> wbudowany w Pythona.</p>
 </div>
 <div class="section" id="id2">
 <h3>13.2.1. Połączenie z bazą<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -828,11 +826,11 @@ powiązanie. W tym wypadku wywołanie typu <code class="docutils literal"><span 
 reprezentujący klasę, do której przypisano ucznia.</p>
 <p>Po zdefiniowaniu przemyślanego modelu, co jest relatywnie najtrudniejsze,
 trzeba przetestować działanie mechanizmów ORM w praktyce, czyli utworzyć
-tabele i kolumny w bazie. W <code class="docutils literal"><span class="pre">Peewee</span></code> łączymy się z bazą i wywołujemy
+tabele i kolumny w bazie. W Peewee łączymy się z bazą i wywołujemy
 metodę <code class="docutils literal"><span class="pre">.create_tables()</span></code>, której podajemy nazwy klas reprezentujących
 tabele. Dodatkowy parametr <code class="docutils literal"><span class="pre">True</span></code> powoduje sprawdzenie przed utworzeniem,
 czy tablic w bazie już nie ma. SQLAlchemy wymaga tylko wywołania metody
-<code class="docutils literal"><span class="pre">.create_all()</span></code> kontenera metadata zawartego w klasie bazowej.</p>
+<code class="docutils literal"><span class="pre">.create_all()</span></code> kontenera <em>metadata</em> zawartego w klasie bazowej.</p>
 <p>Podane kody można już uruchomić, oba powinny utworzyć bazę <code class="docutils literal"><span class="pre">test.db</span></code>
 w katalogu, z którego uruchamiamy skrypt.</p>
 <div class="admonition note">
@@ -846,8 +844,247 @@ ilustrujący SQLAlchemy.</p>
 <img alt="../_images/sqlite3_2.png" src="../_images/sqlite3_2.png" />
 </div>
 </div>
+<div class="section" id="operacje-crud">
+<h3>13.2.3. Operacje CRUD<a class="headerlink" href="#operacje-crud" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="wstawianie-i-odczytywanie-danych">
+<h4>13.2.3.1. Wstawianie i odczytywanie danych<a class="headerlink" href="#wstawianie-i-odczytywanie-danych" title="Permalink to this headline">¶</a></h4>
+<p>Podstawowe operacje wykonywane na bazie, np, wstawianie i odczytywanie danych,
+w Peewee wykonywane są za pomocą obiektów reprezentujących rekordy
+zdefiniowanych tabel oraz ich metod. W SQLAlchemy oprócz obiektów
+wykorzystujemy metody sesji, w ramach której komunikujemy się z bazą.</p>
+<div class="code_no">Peewee nr <script>var code_no2 = code_no2 || 1; document.write(code_no2++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># dodajemy dwie klasy, jeżeli tabela jest pusta</span>
+<span class="k">if</span> <span class="n">Klasa</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">klasa</span> <span class="o">=</span> <span class="n">Klasa</span><span class="p">(</span><span class="n">nazwa</span> <span class="o">=</span> <span class="s">&#39;1A&#39;</span><span class="p">,</span> <span class="n">profil</span> <span class="o">=</span> <span class="s">&#39;matematyczny&#39;</span><span class="p">)</span>
+    <span class="n">klasa</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">klasa</span> <span class="o">=</span> <span class="n">Klasa</span><span class="p">(</span><span class="n">nazwa</span> <span class="o">=</span> <span class="s">&#39;1B&#39;</span><span class="p">,</span> <span class="n">profil</span> <span class="o">=</span> <span class="s">&#39;humanistyczny&#39;</span><span class="p">)</span>
+    <span class="n">klasa</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c"># tworzymy instancję klasy Klasa reprezentującą klasę &quot;1A&quot;</span>
+<span class="n">klasa</span> <span class="o">=</span> <span class="n">Klasa</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Klasa</span><span class="o">.</span><span class="n">nazwa</span> <span class="o">==</span> <span class="s">&#39;1A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+<span class="c"># lista uczniów, których dane zapisane są w słownikach</span>
+<span class="n">uczniowie</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s">&#39;imie&#39;</span><span class="p">:</span><span class="s">&#39;Tomasz&#39;</span><span class="p">,</span> <span class="s">&#39;nazwisko&#39;</span><span class="p">:</span><span class="s">&#39;Nowak&#39;</span><span class="p">,</span> <span class="s">&#39;klasa&#39;</span><span class="p">:</span><span class="n">klasa</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&#39;imie&#39;</span><span class="p">:</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span> <span class="s">&#39;nazwisko&#39;</span><span class="p">:</span><span class="s">&#39;Kos&#39;</span><span class="p">,</span> <span class="s">&#39;klasa&#39;</span><span class="p">:</span><span class="n">klasa</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&#39;imie&#39;</span><span class="p">:</span><span class="s">&#39;Piotr&#39;</span><span class="p">,</span> <span class="s">&#39;nazwisko&#39;</span><span class="p">:</span><span class="s">&#39;Kowalski&#39;</span><span class="p">,</span> <span class="s">&#39;klasa&#39;</span><span class="p">:</span><span class="n">klasa</span> <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c"># dodajemy dane wielu uczniów</span>
+<span class="n">Uczen</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">uczniowie</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="c"># odczytujemy dane z bazy</span>
+<span class="k">def</span> <span class="nf">czytajdane</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">uczen</span> <span class="ow">in</span> <span class="n">Uczen</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Klasa</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">uczen</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">uczen</span><span class="o">.</span><span class="n">imie</span><span class="p">,</span> <span class="n">uczen</span><span class="o">.</span><span class="n">nazwisko</span><span class="p">,</span> <span class="n">uczen</span><span class="o">.</span><span class="n">klasa</span><span class="o">.</span><span class="n">nazwa</span>
+    <span class="k">print</span> <span class="s">&quot;&quot;</span>
+
+<span class="n">czytajdane</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="code_no">SQLAlchemy nr <script>var code_no3 = code_no3 || 1; document.write(code_no3++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># tworzymy sesję, która przechowuje obiekty i umożliwia &quot;rozmowę&quot; z bazą</span>
+<span class="n">BDSesja</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">baza</span><span class="p">)</span>
+<span class="n">sesja</span> <span class="o">=</span> <span class="n">BDSesja</span><span class="p">()</span>
+
+<span class="c"># dodajemy dwie klasy, jeżeli tabela jest pusta</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">sesja</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Klasa</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">():</span>
+    <span class="n">sesja</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Klasa</span><span class="p">(</span><span class="n">nazwa</span><span class="o">=</span><span class="s">&#39;1A&#39;</span><span class="p">,</span> <span class="n">profil</span><span class="o">=</span><span class="s">&#39;matematyczny&#39;</span><span class="p">))</span>
+    <span class="n">sesja</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Klasa</span><span class="p">(</span><span class="n">nazwa</span><span class="o">=</span><span class="s">&#39;1B&#39;</span><span class="p">,</span> <span class="n">profil</span><span class="o">=</span><span class="s">&#39;humanistyczny&#39;</span><span class="p">))</span>
+
+<span class="c"># tworzymy instancję klasy Klasa reprezentującą klasę &quot;1A&quot;</span>
+<span class="n">klasa</span> <span class="o">=</span> <span class="n">sesja</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Klasa</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Klasa</span><span class="o">.</span><span class="n">nazwa</span> <span class="o">==</span> <span class="s">&#39;1A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
+
+<span class="c"># dodajemy dane wielu uczniów</span>
+<span class="n">sesja</span><span class="o">.</span><span class="n">add_all</span><span class="p">([</span>
+    <span class="n">Uczen</span><span class="p">(</span><span class="n">imie</span><span class="o">=</span><span class="s">&#39;Tomasz&#39;</span><span class="p">,</span><span class="n">nazwisko</span><span class="o">=</span><span class="s">&#39;Nowak&#39;</span><span class="p">,</span><span class="n">klasa_id</span><span class="o">=</span><span class="n">klasa</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+    <span class="n">Uczen</span><span class="p">(</span><span class="n">imie</span><span class="o">=</span><span class="s">&#39;Jan&#39;</span><span class="p">,</span><span class="n">nazwisko</span><span class="o">=</span><span class="s">&#39;Kos&#39;</span><span class="p">,</span><span class="n">klasa_id</span><span class="o">=</span><span class="n">klasa</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+    <span class="n">Uczen</span><span class="p">(</span><span class="n">imie</span><span class="o">=</span><span class="s">&#39;Piotr&#39;</span><span class="p">,</span><span class="n">nazwisko</span><span class="o">=</span><span class="s">&#39;Kowalski&#39;</span><span class="p">,</span><span class="n">klasa_id</span><span class="o">=</span><span class="n">klasa</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">czytajdane</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">uczen</span> <span class="ow">in</span> <span class="n">sesja</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Uczen</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Klasa</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="k">print</span> <span class="n">uczen</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">uczen</span><span class="o">.</span><span class="n">imie</span><span class="p">,</span> <span class="n">uczen</span><span class="o">.</span><span class="n">nazwisko</span><span class="p">,</span> <span class="n">uczen</span><span class="o">.</span><span class="n">klasa</span><span class="o">.</span><span class="n">nazwa</span>
+    <span class="k">print</span> <span class="s">&quot;&quot;</span>
+
+<span class="n">czytajdane</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Dodawanie informacji w systemach ORM polega na utworzeniu instancji odpowiedniego
+obiektu i podaniu w jego konstruktorze wartości atrybutów reprezentujących pola rekordu:
+<code class="docutils literal"><span class="pre">Klasa(nazwa</span> <span class="pre">=</span> <span class="pre">'1A',</span> <span class="pre">profil</span> <span class="pre">=</span> <span class="pre">'matematyczny')</span></code>. Utworzony rekord zapisujemy metodą
+<code class="docutils literal"><span class="pre">.save()</span></code> obiektu w Peewee lub metodą <code class="docutils literal"><span class="pre">.add()</span></code> <a class="reference internal" href="#sesja"><em>sesji</em></a> w SQLAlchemy.
+Można również dodawać wiele rekordów na raz. Peewee oferuje metodę <code class="docutils literal"><span class="pre">.insert_many()</span></code>,
+która jako parametr przyjmuje listę słowników zawierających dane w formacie
+&#8220;klucz&#8221;:&#8221;wartość&#8221;, przy czym kluczem jest nazwa pola klasy (tabeli).
+SQLAlchemy ma metodę <code class="docutils literal"><span class="pre">.add_all()</span></code> wymagającą listy konstruktorów obiektów,
+które chcemy dodać.</p>
+<p>Zanim dodamy pierwsze informacje sprawdzamy, czy w tabeli <em>klasa</em> są jakieś wpisy, a więc
+wykonujemy prostą kwerendę zliczającą. Peewee używa
+metod odpowiednich obiektów: <code class="docutils literal"><span class="pre">Klasa().select().count()</span></code>, natomiast
+SQLAlchemy korzysta metody <code class="docutils literal"><span class="pre">.query()</span></code> sesji, która pozwala pobierać dane
+z określonej jako klasa tabeli. Obydwa rozwiązania umożliwiają łańcuchowe
+wywoływanie charakterytycznych dla kwerend operacji poprzez &#8220;doklejanie&#8221;
+kolejnych metod, np. <code class="docutils literal"><span class="pre">sesja.query(Klasa).count()</span></code>.</p>
+<p>Tak właśnie konstruujemy kwerendy warunkowe. W Peewee definiujemy warunki jako
+prametry metody <code class="docutils literal"><span class="pre">.where(Klasa.nazwa</span> <span class="pre">==</span> <span class="pre">'1A')</span></code>. Podobnie w SQLAlchemy,
+tyle, że metody sesji inaczej się nazywają i przyjmują postać
+<code class="docutils literal"><span class="pre">.filter_by(nazwa</span> <span class="pre">=</span> <span class="pre">'1A')</span></code> lub <code class="docutils literal"><span class="pre">.filter(Klasa.nazwa</span> <span class="pre">==</span> <span class="pre">'1A')</span></code>. Pierwsza
+wymaga podania warunku w formacie &#8220;klucz&#8221;=&#8221;wartość&#8221;, druga w postaci
+wyrażenia SQL (należy uważać na użycie poprawnego operatora <code class="docutils literal"><span class="pre">==</span></code>).</p>
+<p>Pobieranie danych z wielu tabel połączonych relacjami może być w porównaniu
+do zapytań SQL-a bardzo proste. W zależności od ORM-a wystarcza polecenie:
+<code class="docutils literal"><span class="pre">Uczen.select()</span></code> lub <code class="docutils literal"><span class="pre">sesja.query(Uczen).all()</span></code>, ale przy próbie
+odczytu klasy, do której przypisano ucznia (<code class="docutils literal"><span class="pre">uczen.klasa.nazwa</span></code>),
+wykonane zostanie dodatkowe zapytanie, co nie jest efektywne.
+Dlatego lepiej otwarcie wskazywać na powiązania między obiektami,
+czyli w zależności od ORM-u używać:
+<code class="docutils literal"><span class="pre">Uczen.select().join(Klasa)</span></code> lub <code class="docutils literal"><span class="pre">sesja.query(Uczen).join(Klasa).all()</span></code>.
+Tak właśnie postępujemy w bliźniaczych funkcjach <code class="docutils literal"><span class="pre">czytajdane()</span></code>, które
+pokazują, jak pobierać i wyświetlać wszystkie rekordy z tabel powiązanych
+relacjami.</p>
+<p>Systemy ORM oferują pewne ułatwiania w zależności od tego, ile rekordów lub pól
+i w jakiej formie chcemy wydobyć. Metody w Peewee:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">.get()</span></code> - zwraca pojedynczy rekord pasujący do zapytania lub wyjątek <code class="docutils literal"><span class="pre">DoesNotExist</span></code>, jeżeli go brak;</li>
+<li><code class="docutils literal"><span class="pre">.first()</span></code> - zwróci z kolei pierwszy rekord ze wszystkich pasujących.</li>
+</ul>
+</div></blockquote>
+<p>Metody SQLAlchemy:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">.get(id)</span></code> - zwraca pojedynczy rekord na podstawie podanego identyfikatora;</li>
+<li><code class="docutils literal"><span class="pre">.one()</span></code> - zwraca pojedynczy rekord pasujący do zapytania lub wyjątek <code class="docutils literal"><span class="pre">DoesNotExist</span></code>, jeżeli go brak;</li>
+<li><code class="docutils literal"><span class="pre">.scalar()</span></code> - zwraca pierwszy element pierwszego zwróconego rekordu lub wyjątek <code class="docutils literal"><span class="pre">MultipleResultsFound</span></code>;</li>
+<li><code class="docutils literal"><span class="pre">.all()</span></code> - zwraca pasujące rekordy w postaci listy.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note" id="sesja">
+<p class="first admonition-title">Note</p>
+<p class="last">Mechanizm sesji jest unikalny dla SQLAlchemy, pozwala m. in. zarządzać
+transakcjami i połączeniami z wieloma bazami. Stanowi &#8220;przechowalnię&#8221;
+dla tworzonych obiektów, zapamiętuje wykonywane na nich operacje,
+które mogą zostać zapisane w bazie (tzw. <code class="docutils literal"><span class="pre">commit</span></code>) lub w razie potrzeby odrzucone.
+W prostych aplikacjach wykorzystuje się jedną instancję sesji,
+w bardziej złożonych można korzystać z wielu.
+Instancja sesji (<code class="docutils literal"><span class="pre">sesja</span> <span class="pre">=</span> <span class="pre">BDSesja()</span></code>) tworzona jest na podstawie klasy, która z kolei
+powstaje przez wywołanie konstruktora z opcjonalnym parametrem
+wskazującym bazę: <code class="docutils literal"><span class="pre">BDSesja</span> <span class="pre">=</span> <span class="pre">sessionmaker(bind=baza)</span></code>. Jak pokazano
+wyżej, obiekt sesji zawiera metody pozwalające komunikować się
+z bazą.</p>
+</div>
+</div>
+<div class="section" id="modyfikowanie-i-usuwanie-danych">
+<h4>13.2.3.2. Modyfikowanie i usuwanie danych<a class="headerlink" href="#modyfikowanie-i-usuwanie-danych" title="Permalink to this headline">¶</a></h4>
+<p>Systemy ORM ułatwiają modyfikowanie i usuwanie danych z bazy, ponieważ
+operacje te sprowadzają się do zmiany wartości pól klasy reprezentującej
+tabelę lub do usunięcia instancji danej klasy.</p>
+<div class="code_no">Peewee nr <script>var code_no2 = code_no2 || 1; document.write(code_no2++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># zmiana klasy ucznia o identyfikatorze 2</span>
+<span class="n">uczen</span> <span class="o">=</span> <span class="n">Uczen</span><span class="p">()</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Klasa</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Uczen</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="n">uczen</span><span class="o">.</span><span class="n">klasa</span> <span class="o">=</span> <span class="n">Klasa</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Klasa</span><span class="o">.</span><span class="n">nazwa</span> <span class="o">==</span> <span class="s">&#39;1B&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+<span class="c">#usunięcie ucznia o identyfikatorze 3</span>
+<span class="n">Uczen</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Uczen</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">delete_instance</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="code_no">SQLAlchemy nr <script>var code_no3 = code_no3 || 1; document.write(code_no3++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>62
+63
+64
+65
+66
+67</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># zmiana klasy ucznia o identyfikatorze 2</span>
+<span class="n">uczen</span> <span class="o">=</span> <span class="n">sesja</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Uczen</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Uczen</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
+<span class="n">uczen</span><span class="o">.</span><span class="n">klasa_id</span> <span class="o">=</span> <span class="n">sesja</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Klasa</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Klasa</span><span class="o">.</span><span class="n">nazwa</span> <span class="o">==</span> <span class="s">&#39;1B&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
+
+<span class="c"># usunięcie ucznia o identyfikatorze 3</span>
+<span class="n">sesja</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">sesja</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Uczen</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>Załóżmy, że chcemy zmienić przypisanie ucznia do klasy. W obydwu systemach
+tworzymy więc obiekt reprezentujący ucznia o identyfikatorze &#8220;2&#8221;. Stosujemy
+omówione wyżej metody zapytań. W następnym kroku modyfikujemy odpowiednie
+pole tworzące relację z tabelą &#8220;klasy&#8221;, do którego przypisujemy
+pobrany w zapytaniu obiekt (Peewee) lub identyfikator (SQLAlchemy).
+Różnice, tzn. przypisywanie obiektu lub identyfikatora, wynikają ze sposobu
+definiowania modeli w obu rozwiązanich.</p>
+<p>Usuwanie jest jeszcze prostsze. W Peewee wystarczy do zapytania zwracającego
+obiekt reprezentujący ucznia o podanym id &#8220;dokleić&#8221; odpowiednią metodę:
+<code class="docutils literal"><span class="pre">Uczen.select().where(Uczen.id</span> <span class="pre">==</span> <span class="pre">3).get().delete_instance()</span></code>.
+W SQLAlchemy korzystamy jak zwykle z metody sesji, której przekazujemy
+obiekt reprezentujący ucznia: <code class="docutils literal"><span class="pre">sesja.delete(sesja.query(Uczen).get(3))</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="materialy">
+<h2>13.3. Materiały<a class="headerlink" href="#materialy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dokumentacja">
+<h3>13.3.1. Dokumentacja<a class="headerlink" href="#dokumentacja" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://docs.python.org/2/library/sqlite3.html">Moduł sqlite3 Pythona</a></li>
+<li><a class="reference external" href="http://www.sqlite.org/">Baza SQLite3</a></li>
+<li><a class="reference external" href="http://pl.wikipedia.org/wiki/SQL">Język SQL</a></li>
+<li><a class="reference external" href="http://peewee.readthedocs.org/en/latest/index.html">Peewee (ang.)</a></li>
+<li><a class="reference external" href="http://www.blog.pythonlibrary.org/2014/07/17/an-intro-to-peewee-another-python-orm/">Tutorial Peewee (ang.)</a></li>
+<li><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy ORM Tutorial (ang.)</a></li>
+<li><a class="reference external" href="http://www.pythoncentral.io/introductory-tutorial-python-sqlalchemy/">Tutorial SQLAlchemy (ang.)</a></li>
+</ol>
+</div>
 <div class="section" id="pojecia">
-<h3>13.2.3. Pojęcia<a class="headerlink" href="#pojecia" title="Permalink to this headline">¶</a></h3>
+<h3>13.3.2. Pojęcia<a class="headerlink" href="#pojecia" title="Permalink to this headline">¶</a></h3>
 <dl class="glossary docutils">
 <dt id="term-sql">SQL</dt>
 <dd>strukturalny język zapytań używany do tworzenia i zarządzania bazą danych.</dd>
@@ -877,6 +1114,9 @@ dane i metody (funkcje), za pomocą których wykonuje ṣię na nich operacje.</
 (metody).</dd>
 <dt id="term-instancja">instancja</dt>
 <dd>obiekt stworzony na podstawie klasy.</dd>
+<dt id="term-konstruktor">konstruktor</dt>
+<dd>metoda wywoływana podczas tworzenia instancji (obiektu) klasy, zazwyczaj
+przyjmuje jako argumenty inicjalne wartości zdefiniowanych w klasie atrybutów.</dd>
 <dt id="term-orm">ORM</dt>
 <dd>(ang. Object-Relational Mapping) – mapowanie obiektowo-relacyjne,
 czyli sposób odwzorowania obiektów na struktury bazy danych.</dd>
@@ -889,28 +1129,45 @@ wszystkich możliwości SQL-a, obsługuje bazy SQLite3, MySQL, Postgresql,
 Oracle, MS SQL Server i inne.</dd>
 </dl>
 </div>
+<div class="section" id="id3">
+<h3>13.3.3. Poćwicz sam<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Spróbuj dodać do bazy korzystając z systemu Peewee lub SQLAlchemy
+wiele rekordów na raz pobranych z pliku. W tym celu zmodyfikuj
+funkcję opisaną wcześniej przy omawianiu modułu <em>sqlite3</em> Pythona.</p>
+<p>Postaraj się przedstawione aplikacje wyposażyć w konsolowy interfejs,
+który umożliwi operacje odczytu, zapisu, modyfikowania i usuwania rekordów.
+Dane powinny być pobierane z klawiatury od użytkownika.</p>
+<p>Przedstawione rozwiązania warto użyć w aplikacjach internetowych
+jako relatywnie szybki i łatwy sposób obsługi danych. Zobacz,
+jak to zrobić na przykładzie scenariusza aplikacji &#8220;Quiz 2&#8221;.</p>
+</div></blockquote>
+</div>
 <div class="section" id="zrodla">
-<h3>13.2.4. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h3>
+<h3>13.3.4. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference download internal" href="../_downloads/sqlraw.zip"><code class="xref download docutils literal"><span class="pre">sqlraw.zip</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/orm.zip"><code class="xref download docutils literal"><span class="pre">orm.zip</span></code></a></li>
 </ul>
 <p>Kolejne wersje tworzenego kodu znajdziesz w katalogu <code class="docutils literal"><span class="pre">~/python101/docs/bazy</span></code>.
 Uruchamiamy je wydając polecenia:</p>
 <div class="highlight-bash"><div class="highlight"><pre>~/python101<span class="nv">$ </span><span class="nb">cd </span>docs/bazy
 ~/python101/docs/bazy<span class="nv">$ </span>python sqlraw0x.py
+~/python101/docs/bazy<span class="nv">$ </span>python ormpw0x.py
+~/python101/docs/bazy<span class="nv">$ </span>python ormsa0x.py
 </pre></div>
 </div>
-<p>- gdzie <em>x</em> jest numerem kolejnej wersji kodu (1-6).</p>
+<p>- gdzie <em>x</em> jest numerem kolejnej wersji kodu.</p>
 </div>
 <div class="section" id="metryka">
-<h3>13.2.5. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
+<h3>13.3.5. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Robert Bednarz (<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-17 o 23:31</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2014-12-18 o 22:12</td>
 </tr>
 </tbody>
 </table>
