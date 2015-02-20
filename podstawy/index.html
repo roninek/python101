@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Podstawy Pythona &mdash; Python 101 0.5 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="copyright" title="Copyright" href="../copyright.html"/>
+    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
+        <link rel="next" title="1.1. Wprowadzenie do Pythona" href="podstawy/index.html"/>
+        <link rel="prev" title="Przygotowanie katalogu projektu" href="../source_code.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Python 101</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../env.html">System i oprogramowanie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#system-operacyjny">System operacyjny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#interpreter-pythona">Interpreter Pythona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#edytory-ide-kodu">Edytory (IDE) kodu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env.html#materialy">Materiały</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../source_code.html">Przygotowanie katalogu projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../source_code.html#pobieranie-materialow">Pobieranie materiałów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../source_code.html#korzystanie-z-kodu-zrodlowego">Korzystanie z kodu źródłowego</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../source_code.html#synchronizacja-kodu">Synchronizacja kodu</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">1. Podstawy Pythona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html">1.1. Wprowadzenie do Pythona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index.html">1.2. Python w przykładach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index1.html">1.3. Warunki i pętle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index2.html">1.4. Listy, tuple i funkcje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index3.html">1.5. Zbiory i słowniki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index4.html">1.6. Znam Pythona?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html">1.7. Nie znam Pythona... jeszcze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialy">1.8. Materiały</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pygame/index.html">2. Gry w Pythonie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/pong_str/index.html">2.1. Pong (str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/pong/index.html">2.2. Pong (obj)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/tictactoe_str/index.html">2.3. Kółko i krzyżyk (str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/tictactoe/index.html">2.4. Kółko i krzyżyk (obj)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/life_str/index.html">2.5. Życie Conwaya (str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/life/index.html">2.6. Życie Conwaya (obj)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pygame/index.html#materialy">2.7. Materiały</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bazy/index.html">3. Bazy danych w Pythonie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../bazy/index.html#sql">3.1. SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bazy/index.html#systemy-orm">3.2. Systemy ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bazy/index.html#materialy">3.3. Materiały</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../webapps/index.html">4. Aplikacje internetowe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../webapps/quiz/index.html">4.1. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../webapps/todo/index.html">4.2. ToDo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../webapps/quiz_orm/index.html">4.3. Quiz ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../webapps/chatter/index.html">4.4. Chatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../webapps/index.html#materialy">4.5. Materiały</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/git.html">Git - wersjonowanie kodów źródłowych</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#lokalne-repozytoria-z-historia-zmian">Lokalne repozytoria z historią zmian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#centrale-repozytoria-dostepne-przez-internet">Centrale repozytoria dostępne przez internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#nowe-konto-github">Nowe konto GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#forkujemy-pierwszy-projekt">Forkujemy pierwszy projekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#instalujemy-narzedzie-git">Instalujemy narzędzie GIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#klonujemy-nasz-projekt-lokalnie">Klonujemy nasz projekt lokalnie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#skok-do-wybranej-wersji-z-historii-zmian">Skok do wybranej wersji z historii zmian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#zmieniamy-i-zapisujemy-zmiany-w-lokalnym-repozytorium">Zmieniamy i zapisujemy zmiany w lokalnym repozytorium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#wysylamy-zmiany-do-centralnego-repozytorium">Wysyłamy zmiany do centralnego repozytorium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#przypisujemy-tagi-do-konkretnych-wersji-w-historii-zmian">Przypisujemy tagi do konkretnych wersji w historii zmian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#wysylamy-tagi-do-centralnego-repozytorium">Wysyłamy tagi do centralnego repozytorium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git.html#pobieramy-zmiany-z-centralnego-repozytorium">Pobieramy zmiany z centralnego repozytorium</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python 101</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>1. Podstawy Pythona</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/podstawy/index.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="podstawy-pythona">
+<h1>1. Podstawy Pythona<a class="headerlink" href="#podstawy-pythona" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.python.org">Python</a> jest dynamicznie typowanym językiem interpretowanym
+wysokiego poziomu. Cechuje się czytelnością i zwięzłością kodu. Stworzony został w latach 90.
+przez Guido van Rossuma, nazwa zaś pochodzi od tytułu serialu komediowego
+emitowanego w BBC pt. &#8220;Latający cyrk Monty Pythona&#8221;.</p>
+<p>W systemach opartych na Linuksie <a class="reference internal" href="podstawy/index.html#term-interpreter"><em class="xref std std-term">interpreter</em></a> Pythona jest standardowo zainstalowany,
+ponieważ duża część oprogramowania na nim bazuje. W systemach Microsoft Windows Pythona
+należy <a class="reference internal" href="../env.html#ins-python"><em>doinstalować</em></a>. Interpreter tłumaczy (kompiluje w locie) kod i od razu go wykonuje.
+Interpreter Pythona może być używany w trybie interaktywnym do nauki i testowania
+kodu.</p>
+<p>Funkcjonalność Pythona może być dowolnie rozszerzana dzięki licznym
+bibliotekom pozwalającym tworzyć aplikacje okienkowe (<a class="reference external" href="http://pl.wikipedia.org/wiki/PyQt">PyQt</a>, <a class="reference external" href="http://pl.wikipedia.org/wiki/PyGTK">PyGTK</a>, <a class="reference external" href="http://pl.wikipedia.org/wiki/WxPython">wxPython</a>),
+internetowe (<a class="reference external" href="http://flask.pocoo.org/">Flask</a>, <a class="reference external" href="http://django.pl/">Django</a>) czy multimedialne i gry (<a class="reference external" href="http://pl.wikipedia.org/wiki/Pygame">Pygame</a>). Istnieją również
+kompleksowe projekty oparte na Pythonie wspomagające naukową analizę, obliczenia
+i przetwarzanie danych, np.: <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> czy <a class="reference external" href="https://www.enthought.com/products/canopy/">Enthought Canopy</a>.</p>
+<p>Prosty kod można testować w interpreterze, do tworzenia bardziej rozbudowanych
+skryptów wykorzystać możemy dowolny edytor tekstowy. Ze względów praktycznych
+warto jednak korzystać z programów ułatwiających pisanie kodu (obsługa wcięć,
+podświetlenia itd.) np. lekkie i szybkie <a class="reference internal" href="../env.html#geany-python"><em>IDE Geany</em></a> lub profesjonalne środowisko
+<a class="reference internal" href="../env.html#pycharm-python"><em>PyCharm</em></a>. Obydwa programy działają na platformie Linux i Windows.</p>
+<p>Zanim przystąpimy do pracy w katalogu domowym utworzymy podkatalog <code class="docutils literal"><span class="pre">python</span></code>,
+w którym będziemy zapisywali nasze skrypty:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="code bash highlight-python"><div class="highlight"><pre>~$ mkdir python
+~$ cd python
+</pre></div>
+</div>
+<p>Interpreter Pythona uruchamiamy poleceniem:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>~$ python
+</pre></div>
+</div>
+<p>Po uruchomieniu interpreter wyświetli swoją wersję, wersję kompilatora C++ (<code class="docutils literal"><span class="pre">GCC</span></code>),
+informację o sposobie uzyskania pomocy (polecenie <code class="docutils literal"><span class="pre">help</span></code>), na końcu zaś
+znak zachęty <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Można równierz korzystać z rozszerzonej konsoli Pythona uruchamianej poleceniem
+<code class="docutils literal"><span class="pre">ipython</span></code>. Oferuje ona kolorowane wyjście, ułatwia wszelkiego rodzaju interaktywne obliczenia.</p>
+<p>Przykłady zawierające znak zachęty <code class="docutils literal"><span class="pre">$</span></code> oznaczają komendy
+do wykonania w terminalu systemu operacyjnego (w Xubuntu uruchom przez <code class="kbd docutils literal"><span class="pre">Win+T</span></code>).</p>
+<p class="last">Komendy kopiujemy i wklejamy do terminala bez znaku zachęty <code class="docutils literal"><span class="pre">$</span></code> i poprzedzającego tekstu
+za pomocą środkowego klawisza myszki lub skrótu <code class="kbd docutils literal"><span class="pre">CTRL+SHIFT+V</span></code>.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="podstawy/index.html">1.1. Wprowadzenie do Pythona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#zmienne">1.1.1. Zmienne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#funkcje">1.1.2. Funkcje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#wyrazenia-warunkowe">1.1.3. Wyrażenia warunkowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#gra-w-zgadnij-liczbe">1.1.4. Gra w &#8220;zgadnij liczbę&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#petla-while">1.1.5. Pętla <strong>while</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#petla-for">1.1.6. Pętla <strong>for</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="podstawy/index.html#materialy">1.1.7. Materiały</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="przyklady/index.html">1.2. Python w przykładach</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index.html#mow-mi-python">1.2.1. Mów mi Python!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="przyklady/index1.html">1.3. Warunki i pętle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index1.html#trzy-liczby">1.3.1. Trzy liczby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index1.html#wydrukuj-alfabet">1.3.2. Wydrukuj alfabet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="przyklady/index2.html">1.4. Listy, tuple i funkcje</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index2.html#pobierz-n-liczb">1.4.1. Pobierz <em>n</em> liczb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index2.html#ciag-fibonacciego">1.4.2. Ciąg Fibonacciego</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="przyklady/index3.html">1.5. Zbiory i słowniki</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index3.html#oceny-z-przedmiotow">1.5.1. Oceny z przedmiotów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index3.html#slownik-slowek">1.5.2. Słownik słówek</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="przyklady/index4.html">1.6. Znam Pythona?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index4.html#trojkat">1.6.1. Trójkąt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index4.html#szyfr-cezara">1.6.2. Szyfr Cezara</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="przyklady/index5.html">1.7. Nie znam Pythona... jeszcze</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#operatory-i">1.7.1. Operatory <strong>*</strong> i <strong>**</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#petle">1.7.2. Pętle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#iteratory">1.7.3. Iteratory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#generatory-wyrazen">1.7.4. Generatory wyrażeń</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#wyrazenia-listowe">1.7.5. Wyrażenia listowe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#generatory">1.7.6. Generatory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#pliki">1.7.7. Pliki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="przyklady/index5.html#materialy">1.7.8. Materiały</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="materialy">
+<h2>1.8. Materiały<a class="headerlink" href="#materialy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://www.python.org">Python</a></li>
+</ol>
+<div class="section" id="slownik">
+<h3>1.8.1. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
+<dl class="glossary docutils">
+<dt id="term-jezyk-interpretowany">język interpretowany</dt>
+<dd>język, który jest tłumaczony i wykonywany &#8220;w locie&#8221;. Tłumaczeniem i
+wykonywaniem programu zajmuje się specjalny program nazwany interpreterem języka.</dd>
+<dt id="term-interpreter">interpreter</dt>
+<dd>program, który analizuje kod źródłowy, a następnie go wykonuje. Interpretery są
+podstawowym składnikiem języków wykorzystywanych do pisania skryptów wykonywanych
+po stronie klienta WWW (JavaScript) lub serwera (np. Python, PHP).</dd>
+</dl>
+</div>
+<div class="section" id="zrodla">
+<h3>1.8.2. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h3>
+<p>Wersje &#8220;Podstaw Pythona&#8221; w formacie <em>odt</em> lub <em>pdf</em>:</p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/T1.odt"><code class="xref download docutils literal"><span class="pre">T1.odt</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/T1.pdf"><code class="xref download docutils literal"><span class="pre">T1.pdf</span></code></a></li>
+</ul>
+<p>Kody &#8220;Python w przykładach&#8221;:</p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/basic.zip"><code class="xref download docutils literal"><span class="pre">basic.zip</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="metryka">
+<h3>1.8.3. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Autor:</th><td class="field-body">Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;, Dorota Rybicka, Grzegorz Wilczek</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-20 o 21:47</td>
+</tr>
+</tbody>
+</table>
+<style>
+    div.code_no { text-align: right; background: #e3e3e3; padding: 6px 12px; }
+    div.highlight, div.highlight-python { margin-top: 0px; }
+</style><p>
+    <a style="float:left; margin: 0.3em 1em 1em 0" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+    Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
+    udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
+    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
+</p>
+
+<script>
+  // dla http://koduj-z-klasa.github.io/python101/
+  // w read the docs kod uzupełnia się w dashboardzie
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55172998-1', 'auto');
+  ga('send', 'pageview');
+</script></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="podstawy/index.html" class="btn btn-neutral float-right" title="1.1. Wprowadzenie do Pythona"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../source_code.html" class="btn btn-neutral" title="Przygotowanie katalogu projektu"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; <a href="../copyright.html">Copyright</a> 2014, Centrum Edukacji Obywatelskiej.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/custom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

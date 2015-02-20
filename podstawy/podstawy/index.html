@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Python - Podstawy programowania &mdash; Python 101 0.5 documentation</title>
+  <title>1.1. Wprowadzenie do Pythona &mdash; Python 101 0.5 documentation</title>
   
 
   
@@ -24,14 +24,15 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
   
-        <link rel="copyright" title="Copyright" href="../copyright.html"/>
-    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
-        <link rel="next" title="2. Python w przykładach" href="basic1.html"/>
-        <link rel="prev" title="Przygotowanie katalogu projektu" href="../source_code.html"/> 
+        <link rel="copyright" title="Copyright" href="../../copyright.html"/>
+    <link rel="top" title="Python 101 0.5 documentation" href="../../index.html"/>
+        <link rel="up" title="1. Podstawy Pythona" href="../index.html"/>
+        <link rel="next" title="1.2. Python w przykładach" href="../przyklady/index.html"/>
+        <link rel="prev" title="1. Podstawy Pythona" href="../index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -45,9 +46,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Python 101</a>
+        <a href="../../index.html" class="fa fa-home"> Python 101</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -59,111 +60,73 @@
         
         
             <ul>
-<li class="toctree-l1"><a class="reference internal" href="../env.html">System i oprogramowanie</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#system-operacyjny">System operacyjny</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#tryb-live">Tryb <em>live</em></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#rozruchowy-klucz-usb">Rozruchowy klucz USB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#interpreter-pythona">Interpreter Pythona</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#edytory-ide-kodu">Edytory (IDE) kodu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env.html#materialy">Materiały</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../env.html#interpreter-pythona">Interpreter Pythona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../env.html#edytory-ide-kodu">Edytory (IDE) kodu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../env.html#materialy">Materiały</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../source_code.html">Przygotowanie katalogu projektu</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../source_code.html#pobieranie-materialow">Pobieranie materiałów</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../source_code.html#korzystanie-z-kodu-zrodlowego-w-opisie-przykladow">Korzystanie z kodu źródłowego w opisie przykładów</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../source_code.html#synchronizacja-kodu-pomiedzy-etapami-przykladow">Synchronizacja kodu pomiędzy etapami przykładów</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source_code.html">Przygotowanie katalogu projektu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../source_code.html#pobieranie-materialow">Pobieranie materiałów</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../source_code.html#korzystanie-z-kodu-zrodlowego">Korzystanie z kodu źródłowego</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../source_code.html#synchronizacja-kodu">Synchronizacja kodu</a></li>
 </ul>
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">1. Python - Podstawy programowania</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#zrodla">1.1. Źródła</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#zmienne">1.2. Zmienne</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#wyrazenia-warunkowe">1.3. Wyrażenia warunkowe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gra-w-zgadnij-liczbe">1.4. Gra w &#8220;zgadnij liczbę&#8221;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#zadania-dodatkowe">1.5. Zadania dodatkowe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#petla-while">1.6. Pętla WHILE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#wyrazenia-break-i-continue">1.7. Wyrażenia break i continue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#petla-for">1.8. Pętla FOR</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#slowniczek">1.9. Słowniczek</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">1. Podstawy Pythona</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">1.1. Wprowadzenie do Pythona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../przyklady/index.html">1.2. Python w przykładach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../przyklady/index1.html">1.3. Warunki i pętle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../przyklady/index2.html">1.4. Listy, tuple i funkcje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../przyklady/index3.html">1.5. Zbiory i słowniki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../przyklady/index4.html">1.6. Znam Pythona?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../przyklady/index5.html">1.7. Nie znam Pythona... jeszcze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#materialy">1.8. Materiały</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic1.html">2. Python w przykładach</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic1.html#jestem-python">2.1. Jestem Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic1.html#przywitaj-sie">2.2. Przywitaj się</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pygame/index.html">2. Gry w Pythonie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/pong_str/index.html">2.1. Pong (str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/pong/index.html">2.2. Pong (obj)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/tictactoe_str/index.html">2.3. Kółko i krzyżyk (str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/tictactoe/index.html">2.4. Kółko i krzyżyk (obj)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/life_str/index.html">2.5. Życie Conwaya (str)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/life/index.html">2.6. Życie Conwaya (obj)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pygame/index.html#materialy">2.7. Materiały</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic2.html">3. Warunki i pętle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic2.html#trzy-liczby">3.1. Trzy liczby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic2.html#wydrukuj-alfabet">3.2. Wydrukuj alfabet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bazy/index.html">3. Bazy danych w Pythonie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../bazy/index.html#sql">3.1. SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bazy/index.html#systemy-orm">3.2. Systemy ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bazy/index.html#materialy">3.3. Materiały</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basic3.html">4. Listy, tuple i funkcje</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#pobierz-n-liczb">4.1. Pobierz <em>n</em> liczb</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic3.html#ciag-fibonacciego">4.2. Ciąg Fibonacciego</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="basic4.html">5. Zbiory i słowniki</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic4.html#oceny-z-przedmiotow">5.1. Oceny z przedmiotów</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic4.html#slownik-slowek">5.2. Słownik słówek</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="basic5.html">6. Znam Pythona?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic5.html#trojkat">6.1. Trójkąt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic5.html#szyfr-cezara">6.2. Szyfr Cezara</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="basic6.html">7. Nie znam Pythona... jeszcze</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#operatory-i">7.1. Operatory <strong>*</strong> i <strong>**</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#iteratory">7.2. Iteratory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#generatory-wyrazen">7.3. Generatory wyrażeń</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#wyrazenia-listowe">7.4. Wyrażenia listowe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#generatory">7.5. Generatory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#pliki">7.6. Pliki</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic6.html#materialy-w-sieci">7.7. Materiały w sieci</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../pygame/index.html">8. Gry w Pythonie</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/pong_str/index.html">8.1. Pong (str)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/pong/index.html">8.2. Pong (obj)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/tictactoe_str/index.html">8.3. Kółko i krzyżyk (str)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/tictactoe/index.html">8.4. Kółko i krzyżyk (obj)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/life_str/index.html">8.5. Życie Conwaya (str)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/life/index.html">8.6. Życie Conwaya (obj)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pygame/index.html#materialy">8.7. Materiały</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../bazy/index.html">9. Bazy danych w Pythonie</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../bazy/index.html#sql">9.1. SQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bazy/index.html#systemy-orm">9.2. Systemy ORM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bazy/index.html#materialy">9.3. Materiały</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../webapps/index.html">10. Aplikacje internetowe</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../webapps/quiz/index.html">10.1. Quiz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../webapps/todo/index.html">10.2. ToDo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../webapps/quiz_orm/index.html">10.3. Quiz ORM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../webapps/chatter/index.html">10.4. Chatter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../webapps/index.html#materialy">10.5. Materiały</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webapps/index.html">4. Aplikacje internetowe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../webapps/quiz/index.html">4.1. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../webapps/todo/index.html">4.2. ToDo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../webapps/quiz_orm/index.html">4.3. Quiz ORM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../webapps/chatter/index.html">4.4. Chatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../webapps/index.html#materialy">4.5. Materiały</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/git.html">Git - wersjonowanie kodów źródłowych</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#lokalne-repozytoria-z-historia-zmian">Lokalne repozytoria z historią zmian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#centrale-repozytoria-dostepne-przez-internet">Centrale repozytoria dostępne przez internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#nowe-konto-github">Nowe konto GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#forkujemy-pierwszy-projekt">Forkujemy pierwszy projekt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#instalujemy-narzedzie-git">Instalujemy narzędzie GIT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#klonujemy-nasz-projekt-lokalnie">Klonujemy nasz projekt lokalnie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#skok-do-wybranej-wersji-z-historii-zmian">Skok do wybranej wersji z historii zmian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#zmieniamy-i-zapisujemy-zmiany-w-lokalnym-repozytorium">Zmieniamy i zapisujemy zmiany w lokalnym repozytorium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#wysylamy-zmiany-do-centralnego-repozytorium">Wysyłamy zmiany do centralnego repozytorium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#przypisujemy-tagi-do-konkretnych-wersji-w-historii-zmian">Przypisujemy tagi do konkretnych wersji w historii zmian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#wysylamy-tagi-do-centralnego-repozytorium">Wysyłamy tagi do centralnego repozytorium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git.html#pobieramy-zmiany-z-centralnego-repozytorium">Pobieramy zmiany z centralnego repozytorium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/git.html">Git - wersjonowanie kodów źródłowych</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#lokalne-repozytoria-z-historia-zmian">Lokalne repozytoria z historią zmian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#centrale-repozytoria-dostepne-przez-internet">Centrale repozytoria dostępne przez internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#nowe-konto-github">Nowe konto GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#forkujemy-pierwszy-projekt">Forkujemy pierwszy projekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#instalujemy-narzedzie-git">Instalujemy narzędzie GIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#klonujemy-nasz-projekt-lokalnie">Klonujemy nasz projekt lokalnie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#skok-do-wybranej-wersji-z-historii-zmian">Skok do wybranej wersji z historii zmian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#zmieniamy-i-zapisujemy-zmiany-w-lokalnym-repozytorium">Zmieniamy i zapisujemy zmiany w lokalnym repozytorium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#wysylamy-zmiany-do-centralnego-repozytorium">Wysyłamy zmiany do centralnego repozytorium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#przypisujemy-tagi-do-konkretnych-wersji-w-historii-zmian">Przypisujemy tagi do konkretnych wersji w historii zmian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#wysylamy-tagi-do-centralnego-repozytorium">Wysyłamy tagi do centralnego repozytorium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git.html#pobieramy-zmiany-z-centralnego-repozytorium">Pobieramy zmiany z centralnego repozytorium</a></li>
 </ul>
 </li>
 </ul>
@@ -178,7 +141,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Python 101</a>
+        <a href="../../index.html">Python 101</a>
       </nav>
 
 
@@ -187,12 +150,14 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>1. Python - Podstawy programowania</li>
+          <li><a href="../index.html">1. Podstawy Pythona</a> &raquo;</li>
+      
+    <li>1.1. Wprowadzenie do Pythona</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/basic/basic.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/podstawy/podstawy/index.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -200,37 +165,21 @@
 </div>
           <div role="main">
             
-  <div class="section" id="python-podstawy-programowania">
-<h1>1. Python - Podstawy programowania<a class="headerlink" href="#python-podstawy-programowania" title="Permalink to this headline">¶</a></h1>
-<p>Python jest dynamicznym językiem interpretowanym.</p>
-<p>Interpretowany tzn. że kod, który napiszemy możemy natychmiast wykonać bez
-potrzeby tłumaczenia (kompilowania) kodu programistycznego na język maszynowy (czyli na
-formę zrozumiałą przez komputer).</p>
-<p>Interpreter tłumaczy (kompiluje w locie) nasz kod oraz natychmiast go uruchamia.
-Interpreter może również być używany w trybie interaktywnym do testowania <code class="docutils literal"><span class="pre">kawałków</span></code>
-kodu (np. IPython omawiany w kolejnych scenariuszach).</p>
-<p>Naukę zaczynamy od poznania interpretera. Interpreter uruchamiamy z konsoli poleceniem</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python
-</pre></div>
-</div>
-<p>Po uruchomieniu interpretera komputer powinien wypisać trzy linie tekstu a w czwartej tak zwany
-znak zachęty, po którym wpisujemy komendy. Standardowym znakiem zachęty w interpreterze
-Pythona jest <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>Przykłady zawierające znak zachęty <code class="docutils literal"><span class="pre">$</span></code> oznaczają komendy
-do wykonania w terminalu systemu operacyjnego (uruchom przez <code class="kbd docutils literal"><span class="pre">Win+T</span></code>).</p>
-<p class="last">Komendy należy kopiować i wklejać bez znaku zachęty <code class="docutils literal"><span class="pre">$</span></code> i poprzedzającego tekstu.
-Komendy można wklejać do terminala środkowym klawiszem myszki.</p>
-</div>
-<div class="section" id="zrodla">
-<h2>1.1. Źródła<a class="headerlink" href="#zrodla" title="Permalink to this headline">¶</a></h2>
-<p>Poniższy dokument możesz pobrać w formacie <em>odt</em> lub <em>pdf</em>:
-<a class="reference download internal" href="../_downloads/T1.odt"><code class="xref download docutils literal"><span class="pre">T1.odt</span></code></a>
-<a class="reference download internal" href="../_downloads/T1.pdf"><code class="xref download docutils literal"><span class="pre">T1.pdf</span></code></a></p>
+  <div class="section" id="wprowadzenie-do-pythona">
+<h1>1.1. Wprowadzenie do Pythona<a class="headerlink" href="#wprowadzenie-do-pythona" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#zmienne" id="id3">Zmienne</a></li>
+<li><a class="reference internal" href="#funkcje" id="id4">Funkcje</a></li>
+<li><a class="reference internal" href="#wyrazenia-warunkowe" id="id5">Wyrażenia warunkowe</a></li>
+<li><a class="reference internal" href="#gra-w-zgadnij-liczbe" id="id6">Gra w &#8220;zgadnij liczbę&#8221;</a></li>
+<li><a class="reference internal" href="#petla-while" id="id7">Pętla <strong>while</strong></a></li>
+<li><a class="reference internal" href="#petla-for" id="id8">Pętla <strong>for</strong></a></li>
+<li><a class="reference internal" href="#materialy" id="id9">Materiały</a></li>
+</ul>
 </div>
 <div class="section" id="zmienne">
-<h2>1.2. Zmienne<a class="headerlink" href="#zmienne" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">1.1.1. Zmienne</a><a class="headerlink" href="#zmienne" title="Permalink to this headline">¶</a></h2>
 <p>W interpreterze wpisz poniższy przykład:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="code pycon highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
@@ -309,8 +258,9 @@ funkcji <code class="docutils literal"><span class="pre">int</span></code>.</p>
 <p class="first admonition-title">Tip</p>
 <p class="last">Grupy mniej zaawansowane mogą poświęcić czas na eksperymenty z operacjami na zmiennych podawanych z klawiatury.</p>
 </div>
+</div>
 <div class="section" id="funkcje">
-<h3>1.2.1. Funkcje<a class="headerlink" href="#funkcje" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id4">1.1.2. Funkcje</a><a class="headerlink" href="#funkcje" title="Permalink to this headline">¶</a></h2>
 <p>Funkcje są to wcześniej zdefiniowane kawałki kodu, których możemy później użyć do wykonania
 określonej czynności, zamiast wpisywać ten sam kod po raz kolejny.</p>
 <p>W okrągłych nawiasach po nazwach funkcji umieszczamy parametry lub argumenty funkcji (może być
@@ -323,13 +273,12 @@ mówimy, że funkcja zwraca dane.</p>
 W tym celu należy otworzyć edytor tekstu, wpisać do niego instrukcje języka Python, a następnie
 zapisać z rozszerzeniem <code class="docutils literal"><span class="pre">.py</span></code>. Aby uruchomić tak zapisany program należy będąc w linii poleceń
 (konsola / terminal) w tym samym katalogu gdzie zapisaliśmy nasz plik wpisać:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$python</span> nazwa-pliku.py
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python nazwa-pliku.py
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="wyrazenia-warunkowe">
-<h2>1.3. Wyrażenia warunkowe<a class="headerlink" href="#wyrazenia-warunkowe" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">1.1.3. Wyrażenia warunkowe</a><a class="headerlink" href="#wyrazenia-warunkowe" title="Permalink to this headline">¶</a></h2>
 <p>Do podejmowania decyzji w programowaniu służy instrukcja warunkowa <code class="docutils literal"><span class="pre">if</span></code>.</p>
 <p>Blok kodu podany po instrukcji if zostanie wykonany wtedy, gdy wyrażenie warunkowe będzie
 prawdziwe. W przeciwnym przypadku blok kodu zostanie zignorowany.
@@ -374,7 +323,7 @@ wyświetlając: <code class="docutils literal"><span class="pre">Koniec</span> <
 równości: <code class="docutils literal"><span class="pre">==</span></code>. Matematyczne wyrażenie <code class="docutils literal"><span class="pre">nie</span> <span class="pre">równe</span></code> (≠) w Pythonie zapisujemy jako <code class="docutils literal"><span class="pre">!=</span></code>.</p>
 </div>
 <div class="section" id="gra-w-zgadnij-liczbe">
-<h2>1.4. Gra w &#8220;zgadnij liczbę&#8221;<a class="headerlink" href="#gra-w-zgadnij-liczbe" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">1.1.4. Gra w &#8220;zgadnij liczbę&#8221;</a><a class="headerlink" href="#gra-w-zgadnij-liczbe" title="Permalink to this headline">¶</a></h2>
 <p>Napisz program, w którym:</p>
 <ul class="simple">
 <li>do zmiennej <code class="docutils literal"><span class="pre">dana</span></code> przypiszesz pewną liczbę</li>
@@ -393,9 +342,8 @@ napis określający czy podana liczba jest większa od danej czy mniejsza.</li>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Koniec programu.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="zadania-dodatkowe">
-<h2>1.5. Zadania dodatkowe<a class="headerlink" href="#zadania-dodatkowe" title="Permalink to this headline">¶</a></h2>
+<h3>1.1.4.1. Zadania dodatkowe<a class="headerlink" href="#zadania-dodatkowe" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Za pomocą poznanych narzędzi stwórz program będący kalkulatorem.</li>
 <li>Napisz program rozwiązujący równania kwadratowe (<a class="reference internal" href="#kwadratowe"><em>Przykład równania kwadratowego</em></a>).</li>
@@ -409,7 +357,7 @@ komunikat czy jest to liczba parzysta, czy nieparzysta.</li>
 można zbudować trójkąt.</li>
 </ol>
 <div class="section" id="przyklad-rownania-kwadratowego">
-<span id="kwadratowe"></span><h3>1.5.1. Przykład równania kwadratowego<a class="headerlink" href="#przyklad-rownania-kwadratowego" title="Permalink to this headline">¶</a></h3>
+<span id="kwadratowe"></span><h4>1.1.4.1.1. Przykład równania kwadratowego<a class="headerlink" href="#przyklad-rownania-kwadratowego" title="Permalink to this headline">¶</a></h4>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -441,8 +389,9 @@ można zbudować trójkąt.</li>
 </td></tr></table></div>
 </div>
 </div>
+</div>
 <div class="section" id="petla-while">
-<h2>1.6. Pętla WHILE<a class="headerlink" href="#petla-while" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">1.1.5. Pętla <strong>while</strong></a><a class="headerlink" href="#petla-while" title="Permalink to this headline">¶</a></h2>
 <p>Pętla while służy do konstrukcji bloku instrukcji, które będą wykonywane warunkowo. W programie
 najpierw będzie sprawdzane czy warunek jest spełniony – jeśli tak, to wykonane będą wszystkie
 instrukcje zawarte w bloku. Następnie ponownie sprawdzany jest warunek, jeśli nadal jest spełniony
@@ -485,9 +434,8 @@ trzeba do każdego strzału ponownie uruchamiać programu. Zmienna <code class="
 wartość logiczną <code class="docutils literal"><span class="pre">True</span></code> (z angielskiego prawda). W momencie, w którym użytkownik poda właściwą
 liczbę zmienna przyjmie wartość logiczną <code class="docutils literal"><span class="pre">False</span></code> (z angielskiego fałsz), co spowoduje zakończenie
 wykonywania pętli while.</p>
-</div>
 <div class="section" id="wyrazenia-break-i-continue">
-<h2>1.7. Wyrażenia break i continue<a class="headerlink" href="#wyrazenia-break-i-continue" title="Permalink to this headline">¶</a></h2>
+<h3>1.1.5.1. Wyrażenia <strong>break</strong> i <strong>continue</strong><a class="headerlink" href="#wyrazenia-break-i-continue" title="Permalink to this headline">¶</a></h3>
 <p>Wyrażenie <code class="docutils literal"><span class="pre">break</span></code> powoduje natychmiastowe zakończenie wykonywania pętli.</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -543,8 +491,9 @@ rozpoczyna ponowne wykonanie pętli.</p>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Koniec programu.&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
+</div>
 <div class="section" id="id1">
-<h3>1.7.1. Zadania dodatkowe<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.5.2. Zadania dodatkowe<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Napisz program, który sumuje liczby dodatnie podawane przez użytkownika – pętla pozwala
 użytkownikowi podawać liczby dopóki nie poda liczby niedodatniej.
@@ -556,7 +505,7 @@ następnie zmodyfikuj go tak, aby obliczana była średnia również dla liczb u
 </div>
 </div>
 <div class="section" id="petla-for">
-<h2>1.8. Pętla FOR<a class="headerlink" href="#petla-for" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">1.1.6. Pętla <strong>for</strong></a><a class="headerlink" href="#petla-for" title="Permalink to this headline">¶</a></h2>
 <p>Pętla for służy do wykonywania tego samego bloku operacji dla każdego elementu z pewnej listy.
 Ilość wykonań tego bloku jest równa liczbie elementów tej listy. Wywoływana w pętli zmienna
 przyjmuje po kolei wartości każdego z elementów.</p>
@@ -586,7 +535,7 @@ listy.</p>
 </pre></div>
 </div>
 <div class="section" id="id2">
-<h3>1.8.1. Zadania dodatkowe<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.6.1. Zadania dodatkowe<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Napisz dwa programy, które wypisują liczby naturalne od 1 do 15. W pierwszym programie
 wykonaj pętlę for, a w drugim while.</li>
@@ -596,8 +545,10 @@ wykonaj pętlę for, a w drugim while.</li>
 </ol>
 </div>
 </div>
-<div class="section" id="slowniczek">
-<h2>1.9. Słowniczek<a class="headerlink" href="#slowniczek" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="materialy">
+<h2><a class="toc-backref" href="#id9">1.1.7. Materiały</a><a class="headerlink" href="#materialy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="slownik">
+<h3>1.1.7.1. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
 <dl class="glossary docutils">
 <dt id="term-jezyk-interpretowany">Język interpretowany</dt>
 <dd>język, który jest tłumaczony i wykonywany &#8220;w locie&#8221;. Tłumaczeniem i
@@ -616,22 +567,42 @@ wykonania.</dd>
 <dt id="term-typ-zmiennych">Typ zmiennych</dt>
 <dd>rodzaj danych, który przypisany jest do zmiennej w momencie jej tworzenia.</dd>
 </dl>
+</div>
 <div class="section" id="metryka">
-<h3>1.9.1. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.7.2. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Dorota Rybicka, Grzegorz Wilczek</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-17 o 12:22</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-20 o 21:47</td>
 </tr>
 </tbody>
 </table>
 <style>
     div.code_no { text-align: right; background: #e3e3e3; padding: 6px 12px; }
     div.highlight, div.highlight-python { margin-top: 0px; }
-</style></div>
+</style><p>
+    <a style="float:left; margin: 0.3em 1em 1em 0" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+    Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
+    udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
+    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
+</p>
+
+<script>
+  // dla http://koduj-z-klasa.github.io/python101/
+  // w read the docs kod uzupełnia się w dashboardzie
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55172998-1', 'auto');
+  ga('send', 'pageview');
+</script></div>
 </div>
 </div>
 
@@ -641,10 +612,10 @@ wykonania.</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="basic1.html" class="btn btn-neutral float-right" title="2. Python w przykładach"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../przyklady/index.html" class="btn btn-neutral float-right" title="1.2. Python w przykładach"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../source_code.html" class="btn btn-neutral" title="Przygotowanie katalogu projektu"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="1. Podstawy Pythona"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -653,7 +624,7 @@ wykonania.</dd>
 
   <div role="contentinfo">
     <p>
-        &copy; <a href="../copyright.html">Copyright</a> 2014, Centrum Edukacji Obywatelskiej.
+        &copy; <a href="../../copyright.html">Copyright</a> 2014, Centrum Edukacji Obywatelskiej.
     </p>
   </div>
 
@@ -672,23 +643,23 @@ wykonania.</dd>
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
+            URL_ROOT:'../../',
             VERSION:'0.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/custom.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/custom.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
   
