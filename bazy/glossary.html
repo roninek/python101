@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Bazy danych w Pythonie &mdash; Python 101 0.5 documentation</title>
+  <title>&lt;no title&gt; &mdash; Python 101 0.5 documentation</title>
   
 
   
@@ -29,9 +29,7 @@
 
   
         <link rel="copyright" title="Copyright" href="../copyright.html"/>
-    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/>
-        <link rel="next" title="3.1. SQL" href="sql/index.html"/>
-        <link rel="prev" title="2.6. Życie Conwaya (obj)" href="../pygame/life/index.html"/> 
+    <link rel="top" title="Python 101 0.5 documentation" href="../index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -74,7 +72,7 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../podstawy/index.html">1. Podstawy Pythona</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../podstawy/podstawy/index.html">1.1. Wprowadzenie do Pythona</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../podstawy/przyklady/index.html">1.2. Python w przykładach</a></li>
@@ -96,10 +94,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../pygame/index.html#materialy">2.7. Materiały</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">3. Bazy danych w Pythonie</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">3. Bazy danych w Pythonie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sql/index.html">3.1. SQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orm/index.html">3.2. Systemy ORM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#materialy">3.3. Materiały</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#materialy">3.3. Materiały</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../webapps/index.html">4. Aplikacje internetowe</a><ul>
@@ -151,10 +149,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>3. Bazy danych w Pythonie</li>
+    <li>&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/bazy/index.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/bazy/glossary.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -162,57 +160,7 @@
 </div>
           <div role="main">
             
-  <div class="section" id="bazy-danych-w-pythonie">
-<h1>3. Bazy danych w Pythonie<a class="headerlink" href="#bazy-danych-w-pythonie" title="Permalink to this headline">¶</a></h1>
-<p>Tworzenie i zarządzanie bazami danymi za pomocą Pythona z wykorzystaniem
-wbudowanego modułu <a class="reference external" href="https://docs.python.org/2/library/sqlite3.html">sqlite3 DB-API</a>, a także zewnętrznych bibliotek ORM:
-<a class="reference external" href="http://peewee.readthedocs.org/en/latest/index.html">Peewee</a> oraz <a class="reference external" href="http://www.sqlalchemy.org">SQLAlchemy</a></p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Poniższe przykłady wykorzystywać będą prostą, wydajną, stosowaną
-zarówno w prostych, jak i zaawansowanych projektach, <a class="reference external" href="http://www.sqlite.org/">bazę danych SQLite3</a>.
-Gdy zajdzie potrzeba, można je jednak wyorzystać w pracy z innymi
-bazami, takimi jak np. MySQL, MariaDB czy PostgresSQL.
-Do testowania baz danych SQLite można wykorzystać przygotowane przez
-jej twórców konsolowe narzędzie <a class="reference external" href="http://www.sqlite.org/cli.html">sqlite3</a>. W linuksach opartych na Debianie
-(m. in. Ubuntu i pochodne) instalujemy je poleceniem typu:
-<code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">sqlite3</span></code>; w systemach Windows natomiast rozpakowujemy
-z pobranego <a class="reference external" href="http://www.sqlite.org/download.html">archiwum</a>.</p>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sql/index.html">3.1. SQL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html#polaczenie-z-baza">3.1.1. Połączenie z bazą</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html#model-bazy">3.1.2. Model bazy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html#wstawianie-danych">3.1.3. Wstawianie danych</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html#pobieranie-danych">3.1.4. Pobieranie danych</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html#dane-z-pliku">3.1.5. Dane z pliku</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html#materialy">3.1.6. Materiały</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="orm/index.html">3.2. Systemy ORM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="orm/index.html#polaczenie-z-baza">3.2.1. Połączenie z bazą</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orm/index.html#model-danych-i-baza">3.2.2. Model danych i baza</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orm/index.html#operacje-crud">3.2.3. Operacje CRUD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orm/index.html#materialy">3.2.4. Materiały</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="materialy">
-<h2>3.3. Materiały<a class="headerlink" href="#materialy" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><a class="reference external" href="https://docs.python.org/2/library/sqlite3.html">Moduł sqlite3 Pythona</a></li>
-<li><a class="reference external" href="http://www.sqlite.org/">Baza SQLite3</a></li>
-<li><a class="reference external" href="http://pl.wikipedia.org/wiki/SQL">Język SQL</a></li>
-<li><a class="reference external" href="http://peewee.readthedocs.org/en/latest/index.html">Peewee (ang.)</a></li>
-<li><a class="reference external" href="http://www.blog.pythonlibrary.org/2014/07/17/an-intro-to-peewee-another-python-orm/">Tutorial Peewee (ang.)</a></li>
-<li><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy ORM Tutorial (ang.)</a></li>
-<li><a class="reference external" href="http://www.pythoncentral.io/introductory-tutorial-python-sqlalchemy/">Tutorial SQLAlchemy (ang.)</a></li>
-</ol>
-<div class="section" id="slownik">
-<h3>3.3.1. Słownik<a class="headerlink" href="#slownik" title="Permalink to this headline">¶</a></h3>
-<dl class="glossary docutils">
+  <dl class="glossary docutils">
 <dt id="term-sql">SQL</dt>
 <dd>strukturalny język zapytań używany do tworzenia i zarządzania bazą danych.</dd>
 <dt id="term-sqlite3">SQLite3</dt>
@@ -255,57 +203,10 @@ bazy SQLite3, MySQL, Posgresql.</dd>
 wszystkich możliwości SQL-a, obsługuje bazy SQLite3, MySQL, Postgresql,
 Oracle, MS SQL Server i inne.</dd>
 </dl>
-</div>
-<div class="section" id="metryka">
-<h3>3.3.2. Metryka<a class="headerlink" href="#metryka" title="Permalink to this headline">¶</a></h3>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Autor:</th><td class="field-body">Robert Bednarz (<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
-</tr>
-</tbody>
-</table>
-<style>
-    div.code_no { text-align: right; background: #e3e3e3; padding: 6px 12px; }
-    div.highlight, div.highlight-python { margin-top: 0px; }
-</style><p>
-    <a style="float:left; margin: 0.3em 1em 1em 0" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-    Materiały <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python 101</span>
-    udostępniane przez <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.ceo.org.pl/" property="cc:attributionName" rel="cc:attributionURL">
-    Centrum Edukacji Obywatelskiej</a> na licencji <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    Creative Commons Uznanie autorstwa-Na tych samych warunkach 4.0 Międzynarodowa</a>.<br />
-</p>
-
-<script>
-  // dla http://koduj-z-klasa.github.io/python101/
-  // w read the docs kod uzupełnia się w dashboardzie
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55172998-1', 'auto');
-  ga('send', 'pageview');
-</script></div>
-</div>
-</div>
 
 
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="sql/index.html" class="btn btn-neutral float-right" title="3.1. SQL"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../pygame/life/index.html" class="btn btn-neutral" title="2.6. Życie Conwaya (obj)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
