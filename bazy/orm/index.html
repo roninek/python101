@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -46,9 +48,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> Python 101</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> Python 101</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -58,8 +63,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -131,6 +137,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -163,7 +170,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="systemy-orm">
 <h1>3.2. Systemy ORM<a class="headerlink" href="#systemy-orm" title="Permalink to this headline">¶</a></h1>
@@ -180,13 +187,13 @@ możliwości baz danych, niemniej w wielu niespecjalistycznych projektach można
 je obsługiwać inaczej, tj. za pomocą systemów ORM (ang. Object-Relational Mapping
 – mapowanie obiektowo-relacyjne). Pozwalają one traktować tabele w sposób
 obiektowy, co bywa wygodniejsze w budowaniu logiki aplikacji.</p>
-<p>Używanie systemów ORM, takich jak <a class="reference internal" href="../sql/index.html#term-peewee"><em class="xref std std-term">Peewee</em></a> czy <a class="reference internal" href="../sql/index.html#term-sqlalchemy"><em class="xref std std-term">SQLAlchemy</em></a>,
+<p>Używanie systemów ORM, takich jak <a class="reference internal" href="../sql/index.html#term-peewee"><span class="xref std std-term">Peewee</span></a> czy <a class="reference internal" href="../sql/index.html#term-sqlalchemy"><span class="xref std std-term">SQLAlchemy</span></a>,
 w prostych projektach sprowadza się do schematu, który poglądowo można opisać
 w trzech krokach:</p>
 <ol class="arabic simple">
 <li>Nawiązanie połączenia z bazą</li>
 <li>Deklaracja modelu opisującego bazę i utworzenie struktury bazy</li>
-<li>Wykonywanie operacji <a class="reference internal" href="../sql/index.html#term-crud"><em class="xref std std-term">CRUD</em></a></li>
+<li>Wykonywanie operacji <a class="reference internal" href="../sql/index.html#term-crud"><span class="xref std std-term">CRUD</span></a></li>
 </ol>
 <p>Poniżej spróbujemy pokazać, jak operacje wykonywane przy użyciu wbudowanego
 w Pythona modułu sqlite3, zrealizować przy użyciu technik ORM.</p>
@@ -512,7 +519,7 @@ wykorzystujemy metody sesji, w ramach której komunikujemy się z bazą.</p>
 <p>Dodawanie informacji w systemach ORM polega na utworzeniu instancji odpowiedniego
 obiektu i podaniu w jego konstruktorze wartości atrybutów reprezentujących pola rekordu:
 <code class="docutils literal"><span class="pre">Klasa(nazwa</span> <span class="pre">=</span> <span class="pre">'1A',</span> <span class="pre">profil</span> <span class="pre">=</span> <span class="pre">'matematyczny')</span></code>. Utworzony rekord zapisujemy metodą
-<code class="docutils literal"><span class="pre">.save()</span></code> obiektu w Peewee lub metodą <code class="docutils literal"><span class="pre">.add()</span></code> <a class="reference internal" href="#sesja"><em>sesji</em></a> w SQLAlchemy.
+<code class="docutils literal"><span class="pre">.save()</span></code> obiektu w Peewee lub metodą <code class="docutils literal"><span class="pre">.add()</span></code> <a class="reference internal" href="#sesja"><span>sesji</span></a> w SQLAlchemy.
 Można również dodawać wiele rekordów na raz. Peewee oferuje metodę <code class="docutils literal"><span class="pre">.insert_many()</span></code>,
 która jako parametr przyjmuje listę słowników zawierających dane w formacie
 &#8220;klucz&#8221;:&#8221;wartość&#8221;, przy czym kluczem jest nazwa pola klasy (tabeli).
@@ -732,7 +739,7 @@ Uruchamiamy je wydając polecenia:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autor:</th><td class="field-body">Robert Bednarz (<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
 </tr>
 </tbody>
 </table>
@@ -768,7 +775,7 @@ Uruchamiamy je wydając polecenia:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../webapps/index.html" class="btn btn-neutral float-right" title="4. Aplikacje internetowe"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../webapps/index.html" class="btn btn-neutral float-right" title="4. Aplikacje internetowe">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../sql/index.html" class="btn btn-neutral" title="3.1. SQL"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -784,7 +791,8 @@ Uruchamiamy je wydając polecenia:</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>

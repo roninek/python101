@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -46,9 +48,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> Python 101</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> Python 101</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -58,8 +63,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -131,6 +137,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -163,7 +170,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="chatter">
 <h1>4.4. Chatter<a class="headerlink" href="#chatter" title="Permalink to this headline">¶</a></h1>
@@ -224,9 +231,9 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 <h2><a class="toc-backref" href="#id16">4.4.2. Model – Widok – Kontroler</a><a class="headerlink" href="#model-widok-kontroler" title="Permalink to this headline">¶</a></h2>
 <p>W projektowaniu aplikacji internetowych za pomocą Django odwołujemy się do wzorca M(odel)V(iew)C(ontroller), czyli Model–Widok–Kontroler <a class="footnote-reference" href="#id3" id="id1">[1]</a>, co pozwala na oddzielenie danych od ich prezentacji oraz logiki aplikacji. Funkcje kolejnych elementów są następujące:</p>
 <ul class="simple">
-<li>Modele – <a class="reference internal" href="../todo/index.html#term-model"><em class="xref std std-term">model</em></a> w Django reprezentuje źródło informacji; są to klasy Pythona, które zawierają pola, właściwości i zachowania danych, odwzorowują pojedyncze tabele w bazie danych <a class="footnote-reference" href="#id4" id="id2">[2]</a>. Definiowane są w pliku <code class="file docutils literal"><span class="pre">models.py</span></code>.</li>
-<li>Widoki – <a class="reference internal" href="../todo/index.html#term-widok"><em class="xref std std-term">widok</em></a> w Django to funkcja Pythona, która na podstawie żądań www (dla danych adresów URL) zwracaja odpowiedź w postaci kodu HTML generowanego w szablonach (templates), przekierowania, dokumentu XML czy obrazka. Definiowane są w pliku <code class="file docutils literal"><span class="pre">views.py</span></code>.</li>
-<li>Kontroler – <a class="reference internal" href="../todo/index.html#term-kontroler"><em class="xref std std-term">kontroler</em></a> to mechanizm kierujący kolejne żądania do odpowiednich widoków na podstawie konfiguracji adresów URL zawartej w pliku <code class="file docutils literal"><span class="pre">urls.py</span></code>.</li>
+<li>Modele – <a class="reference internal" href="../todo/index.html#term-model"><span class="xref std std-term">model</span></a> w Django reprezentuje źródło informacji; są to klasy Pythona, które zawierają pola, właściwości i zachowania danych, odwzorowują pojedyncze tabele w bazie danych <a class="footnote-reference" href="#id4" id="id2">[2]</a>. Definiowane są w pliku <code class="file docutils literal"><span class="pre">models.py</span></code>.</li>
+<li>Widoki – <a class="reference internal" href="../todo/index.html#term-widok"><span class="xref std std-term">widok</span></a> w Django to funkcja Pythona, która na podstawie żądań www (dla danych adresów URL) zwracaja odpowiedź w postaci kodu HTML generowanego w szablonach (templates), przekierowania, dokumentu XML czy obrazka. Definiowane są w pliku <code class="file docutils literal"><span class="pre">views.py</span></code>.</li>
+<li>Kontroler – <a class="reference internal" href="../todo/index.html#term-kontroler"><span class="xref std std-term">kontroler</span></a> to mechanizm kierujący kolejne żądania do odpowiednich widoków na podstawie konfiguracji adresów URL zawartej w pliku <code class="file docutils literal"><span class="pre">urls.py</span></code>.</li>
 </ul>
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -243,7 +250,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </div>
 <div class="section" id="model-danych-i-baza">
 <h2><a class="toc-backref" href="#id17">4.4.3. Model danych i baza</a><a class="headerlink" href="#model-danych-i-baza" title="Permalink to this headline">¶</a></h2>
-<p>Jak zostało wyjaśnione, <a class="reference internal" href="../todo/index.html#term-model"><em class="xref std std-term">model</em></a> jest klasą Pythona opisującą dane naszej aplikacji, czyli wiadomości. Instancje tej klasy będą konkretnymi wiadomościami napisanymi przez użytkowników systemu. Każda wiadomość  będzie zwierała treść, datę dodania oraz autora wiadomości (użytkownika).</p>
+<p>Jak zostało wyjaśnione, <a class="reference internal" href="../todo/index.html#term-model"><span class="xref std std-term">model</span></a> jest klasą Pythona opisującą dane naszej aplikacji, czyli wiadomości. Instancje tej klasy będą konkretnymi wiadomościami napisanymi przez użytkowników systemu. Każda wiadomość  będzie zwierała treść, datę dodania oraz autora wiadomości (użytkownika).</p>
 <p>W katalogu <code class="file docutils literal"><span class="pre">chatter/chatter</span></code> w pliku <code class="file docutils literal"><span class="pre">models.py</span></code> wpisujemy:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -871,7 +878,7 @@ i na ich podstawie przygotowuje dane zwracane do przeglądarki, najczęściej  w
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Tomasz Nowacki,
 Robert Bednarz</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
 </tr>
 </tbody>
 </table>
@@ -907,7 +914,7 @@ Robert Bednarz</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../faq/index.html" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../faq/index.html" class="btn btn-neutral float-right" title="FAQ">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../quiz_orm/index.html" class="btn btn-neutral" title="4.3. Quiz ORM"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -923,7 +930,8 @@ Robert Bednarz</td>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>

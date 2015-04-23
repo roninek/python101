@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -46,9 +48,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> Python 101</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> Python 101</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -58,8 +63,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -131,6 +137,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -163,7 +170,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="zycie-conwaya-obj">
 <h1>2.6. Życie Conwaya (obj)<a class="headerlink" href="#zycie-conwaya-obj" title="Permalink to this headline">¶</a></h1>
@@ -373,10 +380,10 @@ zarządzania główną pętlą naszej gry.</p>
 <p>Nasza gra polega na ułożenia komórek na planszy i obserwacji jak w kolejnych generacjach
 życie się zmienia, które komórki giną, gdzie się rozmnażają i wywołują efektowną wędrówkę
 oraz tworzenie się ciekawych struktur.</p>
-<p>Zacznijmy od zadeklarowania zmiennych które zastąpią nam tzw. <a class="reference internal" href="#term-magiczne-liczby"><em class="xref std std-term">magiczne liczby</em></a>.
+<p>Zacznijmy od zadeklarowania zmiennych które zastąpią nam tzw. <a class="reference internal" href="#term-magiczne-liczby"><span class="xref std std-term">magiczne liczby</span></a>.
 W kodzie zamiast wartości <code class="docutils literal"><span class="pre">1</span></code> dla określenia żywej komórki i wartości <code class="docutils literal"><span class="pre">0</span></code>
 dla martwej komórki wykorzystamy zmiennie <code class="docutils literal"><span class="pre">ALIVE</span></code> oraz <code class="docutils literal"><span class="pre">DEAD</span></code>. W innych językach
-takie zmienne czasem są określane jako <a class="reference internal" href="#term-stala"><em class="xref std std-term">stała</em></a>.</p>
+takie zmienne czasem są określane jako <a class="reference internal" href="#term-stala"><span class="xref std std-term">stała</span></a>.</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>77
 78
 79</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># magiczne liczby używane do określenia czy komórka jest żywa</span>
@@ -616,7 +623,7 @@ stan życia komórek dla wszystkich możliwych współrzędnych <code class="doc
 Na uwagę zasługują dwie rzeczy. Nigdzie tutaj nie zadeklarowaliśmy listy żywych komórek
 — którą chcemy zwrócić — oraz instrukcję yield.</p>
 <p>Instrukcja <code class="docutils literal"><span class="pre">yield</span></code> powoduje, że nasza funkcja zamiast zwykłych wartości zwróci
-<a class="reference internal" href="#term-generator"><em class="xref std std-term">generator</em></a>. W skrócie w każdym przebiegu wewnętrznej pętli
+<a class="reference internal" href="#term-generator"><span class="xref std std-term">generator</span></a>. W skrócie w każdym przebiegu wewnętrznej pętli
 zostaną <em>wygenerowane</em> i zwrócone na zewnątrz wartości <code class="docutils literal"><span class="pre">x,</span> <span class="pre">y</span></code>. Za każdym razem gdy
 <code class="docutils literal"><span class="pre">for</span> <span class="pre">x,</span> <span class="pre">y</span> <span class="pre">in</span> <span class="pre">self.alive_cells()</span></code> poprosi o współrzędne następnej żywej komórki,
 <code class="docutils literal"><span class="pre">alive_cells</span></code> wykona się do instrukcji <code class="docutils literal"><span class="pre">yield</span></code>.</p>
@@ -975,7 +982,7 @@ Czasem tak samo nazywane są funkcje zwracające generator (ang. generator funct
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body"><a class="reference external" href="https://plus.google.com/+JanuszSkonieczny/">Janusz Skonieczny</a>,
 Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
 </tr>
 </tbody>
 </table>
@@ -1011,7 +1018,7 @@ Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../bazy/index.html" class="btn btn-neutral float-right" title="3. Bazy danych w Pythonie"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../bazy/index.html" class="btn btn-neutral float-right" title="3. Bazy danych w Pythonie">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../life_str/index.html" class="btn btn-neutral" title="2.5. Życie Conwaya (str)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1027,7 +1034,8 @@ Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>

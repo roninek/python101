@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -46,9 +48,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> Python 101</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> Python 101</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -58,8 +63,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -131,6 +137,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -163,7 +170,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="quiz">
 <h1>4.1. Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h1>
@@ -229,7 +236,7 @@ co wynika z faktu, że nasza aplikacja nie ma jeszcze zdefiniowanego żadnego za
 <div class="section" id="widok-strona-glowna">
 <h2><a class="toc-backref" href="#id3">4.1.3. Widok (strona główna)</a><a class="headerlink" href="#widok-strona-glowna" title="Permalink to this headline">¶</a></h2>
 <p>Jeżeli chcemy, aby nasza aplikacja zwracała użytkownikowi jakieś strony www,
-tworzymy tzw. <a class="reference internal" href="../todo/index.html#term-widok"><em class="xref std std-term">widok</em></a>. Jest to funkcja Pythona powiązana z określonymi
+tworzymy tzw. <a class="reference internal" href="../todo/index.html#term-widok"><span class="xref std std-term">widok</span></a>. Jest to funkcja Pythona powiązana z określonymi
 adresami URL za pomocą tzw. dekoratorów. Widoki pozwalają name obsługiwać
 żądania GET, kiedy (upraszczając nieco) użytkownik chce po prostu zobaczyć
 stronę, i POST, kiedy użytkownik przesyła jakieś dane za pomocą formularza,
@@ -633,9 +640,9 @@ w funkcji <code class="docutils literal"><span class="pre">index()</span></code>
 </td></tr></table></div>
 <div class="section" id="jak-to-dziala">
 <h3>4.1.5.1. Jak to działa<a class="headerlink" href="#jak-to-dziala" title="Permalink to this headline">¶</a></h3>
-<p>Uzupełniliśmy dekorator <code class="docutils literal"><span class="pre">app.route()</span></code>, aby obsługiwał zarówno żądania <a class="reference internal" href="../todo/index.html#term-get"><em class="xref std std-term">GET</em></a>
+<p>Uzupełniliśmy dekorator <code class="docutils literal"><span class="pre">app.route()</span></code>, aby obsługiwał zarówno żądania <a class="reference internal" href="../todo/index.html#term-get"><span class="xref std std-term">GET</span></a>
 (wejście na stronę główną, po wpisaniu adresu =&gt; pokazujemy pytania),
-jak i <a class="reference internal" href="../todo/index.html#term-post"><em class="xref std std-term">POST</em></a> (przesłanie odpowiedzi z formularza pytań =&gt; oceniamy odpowiedzi).</p>
+jak i <a class="reference internal" href="../todo/index.html#term-post"><span class="xref std std-term">POST</span></a> (przesłanie odpowiedzi z formularza pytań =&gt; oceniamy odpowiedzi).</p>
 <p>W widoku <code class="docutils literal"><span class="pre">index()</span></code> dodaliśmy instrukcję warunkową <code class="docutils literal"><span class="pre">if</span> <span class="pre">request.method</span> <span class="pre">==</span> <span class="pre">'POST':</span></code>,
 która wykrywa żądania POST i wykonuje blok kodu zliczający poprawne odpowiedzi.
 Przesłane dane zapisujemy w zmiennej: <code class="docutils literal"><span class="pre">odpowiedzi</span> <span class="pre">=</span> <span class="pre">request.form</span></code>.
@@ -728,7 +735,7 @@ Uruchamiamy je wydając polecenia:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Robert Bednarz (<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>), Tomasz Nowacki</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
 </tr>
 </tbody>
 </table>
@@ -764,7 +771,7 @@ Uruchamiamy je wydając polecenia:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../todo/index.html" class="btn btn-neutral float-right" title="4.2. ToDo"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../todo/index.html" class="btn btn-neutral float-right" title="4.2. ToDo">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../index.html" class="btn btn-neutral" title="4. Aplikacje internetowe"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -780,7 +787,8 @@ Uruchamiamy je wydając polecenia:</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>

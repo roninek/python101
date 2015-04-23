@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -46,9 +48,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> Python 101</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> Python 101</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -58,8 +63,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -131,6 +137,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -163,7 +170,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="quiz-orm">
 <h1>4.3. Quiz ORM<a class="headerlink" href="#quiz-orm" title="Permalink to this headline">¶</a></h1>
@@ -747,7 +754,7 @@ w trybie debugowania. Czas więc uruchomić nasz testowy serwer:</p>
 </div>
 <div class="section" id="widoki-crud">
 <h2><a class="toc-backref" href="#id11">4.3.7. Widoki CRUD</a><a class="headerlink" href="#widoki-crud" title="Permalink to this headline">¶</a></h2>
-<p>Skrót <a class="reference internal" href="../../bazy/sql/index.html#term-crud"><em class="xref std std-term">CRUD</em></a> (<em>Create</em> (tworzenie), <em>Read</em> (odczyt), <em>Update</em> (aktualizacja), <em>Delete</em> (usuwanie))
+<p>Skrót <a class="reference internal" href="../../bazy/sql/index.html#term-crud"><span class="xref std std-term">CRUD</span></a> (<em>Create</em> (tworzenie), <em>Read</em> (odczyt), <em>Update</em> (aktualizacja), <em>Delete</em> (usuwanie))
 oznacza, jak wyjaśniono, podstawowe operacje wykonywane na bazie danych.</p>
 <div class="section" id="dane-poczatkowe">
 <h3>4.3.7.1. Dane początkowe<a class="headerlink" href="#dane-poczatkowe" title="Permalink to this headline">¶</a></h3>
@@ -974,7 +981,7 @@ i możliwe odpowiedzi jako pola opcji typu radio button:</p>
 </pre></div>
 </td></tr></table></div>
 <p>Użytkownik po wybraniu odpowiedzi naciska przyscisk <em>Sprawdź...</em> i przesyła
-do naszego widoku dane w żądaniu typu <a class="reference internal" href="../todo/index.html#term-post"><em class="xref std std-term">POST</em></a>. W funkcji <code class="docutils literal"><span class="pre">quiz()</span></code>
+do naszego widoku dane w żądaniu typu <a class="reference internal" href="../todo/index.html#term-post"><span class="xref std std-term">POST</span></a>. W funkcji <code class="docutils literal"><span class="pre">quiz()</span></code>
 uwzględniamy taką sytuację i w pętli <code class="docutils literal"><span class="pre">for</span> <span class="pre">pid,</span> <span class="pre">odp</span> <span class="pre">in</span> <span class="pre">request.form.items():</span></code>
 odczytujemy identyfikator pytania i udzieloną odpowiedź. Następnie
 pobieramy odpowiedź prawidłową w Peewee za pomocą kodu
@@ -1086,7 +1093,7 @@ przekazanymi danymi. W tym ostatnim przypadku umieszczamy w
 formularzu dodaktowe ukryte pole, w którym zapisujemy <em>id</em> edytowanego pytania.</p>
 <p>Załóżmy, że użytkownik wpisał lub zmienił pytanie i nacisnął przycisk
 typu <em>submit</em>, czyli wysłał dane do serwera. Co dzieje się dalej? Takie
-żądanie <a class="reference internal" href="../todo/index.html#term-post"><em class="xref std std-term">POST</em></a> trafi do widoku <code class="docutils literal"><span class="pre">dodaj()</span></code>, co określone zostało
+żądanie <a class="reference internal" href="../todo/index.html#term-post"><span class="xref std std-term">POST</span></a> trafi do widoku <code class="docutils literal"><span class="pre">dodaj()</span></code>, co określone zostało
 w atrybucie formularza: <code class="docutils literal"><span class="pre">action=&quot;{{</span> <span class="pre">url_for('dodaj')</span> <span class="pre">}}&quot;</span></code>. Zobaczmy, jak
 wygląda ten widok:</p>
 <div class="code_no">Peewee nr <script>var code_no2 = code_no2 || 1; document.write(code_no2++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>36
@@ -1223,7 +1230,7 @@ wygląda ten widok:</p>
             <span class="n">flash</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">+</span><span class="n">pytanie</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">odpok</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; (&quot;</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">odpowiedzi</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">,</span> <span class="s">&#39;kom&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>Po otworzeniu adresu <code class="docutils literal"><span class="pre">/dodaj</span></code> otrzymujemy żadanie <a class="reference internal" href="../todo/index.html#term-get"><em class="xref std std-term">GET</em></a>,
+<p>Po otworzeniu adresu <code class="docutils literal"><span class="pre">/dodaj</span></code> otrzymujemy żadanie <a class="reference internal" href="../todo/index.html#term-get"><span class="xref std std-term">GET</span></a>,
 na które odpowiadamay zwróceniem omówionego wyżej szablonu <code class="docutils literal"><span class="pre">dodaj.html</span></code>.
 Jeżeli jednak otrzymujemy dane z formularza, na początku dokonujemy prostej
 walidacji, tj. sprawdzamy, czy użytkownik nie przesyła pustego pytania lub odpowiedzi,
@@ -1355,7 +1362,7 @@ w formularzu: <code class="docutils literal"><span class="pre">{{</span> <span c
 Używamy tu funkcji <code class="docutils literal"><span class="pre">url_for</span></code>, która na podstawie podanego widoku generuje
 odpowiadający mu adres url.</p>
 <p>Jeżeli użytkownik wybierze edycję, do omawianego widoku <code class="docutils literal"><span class="pre">edytuj()</span></code> trafia
-żądanie <a class="reference internal" href="../todo/index.html#term-post"><em class="xref std std-term">POST</em></a>, które obsługujemy w ten sposób, że na podstawie
+żądanie <a class="reference internal" href="../todo/index.html#term-post"><span class="xref std std-term">POST</span></a>, które obsługujemy w ten sposób, że na podstawie
 odebranego identyfikatora tworzymy obiekt z żądanym pytaniem i odpowiedziami
 (w SQLAlchemy stosujemy tu polecenie: <code class="docutils literal"><span class="pre">Pytanie.query.get(pid)</span></code>), a następnie
 każemy go wyrenderować w szablonie <code class="docutils literal"><span class="pre">dodaj.html</span></code>. Działanie tego szablonu
@@ -1394,7 +1401,7 @@ Na koniec wywołujemy za pomocą tzw. przekierowania widok strony głównej
 <div class="section" id="pocwicz-sam">
 <h3>4.3.7.5. Poćwicz sam<a class="headerlink" href="#pocwicz-sam" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div>Spróbuj napisać wersję omówionej w innym scenariuszu aplikacji <a class="reference internal" href="../todo/index.html#id1"><em>ToDo</em></a>
+<div>Spróbuj napisać wersję omówionej w innym scenariuszu aplikacji <a class="reference internal" href="../todo/index.html#id1"><span>ToDo</span></a>
 przy wykorzystaniu wybranego systemu ORM, tj. Peewee lub SQLAlchemy.</div></blockquote>
 </div>
 </div>
@@ -1477,7 +1484,7 @@ dane, pamiętaj, aby odkomentować odpowiednie linie w pliku
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autor:</th><td class="field-body">Robert Bednarz (<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
 </tr>
 </tbody>
 </table>
@@ -1513,7 +1520,7 @@ dane, pamiętaj, aby odkomentować odpowiednie linie w pliku
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../chatter/index.html" class="btn btn-neutral float-right" title="4.4. Chatter"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../chatter/index.html" class="btn btn-neutral float-right" title="4.4. Chatter">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../todo/index.html" class="btn btn-neutral" title="4.2. ToDo"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1529,7 +1536,8 @@ dane, pamiętaj, aby odkomentować odpowiednie linie w pliku
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>

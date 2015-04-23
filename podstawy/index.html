@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -45,9 +47,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Python 101</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        
+          <a href="../index.html" class="fa fa-home"> Python 101</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -57,8 +62,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -130,6 +136,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -160,17 +167,17 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="podstawy-pythona">
 <h1>1. Podstawy Pythona<a class="headerlink" href="#podstawy-pythona" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://www.python.org">Python</a> jest dynamicznie typowanym językiem interpretowanym
-wysokiego poziomu. Cechuje się czytelnością i zwięzłością kodu. Stworzony został w latach 90.
-przez Guido van Rossuma, nazwa zaś pochodzi od tytułu serialu komediowego
-emitowanego w BBC pt. &#8220;Latający cyrk Monty Pythona&#8221;.</p>
-<p>W systemach opartych na Linuksie <a class="reference internal" href="podstawy/index.html#term-interpreter"><em class="xref std std-term">interpreter</em></a> Pythona jest standardowo zainstalowany,
-ponieważ duża część oprogramowania na nim bazuje. W systemach Microsoft Windows Pythona
-należy <a class="reference internal" href="../env.html#ins-python"><em>doinstalować</em></a>. Interpreter tłumaczy (kompiluje w locie) kod i od razu go wykonuje.
+<p><a class="reference external" href="http://www.python.org">Python</a> jest dynamicznie typowanym <a class="reference external" href="http://pl.wikipedia.org/wiki/J%C4%99zyk_interpretowany">językiem interpretowanym</a>
+<a class="reference external" href="http://pl.wikipedia.org/wiki/J%C4%99zyk_wysokiego_poziomu">wysokiego poziomu</a>. Cechuje się czytelnością i zwięzłością kodu. Stworzony został w latach 90.
+przez <a class="reference external" href="https://www.python.org/~guido/">Guido van Rossuma</a>, nazwa zaś pochodzi od tytułu serialu komediowego
+emitowanego w BBC pt. <a class="reference external" href="http://pl.wikipedia.org/wiki/Lataj%C4%85cy_cyrk_Monty_Pythona">&#8220;Latający cyrk Monty Pythona&#8221;</a>.</p>
+<p>W systemach opartych na Linuksie <a class="reference internal" href="podstawy/index.html#term-interpreter"><span class="xref std std-term">interpreter</span></a> Pythona jest standardowo zainstalowany,
+ponieważ duża część oprogramowania na nim bazuje. W systemach Microsoft Windows interpreter Pythona
+należy <a class="reference internal" href="../env.html#ins-python"><span>doinstalować</span></a>. Interpreter tłumaczy (kompiluje w locie) kod i od razu go wykonuje.
 Interpreter Pythona może być używany w trybie interaktywnym do nauki i testowania
 kodu.</p>
 <p>Funkcjonalność Pythona może być dowolnie rozszerzana dzięki licznym
@@ -180,9 +187,10 @@ kompleksowe projekty oparte na Pythonie wspomagające naukową analizę, oblicze
 i przetwarzanie danych, np.: <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> czy <a class="reference external" href="https://www.enthought.com/products/canopy/">Enthought Canopy</a>.</p>
 <p>Prosty kod można testować w interpreterze, do tworzenia bardziej rozbudowanych
 skryptów wykorzystać możemy dowolny edytor tekstowy. Ze względów praktycznych
-warto jednak korzystać z programów ułatwiających pisanie kodu (obsługa wcięć,
-podświetlenia itd.) np. lekkie i szybkie <a class="reference internal" href="../env.html#geany-python"><em>IDE Geany</em></a> lub profesjonalne środowisko
-<a class="reference internal" href="../env.html#pycharm-python"><em>PyCharm</em></a>. Obydwa programy działają na platformie Linux i Windows.</p>
+warto korzystać z programów ułatwiających pisanie kodu (obsługa wcięć,
+podświetlenia itd.) tzw. IDE czyli <a class="reference external" href="http://pl.wikipedia.org/wiki/Zintegrowane_%C5%9Brodowisko_programistyczne">Integrated Development Environment</a>
+np. lekkie i szybkie <a class="reference internal" href="../env.html#geany-python"><span>Geany</span></a> lub profesjonalne środowisko
+<a class="reference internal" href="../env.html#pycharm-python"><span>PyCharm</span></a>. Obydwa programy działają na platformie Linux i Windows.</p>
 <p>Zanim przystąpimy do pracy w katalogu domowym utworzymy podkatalog <code class="docutils literal"><span class="pre">python</span></code>,
 w którym będziemy zapisywali nasze skrypty:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="code bash highlight-python"><div class="highlight"><pre>~$ mkdir python
@@ -291,7 +299,7 @@ po stronie klienta WWW (JavaScript) lub serwera (np. Python, PHP).</dd>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Autor:</th><td class="field-body">Robert Bednarz &lt;<a class="reference external" href="mailto:ecg&#37;&#52;&#48;ecg&#46;vot&#46;pl">ecg<span>&#64;</span>ecg<span>&#46;</span>vot<span>&#46;</span>pl</a>&gt;, Dorota Rybicka, Grzegorz Wilczek</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-02-24 o 16:47</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
 </tr>
 </tbody>
 </table>
@@ -327,7 +335,7 @@ po stronie klienta WWW (JavaScript) lub serwera (np. Python, PHP).</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="podstawy/index.html" class="btn btn-neutral float-right" title="1.1. Wprowadzenie do Pythona"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="podstawy/index.html" class="btn btn-neutral float-right" title="1.1. Wprowadzenie do Pythona">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../source_code.html" class="btn btn-neutral" title="Przygotowanie katalogu projektu"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -343,7 +351,8 @@ po stronie klienta WWW (JavaScript) lub serwera (np. Python, PHP).</dd>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
