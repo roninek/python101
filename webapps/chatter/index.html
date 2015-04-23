@@ -7,14 +7,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.4. Chatter &mdash; Python 101 0.5 documentation</title>
+  <title>4.4. Czat (wersja podstawowa) &mdash; Python 101 0.5 documentation</title>
   
 
   
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -28,12 +28,10 @@
   
 
   
-
-  
         <link rel="copyright" title="Copyright" href="../../copyright.html"/>
     <link rel="top" title="Python 101 0.5 documentation" href="../../index.html"/>
         <link rel="up" title="4. Aplikacje internetowe" href="../index.html"/>
-        <link rel="next" title="FAQ" href="../../faq/index.html"/>
+        <link rel="next" title="4.5. Czat (wersja rozszerzona)" href="../czat/index.html"/>
         <link rel="prev" title="4.3. Quiz ORM" href="../quiz_orm/index.html"/> 
 
   
@@ -48,12 +46,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> Python 101</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> Python 101</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -63,9 +58,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul>
+        
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../env.html">System i oprogramowanie</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#system-operacyjny">System operacyjny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../env.html#windows-8-i-bios-uefi">Windows 8 i BIOS UEFI</a></li>
@@ -113,8 +107,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../quiz/index.html">4.1. Quiz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../todo/index.html">4.2. ToDo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quiz_orm/index.html">4.3. Quiz ORM</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">4.4. Chatter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#materialy">4.5. Materiały</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">4.4. Czat (wersja podstawowa)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../czat/index.html">4.5. Czat (wersja rozszerzona)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#materialy">4.6. Materiały</a></li>
 </ul>
 </li>
 </ul>
@@ -137,7 +132,6 @@
 </li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -161,7 +155,7 @@
       
           <li><a href="../index.html">4. Aplikacje internetowe</a> &raquo;</li>
       
-    <li>4.4. Chatter</li>
+    <li>4.4. Czat (wersja podstawowa)</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/webapps/chatter/index.txt" rel="nofollow"> View page source</a>
@@ -170,11 +164,12 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
-  <div class="section" id="chatter">
-<h1>4.4. Chatter<a class="headerlink" href="#chatter" title="Permalink to this headline">¶</a></h1>
-<p>Zastosowanie Pythona i frameworka Django do stworzenia aplikacji internetowej Chatter; prostego czata, w którym zarejestrowani użytkownicy będą mogli wymieniać się krótkimi wiadomościami.</p>
+  <div class="section" id="czat-wersja-podstawowa">
+<h1>4.4. Czat (wersja podstawowa)<a class="headerlink" href="#czat-wersja-podstawowa" title="Permalink to this headline">¶</a></h1>
+<p>Zastosowanie Pythona i frameworka Django do stworzenia aplikacji internetowej
+Czat; prostego czata, w którym zarejestrowani użytkownicy będą mogli wymieniać się krótkimi wiadomościami.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#projekt-i-aplikacja" id="id15">Projekt i aplikacja</a></li>
@@ -191,13 +186,15 @@
 </div>
 <div class="section" id="projekt-i-aplikacja">
 <h2><a class="toc-backref" href="#id15">4.4.1. Projekt i aplikacja</a><a class="headerlink" href="#projekt-i-aplikacja" title="Permalink to this headline">¶</a></h2>
-<p>Tworzymy nowy projekt Django, a następnie uruchamiamy lokalny serwer, który pozwoli śledzić postęp pracy. W katalogu domowym wydajemy polecenia w terminalu:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~ <span class="nv">$ </span>django-admin.py startproject chatter
-~ <span class="nv">$ </span><span class="nb">cd </span>chatter
-~/chatter <span class="nv">$ </span>python manage.py runserver 127.0.0.1:8080
+<p>Tworzymy nowy projekt Django, a następnie uruchamiamy lokalny serwer,
+który pozwoli śledzić postęp pracy. W katalogu domowym wydajemy polecenia w terminalu:</p>
+<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~ <span class="nv">$ </span>django-admin.py startproject czat
+~ <span class="nv">$ </span><span class="nb">cd </span>czat
+~/czat <span class="nv">$ </span>python manage.py runserver 127.0.0.1:8080
 </pre></div>
 </div>
-<p>Powstanie katalog projektu <code class="file docutils literal"><span class="pre">chatter</span></code> i aplikacja o nazwie <code class="file docutils literal"><span class="pre">chatter</span></code>. Pod adresem <em>127.0.0.1:8080</em> w przeglądarce zobaczymy stronę powitalną.</p>
+<p>Powstanie katalog projektu <code class="file docutils literal"><span class="pre">czat</span></code> i podkatalog aplikacji o nazwie <code class="file docutils literal"><span class="pre">czat</span></code>.
+Pod adresem <em>127.0.0.1:8080</em> w przeglądarce zobaczymy stronę powitalną.</p>
 <div class="figure">
 <img alt="../../_images/chatter1.png" src="../../_images/chatter1.png" />
 </div>
@@ -206,8 +203,10 @@
 <p class="last">Jeden projekt może zawierać wiele aplikacji zapisywanych w osobnych podkatalogach katalogu projektu.
 Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </div>
-<p>Teraz zmodyfikujemy ustawienia projektu, aby korzystał z polskiej wersji językowej oraz lokalnych ustawień daty i czasu. Musimy również zarejestrować naszą aplikację w projekcie. W pliku <code class="file docutils literal"><span class="pre">setting.py</span></code> zmieniamy następujące linie:</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="c"># chatter/chatter/settnigs.py</span>
+<p>Teraz zmodyfikujemy ustawienia projektu, aby korzystał z polskiej wersji
+językowej oraz lokalnych ustawień daty i czasu. Musimy również zarejestrować
+naszą aplikację w projekcie. W pliku <code class="file docutils literal"><span class="pre">setting.py</span></code> zmieniamy następujące linie:</p>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="c"># czat/czat/settings.py</span>
 
 <span class="c"># rejestrujemy aplikacje</span>
 <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
@@ -218,7 +217,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
     <span class="s">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
     <span class="s">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
 
-    <span class="s">&#39;chatter&#39;</span><span class="p">,</span> <span class="c"># nasza aplikacja</span>
+    <span class="s">&#39;czat&#39;</span><span class="p">,</span> <span class="c"># nasza aplikacja</span>
 <span class="p">)</span>
 
 <span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s">&#39;pl&#39;</span> <span class="c"># ustawienia jezyka</span>
@@ -231,9 +230,9 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 <h2><a class="toc-backref" href="#id16">4.4.2. Model – Widok – Kontroler</a><a class="headerlink" href="#model-widok-kontroler" title="Permalink to this headline">¶</a></h2>
 <p>W projektowaniu aplikacji internetowych za pomocą Django odwołujemy się do wzorca M(odel)V(iew)C(ontroller), czyli Model–Widok–Kontroler <a class="footnote-reference" href="#id3" id="id1">[1]</a>, co pozwala na oddzielenie danych od ich prezentacji oraz logiki aplikacji. Funkcje kolejnych elementów są następujące:</p>
 <ul class="simple">
-<li>Modele – <a class="reference internal" href="../todo/index.html#term-model"><span class="xref std std-term">model</span></a> w Django reprezentuje źródło informacji; są to klasy Pythona, które zawierają pola, właściwości i zachowania danych, odwzorowują pojedyncze tabele w bazie danych <a class="footnote-reference" href="#id4" id="id2">[2]</a>. Definiowane są w pliku <code class="file docutils literal"><span class="pre">models.py</span></code>.</li>
-<li>Widoki – <a class="reference internal" href="../todo/index.html#term-widok"><span class="xref std std-term">widok</span></a> w Django to funkcja Pythona, która na podstawie żądań www (dla danych adresów URL) zwracaja odpowiedź w postaci kodu HTML generowanego w szablonach (templates), przekierowania, dokumentu XML czy obrazka. Definiowane są w pliku <code class="file docutils literal"><span class="pre">views.py</span></code>.</li>
-<li>Kontroler – <a class="reference internal" href="../todo/index.html#term-kontroler"><span class="xref std std-term">kontroler</span></a> to mechanizm kierujący kolejne żądania do odpowiednich widoków na podstawie konfiguracji adresów URL zawartej w pliku <code class="file docutils literal"><span class="pre">urls.py</span></code>.</li>
+<li>Modele – <a class="reference internal" href="../czat/index.html#term-model"><em class="xref std std-term">model</em></a> w Django reprezentuje źródło informacji; są to klasy Pythona, które zawierają pola, właściwości i zachowania danych, odwzorowują pojedyncze tabele w bazie danych <a class="footnote-reference" href="#id4" id="id2">[2]</a>. Definiowane są w pliku <code class="file docutils literal"><span class="pre">models.py</span></code>.</li>
+<li>Widoki – <a class="reference internal" href="../czat/index.html#term-widok"><em class="xref std std-term">widok</em></a> w Django to funkcja Pythona, która na podstawie żądań www (dla danych adresów URL) zwracaja odpowiedź w postaci kodu HTML generowanego w szablonach (templates), przekierowania, dokumentu XML czy obrazka. Definiowane są w pliku <code class="file docutils literal"><span class="pre">views.py</span></code>.</li>
+<li>Kontroler – <a class="reference internal" href="../czat/index.html#term-kontroler"><em class="xref std std-term">kontroler</em></a> to mechanizm kierujący kolejne żądania do odpowiednich widoków na podstawie konfiguracji adresów URL zawartej w pliku <code class="file docutils literal"><span class="pre">urls.py</span></code>.</li>
 </ul>
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -250,8 +249,8 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </div>
 <div class="section" id="model-danych-i-baza">
 <h2><a class="toc-backref" href="#id17">4.4.3. Model danych i baza</a><a class="headerlink" href="#model-danych-i-baza" title="Permalink to this headline">¶</a></h2>
-<p>Jak zostało wyjaśnione, <a class="reference internal" href="../todo/index.html#term-model"><span class="xref std std-term">model</span></a> jest klasą Pythona opisującą dane naszej aplikacji, czyli wiadomości. Instancje tej klasy będą konkretnymi wiadomościami napisanymi przez użytkowników systemu. Każda wiadomość  będzie zwierała treść, datę dodania oraz autora wiadomości (użytkownika).</p>
-<p>W katalogu <code class="file docutils literal"><span class="pre">chatter/chatter</span></code> w pliku <code class="file docutils literal"><span class="pre">models.py</span></code> wpisujemy:</p>
+<p>Jak zostało wyjaśnione, <a class="reference internal" href="../czat/index.html#term-model"><em class="xref std std-term">model</em></a> jest klasą Pythona opisującą dane naszej aplikacji, czyli wiadomości. Instancje tej klasy będą konkretnymi wiadomościami napisanymi przez użytkowników systemu. Każda wiadomość  będzie zwierała treść, datę dodania oraz autora wiadomości (użytkownika).</p>
+<p>W katalogu <code class="file docutils literal"><span class="pre">czat/czat</span></code> w pliku <code class="file docutils literal"><span class="pre">models.py</span></code> wpisujemy:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -288,7 +287,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </pre></div>
 </td></tr></table></div>
 <p>Po skonfigurowaniu projektu i zdefiniowaniu modelu danych możemy utworzyć bazę danych <a class="footnote-reference" href="#id6" id="id5">[3]</a> dla naszej aplikacji, czyli wszystkie potrzebne tabele. Podczas tworzenia bazy Django pyta o nazwę, email i hasło administratora. Podajemy te dane po wydaniu w katalogu projektu w terminalu polecenia:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~/chatter <span class="nv">$ </span>python manage.py syncdb
+<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~/czat <span class="nv">$ </span>python manage.py syncdb
 </pre></div>
 </div>
 <table class="docutils footnote" frame="void" id="id6" rules="none">
@@ -300,7 +299,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </div>
 <div class="section" id="panel-administracyjny">
 <h2><a class="toc-backref" href="#id18">4.4.4. Panel administracyjny</a><a class="headerlink" href="#panel-administracyjny" title="Permalink to this headline">¶</a></h2>
-<p>Django pozwala szybko utworzyć panel administratora dla naszego projektu. Rejestrujemy więc model danych jako element panelu w nowo utworzonym pliku <code class="file docutils literal"><span class="pre">admin.py</span></code> w katalogu <code class="file docutils literal"><span class="pre">chatter/chatter</span></code>:</p>
+<p>Django pozwala szybko utworzyć panel administratora dla naszego projektu. Rejestrujemy więc model danych jako element panelu w nowo utworzonym pliku <code class="file docutils literal"><span class="pre">admin.py</span></code> w katalogu <code class="file docutils literal"><span class="pre">czat/czat</span></code>:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -334,19 +333,21 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </div>
 <div class="section" id="widoki-i-szablony">
 <h2><a class="toc-backref" href="#id19">4.4.5. Widoki i szablony</a><a class="headerlink" href="#widoki-i-szablony" title="Permalink to this headline">¶</a></h2>
-<p>Dodawanie stron w Django polega na tworzeniu widoków, czyli funkcji Pythona powiązanych z określonymi adresami url. Widoki najczęściej zwracały będą kod HTML wyrenderowany na podstawie szablonów, do których możemy przekazywać dodatkowe dane <a class="footnote-reference" href="#id10" id="id9">[5]</a>, np. z bazy. Dla przejrzystości przyjęto, że w katalogu aplikacji (<code class="file docutils literal"><span class="pre">chatter/chatter</span></code>):</p>
+<p>Dodawanie stron w Django polega na tworzeniu widoków, czyli funkcji Pythona powiązanych z określonymi adresami url. Widoki najczęściej zwracały będą kod HTML wyrenderowany na podstawie szablonów, do których możemy przekazywać dodatkowe dane <a class="footnote-reference" href="#id10" id="id9">[5]</a>, np. z bazy. Dla przejrzystości przyjęto, że w katalogu aplikacji (<code class="file docutils literal"><span class="pre">czat/czat</span></code>):</p>
 <ol class="arabic simple">
 <li>plik <code class="file docutils literal"><span class="pre">views.py</span></code> zawiera definicję widoków, w tym wywołania szablonów,</li>
 <li>plik <code class="file docutils literal"><span class="pre">url.py</span></code> zawiera reguły łączące widoki z adresami url,</li>
-<li>w katalogu <code class="file docutils literal"><span class="pre">chatter/chatter/templates/chatter</span></code> zapisujemy szablony (templatki) pod nazwami określonymi w wywołujących je widokach, np. <code class="file docutils literal"><span class="pre">index.html</span></code>.</li>
+<li>w katalogu <code class="file docutils literal"><span class="pre">czat/czat/templates/czat</span></code> zapisujemy szablony (templatki) pod nazwami określonymi w wywołujących je widokach, np. <code class="file docutils literal"><span class="pre">index.html</span></code>.</li>
 </ol>
 <table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[5]</a></td><td>Danych z bazy przekazywane są do szablonów za pomocą Pythonowego słownika. Renderowanie polega na odszukaniu pliku szablonu, zastąpieniu przekazanych zmiennych danymi i odesłaniu całości (HTML + dane) do użytkownika.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[5]</a></td><td>Dane z bazy przekazywane są do szablonów za pomocą Pythonowego słownika.
+Renderowanie polega na odszukaniu pliku szablonu, zastąpieniu przekazanych zmiennych danymi i odesłaniu całości (HTML + dane) do użytkownika.</td></tr>
 </tbody>
 </table>
-<p>Aby utworzyć stronę główną, stworzymy pierwszy widok, czyli funkcję <code class="docutils literal"><span class="pre">index()</span></code> <a class="footnote-reference" href="#id12" id="id11">[6]</a>, którą powiążemy z adres URL głównej strony (/). Widok zwracał będzie kod wyrenderowany na podsatwie szablonu <code class="file docutils literal"><span class="pre">index.html</span></code>. W pliku <code class="file docutils literal"><span class="pre">views.py</span></code> umieszczamy:</p>
+<p>Aby utworzyć stronę główną, stworzymy pierwszy widok, czyli funkcję <code class="docutils literal"><span class="pre">index()</span></code> <a class="footnote-reference" href="#id12" id="id11">[6]</a>,
+którą powiążemy z adreseme URL głównej strony (/). Widok zwracał będzie kod wyrenderowany na podsatwie szablonu <code class="file docutils literal"><span class="pre">index.html</span></code>. W pliku <code class="file docutils literal"><span class="pre">views.py</span></code> umieszczamy:</p>
 <table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -365,14 +366,12 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 10
 11
 12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="c"># chatter/chatter/views.py</span>
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c"># czat/czat/views.py</span>
 
 <span class="c"># HttpResponse pozwala zwracac proste wiadomości tekstowe</span>
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
-<span class="c"># render pozwala zwracac szablony</span>
-<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span> <span class="c"># render pozwala zwracac szablony</span>
 
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Strona glowna aplikacji.&quot;&quot;&quot;</span>
@@ -417,10 +416,10 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 </pre></div>
 </td></tr></table></div>
 <p>Tworzymy katalog dla szablonów wydając polecenie:</p>
-<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~/chatter/chatter <span class="nv">$ </span>mkdir -p templates/chatter
+<div class="code_no">Terminal nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-bash"><div class="highlight"><pre>~/czat/czat <span class="nv">$ </span>mkdir -p templates/czat
 </pre></div>
 </div>
-<p>Tworzymy szablon, plik <code class="file docutils literal"><span class="pre">chatter/chatter/templates/chatter/index.html</span></code>, który zawiera:</p>
+<p>Tworzymy szablon, plik <code class="file docutils literal"><span class="pre">czat/czat/templates/czat/index.html</span></code>, który zawiera:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -438,7 +437,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 &lt;/html&gt;
 </pre></div>
 </td></tr></table></div>
-<p>Po wpisaniu adresu <em>127.0.0.1:8080/</em> zobaczymy tekst, który zwróciliśmy z widoku, czyli &#8220;Witaj w systemie Chatter&#8221;.</p>
+<p>Po wpisaniu adresu <em>127.0.0.1:8080/</em> zobaczymy tekst, który zwróciliśmy z widoku, czyli &#8220;Witaj w systemie Czat&#8221;.</p>
 <div class="figure">
 <img alt="../../_images/chatter2.png" src="../../_images/chatter2.png" />
 </div>
@@ -447,7 +446,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 <h2><a class="toc-backref" href="#id20">4.4.6. Logowanie użytkowników</a><a class="headerlink" href="#logowanie-uzytkownikow" title="Permalink to this headline">¶</a></h2>
 <p>Dodanie formularza logowania dla użytkowników polega na:</p>
 <ol class="arabic simple">
-<li>dodaniu w pliku <code class="file docutils literal"><span class="pre">views.py</span></code> nowego widoku <code class="docutils literal"><span class="pre">my_login()</span></code>, który wywoływać będzie szablon zapisany w pliku <code class="file docutils literal"><span class="pre">templates/chatter/login.html</span></code>,</li>
+<li>dodaniu w pliku <code class="file docutils literal"><span class="pre">views.py</span></code> nowego widoku <code class="docutils literal"><span class="pre">my_login()</span></code>, który wywoływać będzie szablon zapisany w pliku <code class="file docutils literal"><span class="pre">templates/czat/login.html</span></code>,</li>
 <li>powiązaniu w pliku urls.py nowego widoku z adresem <code class="file docutils literal"><span class="pre">/login</span></code>.</li>
 </ol>
 <p>Django upraszcza zadanie, ponieważ zawiera odpowiednie formularze i model reprezentujący użytkowników w systemie, z którego – nota bene – skorzystaliśmy już podczas tworzenia bazy danych.</p>
@@ -531,7 +530,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^login/$&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">my_login</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;login&#39;</span><span class="p">),</span>
 </pre></div>
 </div>
-<p>Tworzymy nowy szablon <code class="file docutils literal"><span class="pre">login.html</span></code> w katalogu <code class="file docutils literal"><span class="pre">templates/chatter/</span></code>:</p>
+<p>Tworzymy nowy szablon <code class="file docutils literal"><span class="pre">login.html</span></code> w katalogu <code class="file docutils literal"><span class="pre">templates/czat/</span></code>:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -597,10 +596,10 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 <p>Chcemy, by zalogowani użytkownicy mogli przeglądać wiadomości od innych użytkowników i dodawać własne. Utworzymy widok <code class="docutils literal"><span class="pre">messages()</span></code>, który wyświetli wszystkie wiadomości (żądanie GET) i ewentualnie zapisze nową wiadomość nadesłaną przez użytkownika (żądanie POST). Widok skorzysta z nowego szablonu <code class="file docutils literal"><span class="pre">messages.html</span></code> i powiązany zostanie z adresem <em>/messages</em>. Zaczynamy od zmian w <code class="file docutils literal"><span class="pre">views.py</span></code>.</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="c"># -*- coding: utf 8 -*-</span>
 
-<span class="c"># chatter/chatter/views.py</span>
+<span class="c"># czat/czat/views.py</span>
 
 <span class="c"># dodajemy nowe importy</span>
-<span class="kn">from</span> <span class="nn">chatter.models</span> <span class="kn">import</span> <span class="n">Message</span>
+<span class="kn">from</span> <span class="nn">czat.models</span> <span class="kn">import</span> <span class="n">Message</span>
 <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
 
@@ -632,10 +631,10 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
     <span class="c"># ustawiamy zmienne przekazywane do szablonu</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span> <span class="s">&#39;messages&#39;</span><span class="p">:</span> <span class="n">messages</span><span class="p">,</span> <span class="s">&#39;error&#39;</span><span class="p">:</span> <span class="n">error</span><span class="p">}</span>
     <span class="c"># renderujemy templatke wiadomosci</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;chatter/messages.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;czat/messages.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Teraz tworzymy nowy szablon <code class="file docutils literal"><span class="pre">messages.html</span></code> w katalogu <code class="file docutils literal"><span class="pre">templates/chatter/</span></code>.</p>
+<p>Teraz tworzymy nowy szablon <code class="file docutils literal"><span class="pre">messages.html</span></code> w katalogu <code class="file docutils literal"><span class="pre">templates/czat/</span></code>.</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -719,7 +718,7 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
 <div class="section" id="rejestrowanie-uzytkownikow">
 <h2><a class="toc-backref" href="#id22">4.4.8. Rejestrowanie użytkowników</a><a class="headerlink" href="#rejestrowanie-uzytkownikow" title="Permalink to this headline">¶</a></h2>
 <p>Utworzymy nowy widok <code class="docutils literal"><span class="pre">my_register()</span></code>, szablon <code class="file docutils literal"><span class="pre">register.html</span></code> i nowy adres URL <em>/register</em>, który skieruje użytkownika do formularza rejestracji, wymagającego podania nazwy i hasła. Zaczynamy od dodania widoku w pliku <code class="file docutils literal"><span class="pre">views.py</span></code>.</p>
-<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="c"># chatter/chatter/views.py</span>
+<div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><div class="highlight"><pre><span class="c"># czat/czat/views.py</span>
 
 <span class="c"># pozostale widoki</span>
 
@@ -749,10 +748,10 @@ Lokalny serwer deweloperski można zatrzymać za pomocą skrótu Ctrl+C.</p>
     <span class="c"># ustawiamy zmienne przekazywane do szablonu</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">}</span>
     <span class="c"># renderujemy templatke rejestracji</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;chatter/register.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;czat/register.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Tworzymy nowy szablon <code class="file docutils literal"><span class="pre">register.html</span></code> w katalogu <code class="file docutils literal"><span class="pre">templates/chatter</span></code>:</p>
+<p>Tworzymy nowy szablon <code class="file docutils literal"><span class="pre">register.html</span></code> w katalogu <code class="file docutils literal"><span class="pre">templates/czat</span></code>:</p>
 <div class="code_no">Kod nr <script>var code_no = code_no || 1; document.write(code_no++);</script></div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -878,7 +877,7 @@ i na ich podstawie przygotowuje dane zwracane do przeglądarki, najczęściej  w
 <tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Tomasz Nowacki,
 Robert Bednarz</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-21 o 19:02</td>
+<tr class="field-even field"><th class="field-name">Utworzony:</th><td class="field-body">2015-04-17 o 21:50</td>
 </tr>
 </tbody>
 </table>
@@ -914,7 +913,7 @@ Robert Bednarz</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../faq/index.html" class="btn btn-neutral float-right" title="FAQ">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../czat/index.html" class="btn btn-neutral float-right" title="4.5. Czat (wersja rozszerzona)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../quiz_orm/index.html" class="btn btn-neutral" title="4.3. Quiz ORM"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -930,8 +929,7 @@ Robert Bednarz</td>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
