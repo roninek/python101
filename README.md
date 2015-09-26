@@ -1,3 +1,5 @@
+DUPA
+DWIE DUPY
 Szkolenie Python 101
 ====================
 
